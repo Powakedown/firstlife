@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821123911) do
+ActiveRecord::Schema.define(version: 20170821141049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "title"
+    t.bigint "tree_id"
+    t.boolean "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tree_id"], name: "index_skills_on_tree_id"
+  end
+
+  create_table "trees", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_trees_on_category_id"
+  end
+
+  create_table "user_trees", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tree_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tree_id"], name: "index_user_trees_on_tree_id"
+    t.index ["user_id"], name: "index_user_trees_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +60,15 @@ ActiveRecord::Schema.define(version: 20170821123911) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "skills", "trees"
+  add_foreign_key "trees", "categories"
+  add_foreign_key "user_trees", "trees"
+  add_foreign_key "user_trees", "users"
 end
