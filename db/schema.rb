@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170821195405) do
 
-  # These are extensions that must be enabled in order to support this database
+# These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attachinary_files", force: :cascade do |t|
