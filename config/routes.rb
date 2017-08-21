@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get "/users" => "users#index"
   get "/users/:id" => "users#show"
   resources :trees, only: [:index, :create, :show]
+  mount Attachinary::Engine => "/attachinary"
+
 
 end

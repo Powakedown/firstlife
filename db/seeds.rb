@@ -21,6 +21,8 @@ categories.each do |category|
   Category.create(name: category)
 end
 
+puts "#{Category.count} category created."
+
 tree = Tree.create(
   name: "Développeur Ruby",
   category_id: Category.first.id
@@ -54,10 +56,13 @@ tree = Tree.create(
 
 tree = Tree.create(
   name: "Chef en cuisine",
-  category_id: Category.find(3 )
+  category_id: Category.find(3)
   )
   url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_chief_fsm7te.png"
   tree.photo_url = url
+
+puts "#{Tree.count} trees created."
+
 
 skills_ruby = ["Command line basics",
   "Build-in objects",
@@ -99,6 +104,9 @@ skills_ruby.each do |skill|
   level: false,
   )
 end
+
+puts "#{Skill.count} ruby skills created."
+rubyskill = Skill.count
 
 
 skills_ecology = [
@@ -166,4 +174,6 @@ skills_ecology.each do |skill|
   level: false,
   )
 end
+
+# puts "#{Skill.count - rubyskill} ecology skills created."
 
