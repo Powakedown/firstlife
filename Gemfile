@@ -16,6 +16,9 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'cloudinary'
+gem 'attachinary'
+
 
 group :development, :test do
   gem 'pry-byebug'
