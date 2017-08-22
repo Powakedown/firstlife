@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'trees#index'
+
   get 'trees/index'
 
   get 'trees/show'
