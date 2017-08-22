@@ -1,6 +1,6 @@
 class TreesController < ApplicationController
 
-    skip_before_action :authenticate_user!, only: [:home, :index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @trees = Tree.all
   end
@@ -11,5 +11,6 @@ class TreesController < ApplicationController
   end
 
   def create
+
   end
 end
