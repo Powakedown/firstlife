@@ -2,7 +2,12 @@ class TreesController < ApplicationController
 
     skip_before_action :authenticate_user!, only: [:home, :index, :show]
   def index
-    @trees = Tree.all
+    if params[:query]
+      @trees = Tree.where(name: params[:query][:name])
+    else
+      @trees = Tree.all
+    end
+    @result = @trees.count
   end
 
   def show
