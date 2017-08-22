@@ -1,2 +1,39 @@
-<h1>Trees#index</h1>
-<p>Find me in app/views/trees/index.html.erb</p>
+<% provide(:title, "FirstLife") %>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+    <div class="title">
+    <span>FirstLife</span>
+    </div>
+    <div class="slogan">
+      <p> No more CV<br>show your skills.</p>
+    </div>
+
+
+    </div>
+    <% @trees.each do |tree| %>
+      <div class="col-xs-8 col-md-3 col-sm-4 text-center" >
+        <div class="card-index">
+
+          <%= link_to tree_path(tree) do %>
+            <% if tree.photo? %>
+              <div class="card-index-image" style="background-image: url('<%= cl_image_path tree.photo.path %>')">
+            <% else %>
+              <div class="card-index-image" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/e_blur:1337/v1502810434/doll8_msmtic.jpg')">
+          <% end %>
+          </div>
+          <% end %>
+          <div class="card-body text-center"><p><%= link_to tree.name, tree_path(tree) %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
