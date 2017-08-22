@@ -14,24 +14,16 @@
 }
 .card-body{
   a {
+    font-size: 200%;
     color: #2d2d2d;
     text-decoration: none;
   }
 
 a.hover {
+  font-size: 200%;
   color: #2d2d2d;
   text-decoration: none;
 }
-
-p{
-  color: #2d2d2d;
-  text-decoration: none;
-}
-p.hover {
-  color: #2d2d2d;
-  text-decoration: none;
-}
-
   margin: 10px;
 }
 
@@ -44,5 +36,16 @@ p.hover {
   letter-spacing: -0.8px !important;
   padding-top: 8px !important;
   padding-bottom: 8px !important;
+  p{
+  font-size: 100%;
+  color: #2d2d2d;
+  text-decoration: none;
+}
+p.hover {
+  font-size: 100%;
+  color: #2d2d2d;
+  text-decoration: none;
+}
+
 }
 
