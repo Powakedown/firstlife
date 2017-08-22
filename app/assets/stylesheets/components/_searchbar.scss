@@ -80,13 +80,12 @@ span {
 .fake-input .form-control.string.required{
   border: none;
   outline: none !important;
-  width: 100%;
-  width: 250px;
+  width: 315%;
   box-shadow: none;
   height: 58px;
 }
 .fake-input label.search-field {
-  // display: none;
+  display: none;
 }
 .control-label.string.required.search-field {
   width: 100%;
@@ -94,4 +93,3 @@ span {
 #query_address, .query_address{
   width: 100%;
 }
-
