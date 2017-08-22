@@ -3,4 +3,5 @@ class Tree < ApplicationRecord
   has_many :skills
   has_many :users
   validates :name, presence: true
+
 end
