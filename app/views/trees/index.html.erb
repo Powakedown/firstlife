@@ -1,7 +1,7 @@
 <% provide(:title, "Trees") %>
 
 <% provide(:title, "FirstLife") %>
-<div class="container">
+<div class="container size-limiter">
 
   <div class="row">
     <div class="col-md-12">
@@ -12,7 +12,6 @@
     <div class="slogan">
       <p> No more CV<br>show your skills.</p>
     </div>
-
     <div class="custom-search-input">
       <div class="fake-input">
         <%= simple_form_for :query, url: trees_path, method: :get do |f| %>
