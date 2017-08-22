@@ -5,7 +5,7 @@ class TreesController < ApplicationController
 
   def show
     @tree = Tree.find(params[:id])
-    @skills = @tree.skills
+    @root_skill = @tree.skills.first.root
   end
 
   def create
