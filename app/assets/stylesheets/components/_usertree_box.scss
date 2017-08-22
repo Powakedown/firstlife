@@ -1,0 +1,40 @@
+.usertree-component{
+  position:relative;
+  width: 424px;
+  height: 108px;
+  display: flex;
+  background-color: $white;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #CCD4DA;
+}
+.usertree-name{
+  width: 300px;
+  height: 90px;
+  margin-left: 40px;
+  padding: 20px;
+}
+p{
+  font-size:10px;
+  color:$gray;
+}
+h4{
+  font-size:23px;
+  color:$gray;
+}
+
+.usertree-badge {
+  position:absolute;
+  right: 5px;
+  margin:10px;
+  width: 88px;
+  height: 88px;
+  color: $white;
+  background-color:$green;
+  border-radius: 50%;
+  font-size:45px ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
