@@ -1,2 +1,42 @@
-<h1>Trees#show</h1>
-<p>Find me in app/views/trees/show.html.erb</p>
+<h1><%= @tree.name %></h1>
+<p>Level sur user </p>
+<p>Nombre d'objectifs accomplis</p>
+<% @skills.each do |skill| %>
+  <h2><%= skill.name %></h2>
+  <% if skill.description %>
+    <h2><%= skill.description %></h2>
+  <% end %>
+<% end %>
+
+
+
+<ul class="tree">
+  <li>
+    <div class="leaf">
+      Front-End
+    </div>
+    <ul>
+      <li>
+        <div class="leaf">JS</div>
+        <ul>
+          <li>
+            <div class="leaf">AJAX</div>
+          </li>
+          <li>
+            <div class="leaf">Events</div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="leaf">HTML</div>
+      </li>
+      <li>
+        <div class="leaf">CSS</div>
+      </li>
+      <li>
+        <div class="leaf">SVG</div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
