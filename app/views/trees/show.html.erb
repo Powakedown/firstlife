@@ -1,32 +1,22 @@
-<h1><%= @tree.name %></h1>
-<p>Level sur user </p>
-<p>Nombre d'objectifs accomplis</p>
-<% @skills.each do |skill| %>
-  <h2><%= skill.name %></h2>
-  <% if skill.description %>
-    <h2><%= skill.description %></h2>
-  <% end %>
-<% end %>
-
-
-
 <ul class="tree">
   <li>
     <div class="leaf">
-      Front-End
+     <h1><%= @tree.name %></h1>
     </div>
     <ul>
       <li>
-        <div class="leaf">JS</div>
+      <%= @skills.each do |skill| %>
+        <div class="leaf"><h2><%= @skills.parent.name %></h2></div>
         <ul>
+          <%= @skills.each do |skill| %>
           <li>
-            <div class="leaf">AJAX</div>
+            <div class="leaf"><%= @skills.children.name %></div>
           </li>
-          <li>
-            <div class="leaf">Events</div>
-          </li>
+          <% end %>
         </ul>
+      <% end  %>
       </li>
+
       <li>
         <div class="leaf">HTML</div>
       </li>
@@ -40,3 +30,9 @@
   </li>
 </ul>
 
+<% @skills.each do |skill| %>
+  <h2><%= skill.name %></h2>
+  <% if skill.description %>
+    <!-- <h2><%= skill.description %></h2> -->
+  <% end %>
+<% end %>
