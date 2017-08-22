@@ -1,4 +1,12 @@
 <h1><%= @tree.name %></h1>
 <p>Level sur user </p>
 <p>Nombre d'objectifs accomplis</p>
+<% @skills.each do |skill| %>
+  <h2><%= skill.name %></h2>
+  <% if skill.description %>
+    <h2><%= skill.description %></h2>
+  <% end %>
+<% end %>
+
+
 
