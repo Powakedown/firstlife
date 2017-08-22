@@ -22,7 +22,15 @@
       </div>
     </div>
 
-    <%= @result %>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Talents</h3>
+        <% if @result %>
+        <p>Résultat de la recherche: <%= @result %></p>
+        <% end %>
+      </div>
+    </div>
+
     <% @trees.each do |tree| %>
       <div class="col-xs-8 col-md-3 col-sm-4 text-center" >
         <div class="card-index">
