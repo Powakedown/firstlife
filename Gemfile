@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'cloudinary'
 gem 'attachinary'
+gem 'ancestry'
 
 
 group :development, :test do
