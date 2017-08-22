@@ -1,12 +1,14 @@
-<ul class="tree">
-  <li>
-    <div class="leaf" id="title" >
-      <%= render "skills/skill", skill: @root_skill %>
-    </div>
-    <ul>
-      <% @root_skill.children.each do |skill| %>
-        <%= build_tree(skill) %>
-      <% end %>
-    </ul>
-  </li>
-</ul>
+<div class="tree-wrapper">
+  <ul class="tree">
+    <li>
+      <div class="leaf" id="title" >
+        <%= render "skills/skill", skill: @root_skill %>
+      </div>
+      <ul>
+        <% @root_skill.children.each do |skill| %>
+          <%= build_tree(skill) %>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

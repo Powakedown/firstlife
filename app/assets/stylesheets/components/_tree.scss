@@ -1,13 +1,19 @@
 $border-radius: 7px;
 $border-width: 2px;
-$border-color: #AAA;
-$leaf-margin-height: 10px;
+$border-color: black;
+$leaf-margin-height: 20px;
 $leaf-max-width: 400px;
 $leaf-padding: 10px 20px;
+$border-opacity: 0.1;
 
+.tree-wrapper {
+  max-width: 970px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .tree {
   text-align: center;
-  margin: 0;
+  margin: auto;
   padding: 0;
   ul {
     margin: 0;
@@ -21,6 +27,7 @@ $leaf-padding: 10px 20px;
       height: $leaf-margin-height;
       width: $border-width;
       background: $border-color;
+      opacity: $border-opacity;
       top: -($leaf-margin-height * 2);
     }
   }
@@ -30,6 +37,7 @@ $leaf-padding: 10px 20px;
   }
   .leaf {
     position: relative;
+    background-color: white;
     max-width: $leaf-max-width;
     box-shadow: 1px 1px 4px #CCD4DA;
     border-radius: $border-radius;
@@ -39,36 +47,37 @@ $leaf-padding: 10px 20px;
     margin: 0 0 ($leaf-margin-height * 2) 0;
   }
   .skill-badge {
-  position:absolute;
-  right: 15px;
-  top: 5px;
-  margin:10px;
   width: 40px;
   height: 40px;
-  background-color:#CCCCCC;
+  background-color:black;
+  opacity: 0.1;
   border-radius: 50%;
   font-size:20px ;
+}
+.skill-component {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .skill-name{
   width: 200px;
-  height: 40px;
-  margin-left: 40px;
-  margin-right: 73px;
+  height: 60px;
   p{
     font-size:8px;
     color:$gray;
   }
   h4{
-    font-size:14px;
+    font-size:13px;
     color:$gray;
-    margin-bottom: 5px;
-    margin-left: -20px;
     text-align: left;
   }
-
+  .tree-title {
+    margin-top: 6px;
+  }
+  .tree-type {
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
 }
   ul li {
     position: relative;
@@ -80,12 +89,14 @@ $leaf-padding: 10px 20px;
       top: -$leaf-margin-height;
       left: 0%;
       border-top: $border-width solid $border-color;
+      opacity: $border-opacity;
     }
     &::before {
       content: "";
       height: $leaf-margin-height;
       width: $border-width;
       background: $border-color;
+      opacity: $border-opacity;
       position: absolute;
       top: -$leaf-margin-height;
       left: 50%;
@@ -98,6 +109,7 @@ $leaf-padding: 10px 20px;
       left: 0%;
       width: 50%;
       border-right: $border-width solid $border-color;
+      opacity: $border-opacity;
       border-top-right-radius: $border-radius;
     }
     &::before {
@@ -109,6 +121,7 @@ $leaf-padding: 10px 20px;
       left: 50%;
       width: 50%;
       border-left: $border-width solid $border-color;
+      opacity: $border-opacity;
       border-top-left-radius: $border-radius;
     }
     &::before {
@@ -121,6 +134,7 @@ $leaf-padding: 10px 20px;
       border-right: none;
       border-radius: 0;
       border-left: $border-width solid $border-color;
+      opacity: $border-opacity;
       margin-left: -($border-width/2);
     }
   }
@@ -131,9 +145,17 @@ $leaf-padding: 10px 20px;
   background-color: $white;
   border-radius: 60px;
   box-shadow: 1px 1px 4px #CCD4DA;
-  .skill-badge{
+  padding-top: 14px;
+  padding-left: 32px;
+  .skill-badge {
     width: 60px;
     height: 60px;
     background-color: #56ABAD;
+    opacity: 1;
   }
+  .tree-title {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+
 }
