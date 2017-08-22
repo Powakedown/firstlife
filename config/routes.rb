@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'user_trees/create'
-
   root to: 'trees#index'
 
   devise_for :users
@@ -9,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:index, :show]
+
   resources :trees, only: [:index, :show] do
     resources :user_trees, only: [:create, :destroy], shallow: true
   end
