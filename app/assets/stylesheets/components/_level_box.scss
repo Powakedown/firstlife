@@ -1,0 +1,39 @@
+.level-component{
+  position:relative;
+  width: 353px;
+  height: 90px;
+  display: flex;
+  background-color: $white;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #CCD4DA;
+}
+.level-name{
+  width: 200px;
+  height: 70px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 20px;
+}
+p{
+  font-size:10px;
+  color:$gray;
+}
+h4{
+  font-size:18px;
+  color:$gray;
+}
+
+.level-badge {
+  position:absolute;
+  right: 5px;
+  margin:10px;
+  width: 70px;
+  height: 70px;
+  color: $white;
+  background-color:#66FF66;
+  border-radius: 50%;
+  font-size:35px ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
