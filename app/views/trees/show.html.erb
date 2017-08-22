@@ -1,43 +1,12 @@
-<% provide(:title, @tree.name.capitalize) %>
-<h1><%= @tree.name %></h1>
-<p>Level sur user </p>
-<p>Nombre d'objectifs accomplis</p>
-<% @skills.each do |skill| %>
-  <h2><%= skill.name %></h2>
-  <% if skill.description %>
-    <h2><%= skill.description %></h2>
-  <% end %>
-<% end %>
-
-
-
 <ul class="tree">
   <li>
     <div class="leaf">
-      Front-End
+      <%= render "skills/skill", skill: @root_skill %>
     </div>
     <ul>
-      <li>
-        <div class="leaf">JS</div>
-        <ul>
-          <li>
-            <div class="leaf">AJAX</div>
-          </li>
-          <li>
-            <div class="leaf">Events</div>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <div class="leaf">HTML</div>
-      </li>
-      <li>
-        <div class="leaf">CSS</div>
-      </li>
-      <li>
-        <div class="leaf">SVG</div>
-      </li>
+      <% @root_skill.children.each do |skill| %>
+        <%= build_tree(skill) %>
+      <% end %>
     </ul>
   </li>
 </ul>
-

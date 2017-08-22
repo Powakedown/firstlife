@@ -1,0 +1,85 @@
+$border-radius: 2px;
+$border-width: 2px;
+$border-color: #AAA;
+$leaf-margin-height: 10px;
+$leaf-max-width: 200px;
+$leaf-padding: 10px 20px;
+
+.tree {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: $leaf-margin-height;
+      width: $border-width;
+      background: $border-color;
+      top: -($leaf-margin-height * 2);
+    }
+  }
+  li {
+    list-style: none;
+    flex: 1;
+  }
+  .leaf {
+    max-width: $leaf-max-width;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    padding: $leaf-padding;
+    text-align: center;
+    display: inline-block;
+    margin: 0 0 ($leaf-margin-height * 2) 0;
+  }
+  ul li {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: $leaf-margin-height;
+      top: -$leaf-margin-height;
+      left: 0%;
+      border-top: $border-width solid $border-color;
+    }
+    &::before {
+      content: "";
+      height: $leaf-margin-height;
+      width: $border-width;
+      background: $border-color;
+      position: absolute;
+      top: -$leaf-margin-height;
+      left: 50%;
+      margin-left: -($border-width/2);
+
+    }
+  }
+  ul li:last-child {
+    &::after {
+      left: 0%;
+      width: 50%;
+      border-right: $border-width solid $border-color;
+      border-top-right-radius: $border-radius;
+    }
+    &::before {
+      content: none;
+    }
+  }
+  ul li:first-child {
+    &::after {
+      left: 50%;
+      width: 50%;
+      border-left: $border-width solid $border-color;
+      border-top-left-radius: $border-radius;
+    }
+    &::before {
+      content: none;
+    }
+  }
+}
