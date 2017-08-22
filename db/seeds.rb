@@ -27,7 +27,7 @@ tree = Tree.create(
   name: "Développeur Ruby",
   category_id: Category.first.id
   )
-  url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_dev_ug2xlz.png"
+  url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvmb5ddon.png"
   tree.photo_url = url
 
 
@@ -175,5 +175,5 @@ skills_ecology.each do |skill|
   )
 end
 
-# puts "#{Skill.count - rubyskill} ecology skills created."
+puts "#{Skill.count - rubyskill} ecology skills created."
 
