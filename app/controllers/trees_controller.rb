@@ -3,7 +3,7 @@ class TreesController < ApplicationController
     skip_before_action :authenticate_user!, only: [:home, :index, :show]
   def index
     if params[:query]
-      @trees = Tree.where(name: params[:query][:name])
+      @trees = Tree.where("name ILIKE ?", "%#{params[:query][:name]}%")
     else
       @trees = Tree.all
     end
