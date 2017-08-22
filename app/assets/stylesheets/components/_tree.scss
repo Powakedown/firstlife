@@ -1,8 +1,8 @@
-$border-radius: 2px;
+$border-radius: 7px;
 $border-width: 2px;
 $border-color: #AAA;
 $leaf-margin-height: 10px;
-$leaf-max-width: 200px;
+$leaf-max-width: 400px;
 $leaf-padding: 10px 20px;
 
 .tree {
@@ -29,14 +29,47 @@ $leaf-padding: 10px 20px;
     flex: 1;
   }
   .leaf {
+    position: relative;
     max-width: $leaf-max-width;
-    border: $border-width solid $border-color;
+    box-shadow: 1px 1px 4px #CCD4DA;
     border-radius: $border-radius;
     padding: $leaf-padding;
     text-align: center;
     display: inline-block;
     margin: 0 0 ($leaf-margin-height * 2) 0;
   }
+  .skill-badge {
+  position:absolute;
+  right: 15px;
+  top: 5px;
+  margin:10px;
+  width: 40px;
+  height: 40px;
+  background-color:#CCCCCC;
+  border-radius: 50%;
+  font-size:20px ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.skill-name{
+  width: 200px;
+  height: 40px;
+  margin-left: 40px;
+  margin-right: 73px;
+  p{
+    font-size:8px;
+    color:$gray;
+  }
+  h4{
+    font-size:14px;
+    color:$gray;
+    margin-bottom: 5px;
+    margin-left: -20px;
+    text-align: left;
+  }
+
+}
   ul li {
     position: relative;
     &::after {
@@ -81,5 +114,26 @@ $leaf-padding: 10px 20px;
     &::before {
       content: none;
     }
+  }
+  ul li:only-child {
+    &::after {
+      border-top: none;
+      border-right: none;
+      border-radius: 0;
+      border-left: $border-width solid $border-color;
+      margin-left: -($border-width/2);
+    }
+  }
+}
+#title {
+  width: 353px;
+  height: 90px;
+  background-color: $white;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #CCD4DA;
+  .skill-badge{
+    width: 60px;
+    height: 60px;
+    background-color: #56ABAD;
   }
 }
