@@ -11,16 +11,17 @@
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 .card-body{
   a {
-    font-size: 200%;
+    font-size: 100%;
     color: #2d2d2d;
     text-decoration: none;
   }
 
 a.hover {
-  font-size: 200%;
+  font-size: 100%;
   color: #2d2d2d;
   text-decoration: none;
 }
@@ -41,11 +42,11 @@ a.hover {
   color: #2d2d2d;
   text-decoration: none;
 }
-p.hover {
-  font-size: 100%;
-  color: #2d2d2d;
-  text-decoration: none;
-}
+  p.hover {
+    font-size: 100%;
+    color: #2d2d2d;
+    text-decoration: none;
+  }
 
 }
 
