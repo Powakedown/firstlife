@@ -4,6 +4,7 @@ class TreesController < ApplicationController
   def index
     if params[:query]
       @trees = Tree.where("name ILIKE ?", "%#{params[:query][:name]}%")
+      @search = true
     else
       @trees = Tree.all
     end
