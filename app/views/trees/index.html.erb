@@ -56,7 +56,9 @@
           <% end %>
           </div>
           <% end %>
-          <div class="card-body text-center"><p><%= link_to tree.name, tree_path(tree) %></p>
+          <div class="card-body text-center">
+            <span class="card-title"><%= link_to tree.name, tree_path(tree) %></span>
+            <span class="card-subtitle"><%= tree.skills.count %> niveaux disponibles</span>
           </div>
         </div>
       </div>

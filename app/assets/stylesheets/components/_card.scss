@@ -14,15 +14,22 @@
 
 }
 .card-body{
-  a {
-    font-size: 14px;
+  .card-title {
+    display: inline-block;
+    font-size: 19px;
     color: #2d2d2d;
-    text-decoration: none;
+    a {
+      color: #2d2d2d;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $anis;
+      text-decoration: none;
+    }
   }
-
-  a.hover {
-  color: #2d2d2d;
-  text-decoration: none;
+  .card-subtitle {
+    display: inline-block;
+    font-size: 14px;
   }
   margin: 10px;
 }
