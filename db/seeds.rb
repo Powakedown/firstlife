@@ -124,7 +124,7 @@ puts "#{Skill.count} ruby skills created."
 rubyskill = Skill.count
 
 
-ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte"  description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 
 pipi = ecology.children.create!(name: "Faire pipi dans la douche", action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 ampoule = pipi.children.create!(name: "Installer des ampoules à économies d'énergie",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
