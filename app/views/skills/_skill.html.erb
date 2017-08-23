@@ -11,13 +11,15 @@
     <% end %>
 
     <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
-      <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content"  do %>
+      <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content"  do %>
           <i class="fa fa-check checked"></i> <!-- on affiche la coche verte -->
       <% end %>
     <% else %>
-      <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content"  do %>
+      <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content"  do %>
         <i class="fa fa-check unckecked"></i> <!-- on affiche la coche gris -->
       <% end %>
     <% end %>
   </div>
 </div>
+
+
