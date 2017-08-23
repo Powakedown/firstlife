@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 20170822164249) do
     t.datetime "updated_at", null: false
     t.string "description"
     t.string "ancestry"
-    t.string "title"
-    t.string "type"
     t.string "action"
     t.index ["ancestry"], name: "index_skills_on_ancestry"
     t.index ["tree_id"], name: "index_skills_on_tree_id"
