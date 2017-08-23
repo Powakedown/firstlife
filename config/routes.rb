@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
+  resources :skills, only: [] do
+    resources :user_skills, only: [:create, :destroy], shallow: true
+  end
+
   resources :trees, only: [:index, :show] do
     resources :user_trees, only: [:create, :destroy], shallow: true
   end
+
   mount Attachinary::Engine => "/attachinary"
 end
