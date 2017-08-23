@@ -33,3 +33,84 @@
 //   align-items: center;
 // }
 
+#title {
+  width: 390px;
+  height: 100px;
+  background-color: $white;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #CCD4DA;
+  padding-top: 10px;
+  padding-left: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 105px;
+  box-shadow: none !important;
+  .skill-badge {
+    width: 75px;
+    height: 75px;
+    background-color: #56ABAD;
+    opacity: 1;
+      h1 {
+        font-size: 50px;
+        font-family: "Open sans", Helvetica, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin: 13px;
+      }
+  }
+  .skill-name {
+    width: 265px;
+    height: 65px;
+  }
+  .tree-title {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+
+}
+.skill-badge {
+  width: 40px;
+  height: 40px;
+  background-color:black;
+  opacity: 0.1;
+  border-radius: 50%;
+  font-size:20px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 25px;
+    font-family: "Open sans", Helvetica, sans-serif;
+    font-weight: bold;
+    color: transparent;
+  }
+}
+
+.skill-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skill-name{
+  width: 200px;
+  height: 60px;
+  p{
+    font-size:8px;
+    color:$gray;
+  }
+  h4{
+    font-size:13px;
+    color:$gray;
+    text-align: left;
+  }
+  .tree-title {
+    margin-top: 6px;
+  }
+  .tree-type {
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+}
