@@ -53,13 +53,71 @@
   background-color: white;
   padding-bottom: 0px;
   height: 245px;
-  width: 214px;
+  width: 295px;
   margin-top: 0px;
   border-radius: 8px;
-  margin-left: 100px;
+  margin-left: 0px;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(110,110,110, 0.25);
 }
 
 .card-avatar-image {
-  text-align: center;
+  margin: 3em auto 1em auto;
   padding-top: 40px;
+  width: 119px;
+  height: 119px;
+}
+
+.card-avatar-name p{
+  margin-top: 40px;
+  // text-align: center;
+  font-size: 100%;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.card-avatar-name-description p{
+  margin-top: -10px;
+  text-align: center;
+  font-size: 80%;
+  color: rgb(190,190,190)
+}
+
+.card-avatar-rang{
+  background-color: white;
+  padding-bottom: 10px;
+  max-height: 345px;
+  width: 295px;
+  margin-top: 30px;
+  border-radius: 8px;
+  margin-left: 0px;
+  text-align: center;
+}
+
+.card-rang p{
+  padding-top: 15px;
+  font-size: 70%;
+}
+
+.card-rang-image {
+  padding-top: 0px;
+  margin-right: 10px;
+  margin: auto auto;
+}
+
+.profil {
+  display: block;
+  max-width: 300px;
+}
+
+.limiter-profil-size {
+  display: flex;
+  width: 1038px;
+  justify-content: space-around;
+}
+
+.talents-profil{
+  margin-left: 30px;
+  margin-top: 80px;
+  display: block;
 }
