@@ -1,0 +1,93 @@
+#custom-search-input {
+        margin:0;
+        margin-top: 30px;
+        padding: 0;
+    }
+    #custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 8px;
+        height: 70px;
+    }
+    .search-query:focus + button {
+        z-index: 3;
+    }
+    .fake-input{
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid rgb(220,220,220);
+      padding: 10px 20px ;
+      margin-top: 35px;
+      border-radius: 8px;
+      width: 101%;
+      height: 80px;
+      input, input:focus, input:hover, textarea:focus, textarea:hover {
+        width: 110%;
+        border: none;
+        outline: none !important;
+      form {
+        height: 100px;
+        width: 100%;
+      }
+    }
+}
+
+span {
+  z-index: 10;
+}
+.search-field, #user_address {
+  border: none;
+  box-shadow: none;
+  border-image-width: none;
+  color: black;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+#button-search{
+  margin-right: -15px;
+  line-height:  30px;
+  background-color: #b2d430;
+}
+.btn-pink{
+  background-color: $gray;
+  border-radius: 6px;
+  color: white;
+  height: 48px;
+  margin-top: 5px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.fake-input form {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 10px;
+}
+.form-group .string .optional .user_address {
+  margin-bottom: 0px;
+}
+.fake-input .form-control.string.required{
+  border: none;
+  outline: none !important;
+  width: 315%;
+  box-shadow: none;
+  height: 58px;
+}
+.fake-input label.search-field {
+  display: none;
+}
+.control-label.string.required.search-field {
+  width: 100%;
+}
+#query_address, .query_address{
+  width: 100%;
+}

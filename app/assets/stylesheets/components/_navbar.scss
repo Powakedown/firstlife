@@ -35,7 +35,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: rgb(20,20,20);
+  color: white;
   font-size: 16px;
   font-family: "Open Sans";
   font-weight: 400;
@@ -44,7 +44,7 @@
   // text-shadow: 1px 1px 1px #809184;
 }
 .navbar-wagon-link:hover {
-  color: #2d2d2d;
+  color: $anis;
   text-decoration: none;
   // text-shadow: 1px 1px 1px #809184;
 }

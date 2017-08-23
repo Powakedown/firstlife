@@ -1,13 +1,15 @@
-<ul class="tree">
-  <li>
-    <div class="leaf">
-      <%= render "skills/skill", skill: @root_skill %>
-    </div>
-    <ul>
-      <% @root_skill.children.each do |skill| %>
-        <%= build_tree(skill) %>
-      <% end %>
-    </ul>
-  </li>
+<div class="tree-wrapper">
   <%= link_to 'Add this Tree', tree_user_trees_path(@tree), method: :post, class: 'btn btn-success' %>
-</ul>
+  <ul class="tree">
+    <li>
+      <div class="leaf" id="title" >
+        <%= render "skills/skill", skill: @root_skill %>
+      </div>
+      <ul>
+        <% @root_skill.children.each do |skill| %>
+          <%= build_tree(skill) %>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,13 +1,20 @@
-$border-radius: 2px;
+$border-radius: 7px;
 $border-width: 2px;
-$border-color: #AAA;
-$leaf-margin-height: 10px;
-$leaf-max-width: 200px;
+$border-color: black;
+$leaf-margin-height: 25px;
+$leaf-max-width: 400px;
 $leaf-padding: 10px 20px;
+$border-opacity: 0.1;
 
+.tree-wrapper {
+  max-width: 970px;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .tree {
   text-align: center;
-  margin: 0;
+  margin: auto;
   padding: 0;
   ul {
     margin: 0;
@@ -21,6 +28,7 @@ $leaf-padding: 10px 20px;
       height: $leaf-margin-height;
       width: $border-width;
       background: $border-color;
+      opacity: $border-opacity;
       top: -($leaf-margin-height * 2);
     }
   }
@@ -29,8 +37,10 @@ $leaf-padding: 10px 20px;
     flex: 1;
   }
   .leaf {
+    position: relative;
+    background-color: white;
     max-width: $leaf-max-width;
-    border: $border-width solid $border-color;
+    box-shadow: 1px 1px 4px #CCD4DA;
     border-radius: $border-radius;
     padding: $leaf-padding;
     text-align: center;
@@ -47,17 +57,18 @@ $leaf-padding: 10px 20px;
       top: -$leaf-margin-height;
       left: 0%;
       border-top: $border-width solid $border-color;
+      opacity: $border-opacity;
     }
     &::before {
       content: "";
       height: $leaf-margin-height;
       width: $border-width;
       background: $border-color;
+      opacity: $border-opacity;
       position: absolute;
       top: -$leaf-margin-height;
       left: 50%;
       margin-left: -($border-width/2);
-
     }
   }
   ul li:last-child {
@@ -65,6 +76,7 @@ $leaf-padding: 10px 20px;
       left: 0%;
       width: 50%;
       border-right: $border-width solid $border-color;
+      opacity: $border-opacity;
       border-top-right-radius: $border-radius;
     }
     &::before {
@@ -76,10 +88,21 @@ $leaf-padding: 10px 20px;
       left: 50%;
       width: 50%;
       border-left: $border-width solid $border-color;
+      opacity: $border-opacity;
       border-top-left-radius: $border-radius;
     }
     &::before {
       content: none;
+    }
+  }
+  ul li:only-child {
+    &::after {
+      border-top: none;
+      border-right: none;
+      border-radius: 0;
+      border-left: $border-width solid $border-color;
+      opacity: $border-opacity;
+      margin-left: -($border-width/2);
     }
   }
 }
