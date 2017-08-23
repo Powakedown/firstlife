@@ -2,10 +2,8 @@ class UserTreesController < ApplicationController
   before_action :set_tree
 
   def create
-    raise
-    @user_trees.tree = @tree
-    if user_trees.save
-      redirect_to user_path(@tree)
+    if current_user.trees << @tree
+      redirect_to user_path(current_user)
     else
       render 'trees/show'
     end
