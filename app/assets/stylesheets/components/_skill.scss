@@ -1,37 +1,6 @@
-// .skill-component{
-//   position:relative;
-//   max-width: 353px;
-//   height: 60px;
-//   display: flex;
-//   background-color: $white;
-//   border-radius: 7px;
-//   box-shadow: 1px 1px 4px #CCD4DA;
-// }
-// .skill-name{
-//   width: 200px;
-//   height: 70px;
-//   margin-left: 40px;
-//   margin-right: 73px;
-// }
-
-// .skill-name h4{
-//   font-size:14px;
-//   color:$gray;
-//   margin-bottom: 5px;
-// }
-// .skill-badge {
-//   position:absolute;
-//   right: 5px;
-//   margin:10px;
-//   width: 40px;
-//   height: 40px;
-//   background-color:#CCCCCC;
-//   border-radius: 50%;
-//   font-size:20px ;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
+.badge-content-titre{
+  display:none;
+}
 
 #title {
   width: 390px;
@@ -51,16 +20,27 @@
   .skill-badge {
     width: 75px;
     height: 75px;
-    background-color: #56ABAD;
+    background-color: $anis;
     opacity: 1;
-      h1 {
+      a, h1 {
         font-size: 50px;
+        color: white;
         font-family: "Open sans", Helvetica, sans-serif;
         font-weight: bold;
         color: white;
         margin: 13px;
       }
- }
+      a:hover {
+        text-decoration: none;
+        font-size: 55px;
+      }
+  }
+  .badge-content-titre{
+    display:block;
+  }
+  .badge-content{
+    display:none;
+  }
   .skill-name {
     width: 265px;
     height: 65px;
