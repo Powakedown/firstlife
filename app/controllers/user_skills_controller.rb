@@ -3,6 +3,8 @@ class UserSkillsController < ApplicationController
 
   def create
     @user_skill = current_user.user_skills.new(skill: @skill)
+    @user_skill.save
+    redirect_to @skill.tree
   end
 
  private
