@@ -3,7 +3,8 @@ class UserTreesController < ApplicationController
 
   def create
     if current_user.trees << @tree
-      redirect_to user_path(current_user)
+      flash[:notice] = "Vous avez ajouté l'arbre de talent #{@tree.name} à votre profil."
+      redirect_to tree_path(@tree)
     else
       render 'trees/show'
     end

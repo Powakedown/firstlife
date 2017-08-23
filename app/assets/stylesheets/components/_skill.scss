@@ -35,6 +35,12 @@
         font-size: 55px;
       }
   }
+  .tree-opened {
+    background-color: $blue;
+  }
+  .tree-closed {
+    background-color: $anis;
+  }
   .badge-content-titre{
     display:block;
   }
