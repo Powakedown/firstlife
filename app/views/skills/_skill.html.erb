@@ -2,10 +2,23 @@
   <div class="skill-name">
     <h4 class="tree-type"><%= skill.action %></h4>
     <h4 class="tree-title"><%= skill.name %></h4>
-    <!--<p><%= skill.description.html_safe %></p>-->
-    <!-- description de l'arbre -->
   </div>
   <div class="skill-badge">
-  <h1>7</h1>
+    <% if UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1%>  <!-- si on a le tree -->
+      <%= link_to '7', tree_user_trees_path(@tree), method: :post, class: "badge-content-titre" %>
+    <% else %>
+      <%= link_to '+', tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
+    <% end %>
+
+    <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
+      <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content"  do %>
+          <i class="fa fa-check checked"></i> <!-- on affiche la coche verte -->
+      <% end %>
+    <% else %>
+      <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content"  do %>
+        <i class="fa fa-check unckecked"></i> <!-- on affiche la coche gris -->
+      <% end %>
+    <% end %>
+
   </div>
 </div>
