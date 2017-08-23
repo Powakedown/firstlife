@@ -1,36 +1,24 @@
-
-.card-profil{
+.card-profile {
   position: relative;
-  width: 240px;
-  height: 280px;
   background-color: #FFF;
-}
-.profil-image{
-  position: absolute;
-  top: 70px;
-  left: 33px;
-
-
-}
-.level{
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 43px;
-  color: #008040;
-  font-weight: bold;
-
-}
-.user-name{
-  position: absolute;
-  top:280px;
-  width: 240px;
-  height: 60px;
-  background-color: #D8D8D8;
   text-align: center;
-  color: #4A4A4A;
-  padding: 20px;
-}
-.user-name p{
-  font-size: 18px;
+  margin-bottom: 20px;
+  .card-profile-level {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 43px;
+    color: #008040;
+    font-weight: bold;
+  }
+  .card-profile-avatar {
+    padding: 60px 0;
+  }
+  .card-profile-username {
+    background-color: #D8D8D8;
+
+    color: #4A4A4A;
+    padding: 20px;
+    font-size: 18px;
+  }
 }
