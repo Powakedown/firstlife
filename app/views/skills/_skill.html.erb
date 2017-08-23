@@ -12,11 +12,11 @@
 
     <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
       <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content"  do %>
-          <i class="fa fa-check unchecked" id="check"></i> <!-- on affiche la coche verte -->
+          <i class="fa fa-check checked"></i> <!-- on affiche la coche verte -->
       <% end %>
     <% else %>
       <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content"  do %>
-        <i class="fa fa-check ckecked" id="uncheck"></i> <!-- on affiche la coche gris -->
+        <i class="fa fa-times unchecked"></i> <!-- on affiche la coche gris -->
       <% end %>
     <% end %>
   </div>

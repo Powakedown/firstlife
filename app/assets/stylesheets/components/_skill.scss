@@ -66,10 +66,10 @@
     font-weight: bold;
     color: transparent;
   }
-  #uncheck{
-    color: $bluegrey;
+  .unchecked{
+    color: $red;
   }
-  #check{
+  .checked{
     color: $anis;
   }
 }
