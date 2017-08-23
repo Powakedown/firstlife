@@ -11,9 +11,23 @@ Tree.destroy_all
 Category.destroy_all
 User.destroy_all
 
-User.create(email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux")
-User.create(email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Colmart")
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503481462/maximeboue_vwhvt9.png"
+User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
+User.create(first_name: "Renan", last_name: "Dolan", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
+User.create(first_name: "Léa", last_name: "Lamartine", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
+User.create(first_name: "Benjamin", last_name: "Dessange", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
+User.create(first_name: "Sylvain", last_name: "Lempereur", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 categories = ["Développement Web", "Graphisme", "Famille", "Spectacle","Artisanat","Design","Informatique d'entreprise","Développement personnel", "Éducation","Tourisme","Écologie"]
 
@@ -30,7 +44,6 @@ dev_ruby = Tree.create!(
   photo_url: url
 )
 
-
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ecology_sua5up.png"
 eco = Tree.create!(
   name: "Adepte écologie",
@@ -38,14 +51,12 @@ eco = Tree.create!(
   photo_url: url
 )
 
-
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ux_hrhfl3.png"
 ux_design = Tree.create!(
   name: "UX design",
   category_id: Category.find_by_name("Design"),
   photo_url: url
 )
-
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mtpdtq.png"
 lit_fr = Tree.create!(
@@ -60,6 +71,29 @@ chef = Tree.create!(
   category_id: Category.find_by_name("Famille"),
   photo_url: url
 )
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrotter_mgrgcw.png"
+chef = Tree.create!(
+  name: "Globe-trotter",
+  category_id: Category.find_by_name("Tourisme"),
+  photo_url: url
+)
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503484127/Tree_education_nha3ss.png"
+chef = Tree.create!(
+  name: "Éducation positive",
+  category_id: Category.find_by_name("Éducation"),
+  photo_url: url
+)
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_nmrkzc.png"
+chef = Tree.create!(
+  name: "Développeur Frontend",
+  category_id: Category.first.id,
+  photo_url: url
+)
+
+
 
 puts "#{Tree.count} trees created."
 
