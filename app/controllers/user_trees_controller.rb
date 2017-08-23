@@ -3,7 +3,8 @@ class UserTreesController < ApplicationController
 
   def create
     if current_user.trees << @tree
-      redirect_to user_path(current_user)
+      redirect_to tree_path(@tree)
+      render 'shared/flashes'
     else
       render 'trees/show'
     end
