@@ -21,18 +21,21 @@
     height: 75px;
     background-color: $anis;
     opacity: 1;
+    text-align: center;
       a, h1 {
         font-size: 50px;
         color: white;
         font-family: "Open sans", Helvetica, sans-serif;
         font-weight: bold;
         color: white;
-        margin: 13px;
       }
       a:hover {
         text-decoration: none;
         font-size: 55px;
       }
+  }
+  .fa-check {
+    display: none;
   }
   .tree-opened {
     background-color: $blue;
@@ -76,6 +79,9 @@
   .checked{
     color: $anis;
   }
+  .fa {
+    font-size: 32px;
+  }
 }
 
 .skill-component {
@@ -102,4 +108,7 @@
     opacity: 0.6;
     margin-bottom: 6px;
   }
+
 }
+
+
