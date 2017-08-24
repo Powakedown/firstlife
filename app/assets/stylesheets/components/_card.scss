@@ -1,3 +1,11 @@
+$border-radius: 7px;
+$border-width: 2px;
+$border-color: black;
+$leaf-margin-height: 25px;
+$leaf-max-width: 400px;
+$leaf-padding: 10px 20px;
+$border-opacity: 0.1;
+
 .card-index {
   background-color: rgba(0,0,0, 0.15);
   padding-bottom: 10px;
@@ -118,13 +126,145 @@
 }
 
 .limiter-profil-size {
-  display: flex;
-  width: 1038px;
-  justify-content: space-around;
+  // display: block;
+
+  // justify-content: space-around;
+  padding-left: 180px;
+}
+
+.talents-tile h1{
+  font-size: 80%;
+  color: white;
+  text-align: center;
+  padding-top: 25px;
 }
 
 .talents-profil{
-  margin-left: 30px;
-  margin-top: 80px;
-  display: block;
+  margin-left: 0px;
+  margin-top: 100px;
+  float: left;
+  // display: block;
+}
+
+.talent-profil-leaf{
+    position: relative;
+    background-color: white;
+    max-width: $leaf-max-width;
+    box-shadow: 0px 2px 4px rgba(110,110,110, 0.25);
+    border-radius: $border-radius;
+    padding: $leaf-padding;
+    text-align: center;
+    display: inline-block;
+    margin: auto auto;
+    margin-top: -80px
+}
+
+#talent-leaf{
+  box-shadow: 0px 2px 4px rgba(110,110,110, 0.25);
+  width: 390px;
+  height: 100px;
+  background-color: $white;
+  border-radius: 60px;
+  box-shadow: 1px 1px 4px #CCD4DA;
+  padding-top: 10px;
+  padding-left: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 105px;
+    .skill-leaf {
+    width: 75px;
+    height: 75px;
+    background-color: $anis;
+    opacity: 1;
+    border-radius: 60px;
+      a, h1 {
+        font-size: 50px;
+        color: white;
+        font-family: "Open sans", Helvetica, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin: 13px;
+      }
+      a:hover {
+        text-decoration: none;
+        font-size: 55px;
+      }
+  }
+    .badge-content-titre{
+    display:block;
+  }
+  .badge-content{
+    display:none;
+  }
+  .skill-name {
+    width: 265px;
+    height: 65px;
+  }
+  .tree-title {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+}
+
+
+
+.col-one, .col-two, .col-three {
+
+    width: 30%;
+
+    float: left;
+
+    margin-right: 0%
+
+}
+
+.col-one {
+  margin-left: 0px;
+  width: 392px;
+}
+
+.col-two {
+    margin-left: -60px;
+    width: 392px;
+
+}
+
+.col-three {
+
+  padding-left: 30px;
+  width: 392px;
+  margin-top: 0px;
+}
+
+
+
+.clear {
+
+    clear: both;
+
+}
+
+@media screen and (max-width : 1335px) {
+
+    .col-one, .col-two, .col-three {
+
+        width: 80%;
+
+        float: none;
+
+        margin: 0;
+
+    }
+
+
+
+    .col-one, .col-two {
+
+        padding-bottom: 30px;
+
+    }
+
 }

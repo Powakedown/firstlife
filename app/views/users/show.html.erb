@@ -1,8 +1,91 @@
-<div class="container">
+<div class="limiter-profil-size">
+<div class="col-one">
+
+<div class="card-avatar">
+    <div class="card-avatar-image">
+      <img src="http://www.croop.cl/UI/twitter/images/carl.jpg" alt="avatar" class="img-circle">
+            </div>
+            <div class="card-avatar-name">
+            <p> Maxime Boué </p>
+            </div>
+            <div class="card-avatar-name-description">
+            <p> Etudiant au wagon </p>
+            </div>
+            </div>
+
+  <div class="card-avatar-rang">
+            <div class="card-rang">
+            <p> RANGS ATTEINTS </p>
+            </div>
+            <div class="card-rang-image">
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            <%= image_tag "emptyrang.png" %>
+            </div>
+  </div>
+
+
+<div class="card-avatar-rang">
+            <div class="card-rang">
+            <p> OBJECTIFS ACCOMPLIS </p>
+            </div>
+            <div class="card-rang-image">
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgrey.png" %>
+            <%= image_tag "logo_faved_bnwgreylight.png" %>
+            </div>
+</div>
+
+
+</div>
+
+
+
+<div class="col-two">
+  <div class="talents-tile">
+    <h1> TALENTS </h1>
+  </div>
+  <%= render "skills/skill_design" %>
+</div>
+
+
+
+<div class="col-three">
+    <div class="talents-tile">
+       <h1> SOME TEXT</h1>
+       <%= render "skills/skill_design" %>
+    </div>
+</div>
+
+
+<div class="clear"></div>
+
+</div>
+
+<!-- <div class="container">
   <div class="limiter-profil-size">
     <div class="profil">
       <div class="container">
         <div class="row">
+        <div class="col-md-4 col-xs-12">
           <div class="card-avatar">
             <div class="card-avatar-image">
               <img src="http://www.croop.cl/UI/twitter/images/carl.jpg" alt="avatar" class="img-circle">
@@ -13,8 +96,9 @@
             <div class="card-avatar-name-description">
             <p> Etudiant au wagon </p>
             </div>
-          </div>
-        </div>
+
+
+
       </div>
 
       <div class="container">
@@ -62,24 +146,18 @@
             <%= image_tag "logo_faved_bnwgreylight.png" %>
             </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="talents-profil">
-        <div class="skill-component">
-          <div class="skill-name">
-            <h4 class="tree-type"></h4>
-            <h4 class="tree-title"></h4>
-          </div>
-          <div class="skill-badge">
-          <h1>7</h1>
-          </div>
-        </div>
-      </div>
+      <div class="col-md-4 col-xs-12">
+    <%= render "skills/skill_design" %>
     </div>
-    </div>
+  <div class="col-md-4 col-xs-12"> <%= render "skills/skill_design" %></div>
+  </div>
+  </div>
 </div>
-
+</div> -->
 <!-- <div class="container">
     <header>
       <div class="bio">
