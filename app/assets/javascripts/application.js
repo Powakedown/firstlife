@@ -2,3 +2,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$('.leaf').click(function() {
+  $('#title').addClass("expandOpen");
+});
+
+
