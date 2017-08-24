@@ -11,7 +11,7 @@ Tree.destroy_all
 Category.destroy_all
 User.destroy_all
 
-url = "http://res.cloudinary.com/doodlid/image/upload/v1503504339/bbfqfhlssqybd3hk9qpe.png"
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503506825/max.png"
 User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"

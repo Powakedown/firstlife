@@ -1,7 +1,6 @@
 .badge-content-titre{
   display:none;
 }
-
 #title {
   width: 390px;
   height: 100px;
@@ -55,7 +54,6 @@
     font-size: 16px;
     margin-top: 6px;
   }
-
 }
 .skill-badge {
   width: 40px;
@@ -73,7 +71,7 @@
     color: transparent;
   }
   .unchecked{
-    color: $red;
+    color: $white;
   }
   .checked{
     color: $anis;
