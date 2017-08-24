@@ -1,4 +1,5 @@
 <div class="skill-component">
+
   <div class="skill-name">
     <h4 class="tree-type"><%= skill.action %></h4>
     <h4 class="tree-title"><%= skill.name %></h4>
@@ -6,28 +7,26 @@
 
   <% if UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1%>  <!-- si on a le tree -->
     <div class="skill-badge tree-opened">
-      <%= link_to current_user.skills.where(tree: @tree).count, tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
-
+      <div class="badge-content-titre">
+        <%= current_user.skills.where(tree: @tree).count %>
+      </div>
       <!-- Action de cocher les skills si le Tree est possédé par le current user -->
-
       <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
-        <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content" do %>
+        <div class="badge-content" %>
             <i class="fa fa-check checked"></i> <!-- on affiche la coche verte -->
-        <% end %>
+        </div>
       <% else %>
         <%= link_to skill_user_skills_path(skill), method: :post, class: "badge-content"  do %>
           <i class="fa fa-check unchecked"></i> <!-- on affiche la coche gris -->
         <% end %>
       <% end %>
-
+    </div>
   <% else %>
     <div class="skill-badge tree-closed">
       <%= link_to '+', tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
       <a href="#"><i class="fa fa-check unchecked"></i></a> <!-- on affiche la coche gris -->
+    </div>
   <% end %>
-
-
-  </div>
 </div>
 
 
