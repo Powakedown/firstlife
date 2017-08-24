@@ -185,3 +185,64 @@ ralentir = zero.children.create!(name:   "Ralentir", action: "Learn", tree: eco,
 
 puts "#{Skill.count - rubyskill} ecology skills created."
 
+UserTree.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Léa'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Renan'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Benjamin'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+puts "#{UserTree.count} usertree created."
+
+24.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Léa'),
+  skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Renan'),
+  skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Benjamin'),
+  skill: Skill.find_by(name: "introduction string")
+  )
+end
