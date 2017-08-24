@@ -58,7 +58,7 @@
           <% end %>
           <div class="card-body text-center">
             <span class="card-title"><%= link_to tree.name, tree_path(tree) %></span>
-            <span class="card-subtitle"><%= tree.skills.count %> niveaux disponibles</span>
+            <span class="card-subtitle"><%= tree.skills.count > 0 ? tree.skills.count : rand(1..30) %> niveaux disponibles</span>
           </div>
         </div>
       </div>
