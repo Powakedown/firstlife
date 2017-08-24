@@ -11,23 +11,23 @@ Tree.destroy_all
 Category.destroy_all
 User.destroy_all
 
-url = "http://res.cloudinary.com/doodlid/image/upload/v1503481462/maximeboue_vwhvt9.png"
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503504339/bbfqfhlssqybd3hk9qpe.png"
 User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
-User.create(first_name: "Renan", last_name: "Dolan", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
-User.create(first_name: "Léa", last_name: "Lamartine", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
-User.create(first_name: "Benjamin", last_name: "Dessange", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
-User.create(first_name: "Sylvain", last_name: "Lempereur", email: "etienne.ziegelmeyer@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 categories = ["Développement Web", "Graphisme", "Famille", "Spectacle","Artisanat","Design","Informatique d'entreprise","Développement personnel", "Éducation","Tourisme","Écologie"]
 
@@ -124,7 +124,7 @@ puts "#{Skill.count} ruby skills created."
 rubyskill = Skill.count
 
 
-ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte"  description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 
 pipi = ecology.children.create!(name: "Faire pipi dans la douche", action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 ampoule = pipi.children.create!(name: "Installer des ampoules à économies d'énergie",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
