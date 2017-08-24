@@ -1,82 +1,71 @@
 <div class="limiter-profil-size">
-<div class="col-one">
-
-<div class="card-avatar">
-    <div class="card-avatar-image">
-      <img src="http://www.croop.cl/UI/twitter/images/carl.jpg" alt="avatar" class="img-circle">
-            </div>
-            <div class="card-avatar-name">
-            <p><%= @user.first_name %> <%= @user.last_name %></p>
-            </div>
-            <div class="card-avatar-name-description">
-            <p> Etudiant au wagon </p>
-            </div>
-            </div>
-
-  <div class="card-avatar-rang">
-            <div class="card-rang">
-            <p> RANGS ATTEINTS </p>
-            </div>
-            <div class="card-rang-image">
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            <%= image_tag "emptyrang.png" %>
-            </div>
-  </div>
-
-
-<div class="card-avatar-rang">
-            <div class="card-rang">
-            <p> OBJECTIFS ACCOMPLIS </p>
-            </div>
-            <div class="card-rang-image">
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgrey.png" %>
-            <%= image_tag "logo_faved_bnwgreylight.png" %>
-            </div>
-</div>
-
-
-</div>
-
-
-
-<div class="col-two">
-  <div class="talents-tile">
-    <h1> TALENTS </h1>
-  </div>
-  <%= render "skills/skill_design" %>
-</div>
-
-
-
-<div class="col-three">
-    <div class="talents-tile">
-       <h1> SOME TEXT</h1>
-       <%= render "skills/skill_design" %>
+  <div class="col-one">
+    <div class="card-avatar">
+        <div class="card-avatar-image">
+          <%= cl_image_tag @user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+        </div>
+        <div class="card-avatar-name">
+          <p><%= @user.first_name %> <%= @user.last_name %></p>
+        </div>
+        <div class="card-avatar-name-description">
+          <p> Etudiant au wagon </p>
+        </div>
     </div>
-</div>
+    <div class="card-avatar-rang">
+      <div class="card-rang">
+        <p> RANGS ATTEINTS </p>
+      </div>
+      <div class="card-rang-image">
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+        <%= image_tag "emptyrang.png" %>
+      </div>
+    </div>
+    <div class="card-avatar-rang">
+      <div class="card-rang">
+        <p> OBJECTIFS ACCOMPLIS </p>
+      </div>
+      <div class="card-rang-image">
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgrey.png" %>
+        <%= image_tag "logo_faved_bnwgreylight.png" %>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-two">
+    <div class="talents-tile">
+      <h1> TALENTS </h1>
+    </div>
+    <%= render "skills/skill_design" %>
+  </div>
 
-<div class="clear"></div>
+  <div class="col-three">
+      <div class="talents-tile">
+         <h1> SOME TEXT</h1>
+         <%= render "skills/skill_design" %>
+      </div>
+  </div>
+
+  <div class="clear"></div>
 
 </div>
 
