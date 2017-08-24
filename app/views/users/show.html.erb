@@ -39,15 +39,13 @@
         <div class="talents-tile">
           <h1> TALENTS </h1>
         </div>
-        <% @user.trees.each do |tree|%>
-          <%= render "skills/skill", skill: tree.skills, tree: tree %>
-        <% end %>
+          <%= render "skills/skill_design"%>
       </div>
 
       <div class="col-three">
           <div class="talents-tile">
              <h1>PROFILE DETAILS</h1>
-             <%= render "skills/skill_design" %>
+
           </div>
       </div>
     </div>
