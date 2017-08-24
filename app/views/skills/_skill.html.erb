@@ -6,7 +6,7 @@
 
   <% if UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1%>  <!-- si on a le tree -->
     <div class="skill-badge tree-opened">
-      <%= link_to '0', tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
+      <%= link_to current_user.skills.where(tree: @tree).count, tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
 
       <!-- Action de cocher les skills si le Tree est possédé par le current user -->
 
