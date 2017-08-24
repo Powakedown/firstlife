@@ -1,10 +1,33 @@
-<h1>Users#index</h1>
+<% provide(:title, "Talents") %>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
-      <%= render 'card_user' %>
+      <div class="col-md-12 talents">
+        <% if @result && @search %>
+        <p>Personne avec ce talent: <%= @result %></p>
+        <% end %>
+      </div>
     </div>
+  <div class="row">
+  <% @users.each do |user| %>
+    <div class="col-xs-12 col-md-3 text-center" >
+      <%= link_to user_path(user) do %>
+      <div class="card-user">
+        <div class="card-profile">
+          <div class="card-profile-level">
+            <%= user.skills.where(tree: @tree).count %>
+          </div>
+          <div class="card-profile-avatar">
+            <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+          </div>
+          <div class="card-profile-username">
+            <%= user.first_name %> <%= user.last_name %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
 
