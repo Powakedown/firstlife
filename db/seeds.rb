@@ -212,14 +212,12 @@ UserTree.create!(
 
 puts "#{UserTree.count} usertree created."
 
-24.times do
+48.times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Sylvain'),
   skill: Skill.find_by(name: "introduction string")
   )
 end
-<<<<<<< HEAD
-=======
 
 rand(10..15).times do
 UserSkill.create!(
@@ -248,4 +246,4 @@ UserSkill.create!(
   skill: Skill.find_by(name: "introduction string")
   )
 end
->>>>>>> 3a70641544b7c48ef7030e6e2e6eb9009ed8c9ac
+
