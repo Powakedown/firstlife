@@ -4,7 +4,7 @@
     <h4 class="tree-title"><%= skill.name %></h4>
   </div>
 
-  <% if UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1%>  <!-- si on a le tree -->
+  <% if @test %>  <!-- si on a le tree -->
     <div class="skill-badge tree-opened">
       <%= link_to current_user.skills.where(tree: @tree).count, tree_user_trees_path(@tree), method: :post, class: "badge-content-titre"%>
 
