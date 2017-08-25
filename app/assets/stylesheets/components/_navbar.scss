@@ -1,4 +1,3 @@
-
 /* Main navbar */
 .navbar-wagon {
   background-color: transparent;
@@ -85,4 +84,100 @@
   img{
   height: 35px;
   }
+}
+
+
+
+
+
+#search-nav-custom-search-input {
+        margin:0;
+        margin-top: 10px;
+        padding: 0;
+    }
+    #search-nav-custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 8px;
+        height: 20px;
+    }
+    .search-nav-search-query:focus + button {
+        z-index: 3;
+    }
+    .search-nav-fake-input{
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid rgb(220,220,220);
+      padding: 0px 0px ;
+      margin-top: -5px;
+      border-radius: 8px;
+      width: 100%;
+      height: 50px;
+      input, input:focus, input:hover, textarea:focus, textarea:hover {
+        width: 100%;
+        border: none;
+        outline: none !important;
+      form {
+        height: 100px;
+        width: 100%;
+      }
+    }
+}
+
+span {
+  z-index: 10;
+}
+.search-nav-search-field, #user_address {
+  border: none;
+  box-shadow: none;
+  border-image-width: none;
+  color: black;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+#search-nav-button-search{
+  margin-right: -5px;
+  line-height:  0px;
+  background-color: #b2d430;
+}
+.search-nav-btn-green{
+  background-color: $gray;
+  border-radius: 6px;
+  color: white;
+  height: 38px;
+  margin-top: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.search-nav-fake-input form {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  width: 800px;
+  padding-right: 10px;
+}
+
+.search-nav-form-group .string .optional .user_address {
+  margin-bottom: 0px;
+}
+
+
+.hidden-label{
+  visibility: hidden;
+}
+
+
+.form-control.string.required{
+  margin-top: -25px;
+  margin-left: 10px;
+  width: 650px;
 }

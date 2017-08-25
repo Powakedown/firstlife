@@ -65,16 +65,26 @@ span {
   padding-left: 18px;
   padding-right: 18px;
 }
+
 .fake-input form {
   display: flex;
   align-content: center;
   justify-content: space-between;
   width: 100%;
   padding-right: 10px;
+  .form-group {
+    margin-right: 20px;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    align-items: flex-end;
+  }
 }
+
 .form-group .string .optional .user_address {
   margin-bottom: 0px;
 }
+
 .fake-input .form-control.string.required{
   border: none;
   outline: none !important;
@@ -82,12 +92,20 @@ span {
   box-shadow: none;
   height: 58px;
 }
+
 .fake-input label.search-field {
   display: none;
 }
+
 .control-label.string.required.search-field {
   width: 100%;
 }
+
 #query_address, .query_address{
   width: 100%;
 }
+
+
+
+
+
