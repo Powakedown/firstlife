@@ -157,13 +157,26 @@ span {
   padding-left: 12px;
   padding-right: 12px;
 }
-
+#search-nav-custom-search-input {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  height: 48px;
+}
 .search-nav-fake-input form {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  width: 800px;
   padding-right: 10px;
+  background-color: white;
+  width: 600px;
+  border:none;
+  border-radius: 8px;
+}
+
+.search-nav-fake-input{
+  border:none;
+  border-radius: 8px;
 }
 
 .search-nav-form-group .string .optional .user_address {
