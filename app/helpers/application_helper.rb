@@ -14,4 +14,8 @@ module ApplicationHelper
 
     html.html_safe
   end
+
+  def is_home?
+    controller_name == "trees" && action_name == "index"
+  end
 end
