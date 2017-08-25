@@ -115,8 +115,8 @@
       display: flex;
       justify-content: space-between;
       border: 1px solid rgb(220,220,220);
-      padding: 10px 20px ;
-      margin-top: 5px;
+      padding: 0px 0px ;
+      margin-top: -5px;
       border-radius: 8px;
       width: 100%;
       height: 50px;
@@ -153,9 +153,9 @@ span {
   border-radius: 6px;
   color: white;
   height: 38px;
-  margin-top: -5px;
-  padding-left: 18px;
-  padding-right: 8px;
+  margin-top: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .search-nav-fake-input form {
@@ -173,4 +173,11 @@ span {
 
 .hidden-label{
   visibility: hidden;
+}
+
+
+.form-control.string.required{
+  margin-top: -25px;
+  margin-left: 10px;
+  width: 650px;
 }
