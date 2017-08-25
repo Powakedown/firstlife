@@ -1,3 +1,8 @@
+<% current_user.trees.each do |tree| %>
+  <%= link_to tree.name, tree %>
+  <%= current_user.skills.where(tree: tree).count %>
+<% end %>
+
 <div class="container">
   <div class="user-flex-box">
     <div class="user-column-1">
@@ -12,6 +17,7 @@
           <div class="card-avatar-name-description">
             <p> Etudiant au wagon </p>
           </div>
+
         </div>
       </div>
 
