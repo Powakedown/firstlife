@@ -30,7 +30,22 @@ url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 
-categories = ["Développement Web", "Graphisme", "Famille", "Spectacle","Artisanat","Design","Informatique d'entreprise","Développement personnel", "Éducation","Tourisme","Écologie"]
+categories = [
+  "Développement Web",
+  "Graphisme",
+  "Famille",
+  "Spectacle",
+  "Artisanat",
+  "Design",
+  "Informatique d'entreprise",
+  "Développement personnel",
+  "Éducation",
+  "Tourisme",
+  "Écologie"
+]
+
+
+
 
 
 categories.each do |category|
@@ -38,7 +53,6 @@ categories.each do |category|
 end
 
 puts "#{Category.count} category created."
-
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvmb5ddon.png"
 dev_ruby = Tree.create!(
   name: "Développeur Ruby",
@@ -53,38 +67,39 @@ eco = Tree.create!(
   photo_url: url
 )
 
+
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ux_hrhfl3.png"
 ux_design = Tree.create!(
   name: "UX design",
-  category_id: Category.find_by_name("Design"),
+  category_id: Category.find_by_name("Design").id,
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mtpdtq.png"
 lit_fr = Tree.create!(
   name: "Litterature française",
-  category_id: Category.find_by_name("Éducation"),
+  category_id: Category.find_by_name("Éducation").id,
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_chief_fsm7te.png"
 chef = Tree.create!(
   name: "Chef en cuisine",
-  category_id: Category.find_by_name("Famille"),
+  category_id: Category.find_by_name("Famille").id,
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrotter_mgrgcw.png"
 chef = Tree.create!(
   name: "Globe-trotter",
-  category_id: Category.find_by_name("Tourisme"),
+  category_id: Category.find_by_name("Tourisme").id,
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484127/Tree_education_nha3ss.png"
 chef = Tree.create!(
   name: "Éducation positive",
-  category_id: Category.find_by_name("Éducation"),
+  category_id: Category.find_by_name("Éducation").id,
   photo_url: url
 )
 
