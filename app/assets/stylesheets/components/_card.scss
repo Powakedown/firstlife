@@ -142,8 +142,6 @@ $border-opacity: 0.1;
 
 .talents-profil{
   margin-left: 0px;
-  margin-top: 100px;
-  float: left;
   // display: block;
 }
 
@@ -151,7 +149,6 @@ $border-opacity: 0.1;
     position: relative;
     background-color: white;
     max-width: $leaf-max-width;
-    box-shadow: 0px 2px 4px rgba(110,110,110, 0.25);
     border-radius: $border-radius;
     padding: $leaf-padding;
     text-align: center;
@@ -161,12 +158,10 @@ $border-opacity: 0.1;
 }
 
 #talent-leaf{
-  box-shadow: 0px 2px 4px rgba(110,110,110, 0.25);
   width: 390px;
   height: 100px;
   background-color: $white;
   border-radius: 60px;
-  box-shadow: 1px 1px 4px #CCD4DA;
   padding-top: 10px;
   padding-left: 35px;
   display: flex;
@@ -187,7 +182,7 @@ $border-opacity: 0.1;
         font-family: "Open sans", Helvetica, sans-serif;
         font-weight: bold;
         color: white;
-        margin: 13px;
+        margin: 0px;
       }
       a:hover {
         text-decoration: none;
