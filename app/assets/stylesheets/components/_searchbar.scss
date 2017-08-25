@@ -65,6 +65,7 @@ span {
   padding-left: 18px;
   padding-right: 18px;
 }
+
 .fake-input form {
   display: flex;
   align-content: center;
@@ -72,9 +73,11 @@ span {
   width: 100%;
   padding-right: 10px;
 }
+
 .form-group .string .optional .user_address {
   margin-bottom: 0px;
 }
+
 .fake-input .form-control.string.required{
   border: none;
   outline: none !important;
@@ -82,12 +85,20 @@ span {
   box-shadow: none;
   height: 58px;
 }
+
 .fake-input label.search-field {
   display: none;
 }
+
 .control-label.string.required.search-field {
   width: 100%;
 }
+
 #query_address, .query_address{
   width: 100%;
 }
+
+
+
+
+

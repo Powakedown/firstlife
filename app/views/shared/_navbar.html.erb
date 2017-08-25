@@ -3,6 +3,15 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
+
+   <div id="search-nav-custom-search-input">
+        <div class="search-nav-fake-input">
+          <%= simple_form_for :query, url: trees_path, method: :get do |f| %>
+             <%= f.input :name, label: "Rechercher un arbre de talents", placeholder: 'Rechercher des talents, ex: développeur web, écologie, UX Design, éducation positive...', :label_html => { :class => 'hidden-label' } %>
+           <span><%= f.button :submit, class: 'btn search-nav-btn-green', id: "search-nav-button-search", value: "Rechercher" %></span>
+          <% end %>
+        </div>
+      </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
