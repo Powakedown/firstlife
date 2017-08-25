@@ -1,8 +1,3 @@
-<% current_user.trees.each do |tree| %>
-  <%= link_to tree.name, tree %>
-  <%= current_user.skills.where(tree: tree).count %>
-<% end %>
-
 <div class="container">
   <div class="user-flex-box">
     <div class="user-column-1">
@@ -32,7 +27,7 @@
         </div>
       </div>
       <div class="card-rang-image">
-      
+
       <div class="card-avatar-rang">
         <div class="card-rang text-center">
           <p> OBJECTIFS ACCOMPLIS </p>
@@ -55,7 +50,20 @@
       <div class="talents-tile">
         <h1> TALENTS </h1>
       </div>
-        <%= render "skills/skill_design"%>
+        <% current_user.trees.each do |tree| %>
+          <div class="leaf" id="title">
+            <div class="skill-component">
+              <div class="skill-name">
+                <h4 class="tree-title"><%= link_to tree.name, tree %></h4>
+              </div>
+              <div class="skill-badge tree-opened">
+                <div class="badge-content-titre">
+                  <%= current_user.skills.where(tree: tree).count %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
     </div>
 
     <div class="user-column-3">
