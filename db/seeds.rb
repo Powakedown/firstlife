@@ -29,6 +29,7 @@ User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yaho
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
+
 categories = [
   "Développement Web",
   "Graphisme",
@@ -42,6 +43,10 @@ categories = [
   "Tourisme",
   "Écologie"
 ]
+
+
+
+
 
 categories.each do |category|
   Category.create!(name: category)
