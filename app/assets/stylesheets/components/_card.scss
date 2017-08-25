@@ -66,7 +66,9 @@ $border-opacity: 0.1;
 }
 
 .card-avatar {
-  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   padding-bottom: 0px;
   height: 245px;
@@ -119,9 +121,12 @@ $border-opacity: 0.1;
 }
 
 .card-rang-image {
-  padding-top: 0px;
+  padding: 10px;
   margin-right: 10px;
   margin: auto auto;
+  img {
+    margin: 5px;
+  }
 }
 
 .profil {
@@ -205,62 +210,9 @@ $border-opacity: 0.1;
   }
 }
 
-
-
-.col-one, .col-two, .col-three {
-
-    width: 30%;
-
-    float: left;
-
-    margin-right: 0%
-
-}
-
-.col-one {
-  margin-left: 0px;
-  width: 392px;
-}
-
-.col-two {
-    margin-left: -60px;
-    width: 392px;
-
-}
-
-.col-three {
-
-  padding-left: 30px;
-  width: 392px;
-  margin-top: 0px;
-}
-
-
-
 .clear {
 
     clear: both;
 
 }
 
-@media screen and (max-width : 1335px) {
-
-    .col-one, .col-two, .col-three {
-
-        width: 80%;
-
-        float: none;
-
-        margin: 0;
-
-    }
-
-
-
-    .col-one, .col-two {
-
-        padding-bottom: 30px;
-
-    }
-
-}

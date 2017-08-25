@@ -1,7 +1,22 @@
-.user-wrapper {
-
+.user-flex-box {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+}
+#tile {
+  margin-top: 0px;
 }
 
+.user-column-2>.talents-profil>#title {
+  margin-bottom: 25px;
+}
+.user-column-2>.talents-profil {
+  margin-top: 20px;
+}
+
+.user-column-3 {
+  width: 250px;
+}
 .card-profile {
   position: relative;
   background-color: #FFF;

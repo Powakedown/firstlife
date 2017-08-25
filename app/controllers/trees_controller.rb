@@ -13,7 +13,7 @@ class TreesController < ApplicationController
   def show
     @tree = Tree.find(params[:id])
     @root_skill = @tree.skills.first.root
-    @test = UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1
+    @tree_user = UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1
   end
 
   def create
