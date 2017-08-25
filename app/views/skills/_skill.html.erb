@@ -5,7 +5,7 @@
     <h4 class="tree-title"><%= skill.name %></h4>
   </div>
 
-  <% if @test %>  <!-- si on a le tree -->
+  <% if @tree_user %>  <!-- si on a le tree -->
     <div class="skill-badge tree-opened">
       <div class="badge-content-titre">
         <%= current_user.skills.where(tree: @tree).count %>
