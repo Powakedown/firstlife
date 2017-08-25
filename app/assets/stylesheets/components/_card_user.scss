@@ -7,7 +7,7 @@
   margin-top: 0px;
 }
 
-.user-column-2>#title {
+.user-column-2>.talents-profil>#title {
   margin-bottom: 25px;
 }
 .user-column-2>.talents-profil {
@@ -16,9 +16,6 @@
 
 .user-column-3 {
   width: 250px;
-}
-.user-column-3 >.talents-tile{
-  margin-bottom: 102px;
 }
 .card-profile {
   position: relative;
@@ -47,7 +44,4 @@
 .avatar{
   height: 120px;
   width: 120px;
-}
-.talents-tile {
-  margin-bottom: 25px;
 }
