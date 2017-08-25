@@ -1,4 +1,8 @@
 
+<% current_user.trees.each do |tree| %>
+  <%= link_to tree.name, tree %>
+  <%= current_user.skills.where(tree: tree).count %>
+<% end %>
 <div class="limiter-profil-size">
   <div class="col-one">
     <div class="card-avatar">
