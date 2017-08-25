@@ -1,60 +1,65 @@
+<div class="container">
+  <div class="user-flex-box">
+    <div class="user-column-1">
+      <div class="card-avatar">
+        <div class="card-avatar-content">
+          <div class="card-avatar-image">
+            <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
+          </div>
+          <div class="card-avatar-name">
+            <p><%= @user.first_name.downcase %> <%= @user.last_name.downcase %></p>
+          </div>
+          <div class="card-avatar-name-description">
+            <p> Etudiant au wagon </p>
+          </div>
+        </div>
+      </div>
 
-<div class="limiter-profil-size">
-  <div class="col-one">
-    <div class="card-avatar">
-        <div class="card-avatar-image">
-          <%= cl_image_tag @user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+      <div class="card-avatar-rang">
+        <div class="card-rang text-center">
+          <p> RANGS ATTEINTS </p>
         </div>
-        <div class="card-avatar-name">
-          <p><%= @user.first_name %> <%= @user.last_name %></p>
+        <div class="card-rang-image">
+          <%= cl_image_tag("Save images/rang_masterweb1_zkiflj.png")%>
+          <%= cl_image_tag("Save images/rang_ecology_xbzpth.png") %>
+          <%= cl_image_tag("Save images/emptyrang_n36lvx.png")%>
         </div>
-        <div class="card-avatar-name-description">
-          <p> Etudiant au wagon </p>
-        </div>
-    </div>
-    <div class="card-avatar-rang">
-      <div class="card-rang">
-        <p> RANGS ATTEINTS </p>
       </div>
       <div class="card-rang-image">
-      <%= cl_image_tag("Save images/rang_masterweb1_zkiflj.png")%>
-      <%= cl_image_tag("Save images/rang_ecology_xbzpth.png") %>
-      <%= cl_image_tag("Save images/emptyrang_n36lvx.png")%>
-
-
+      
+      <div class="card-avatar-rang">
+        <div class="card-rang text-center">
+          <p> OBJECTIFS ACCOMPLIS </p>
+        </div>
+        <div class="card-rang-image">
+          <%= image_tag "objectif_1" %>
+          <%= image_tag "Objectif02" %>
+          <%= image_tag "Objectif03" %>
+          <%= image_tag "Objectif04" %>
+          <%= image_tag "Objectif05" %>
+          <%= image_tag "Objectif06" %>
+          <%= image_tag "Objectif07" %>
+          <%= image_tag "Objectif08" %>
+          <%= cl_image_tag("Save images/Add_Objectif_nx6cfl.png")%>
+        </div>
       </div>
     </div>
-    <div class="card-avatar-rang">
-      <div class="card-rang">
-        <p> OBJECTIFS ACCOMPLIS </p>
-      </div>
-      <div class="card-rang-image">
-        <%= image_tag "objectif_1" %>
-        <%= image_tag "Objectif02" %>
-        <%= image_tag "Objectif03" %>
-        <%= image_tag "Objectif04" %>
-        <%= image_tag "Objectif05" %>
-        <%= cl_image_tag("Save images/Add_Objectif_nx6cfl.png")%>
 
-      </div>
-    </div>
-  </div>
-
-  <div class="col-two">
-    <div class="talents-tile">
-      <h1> TALENTS </h1>
-    </div>
-    <%= render "skills/skill_design" %>
-  </div>
-
-  <div class="col-three">
+    <div class="user-column-2">
       <div class="talents-tile">
-         <h1> SOME TEXT</h1>
-         <%= render "skills/skill_design" %>
+        <h1> TALENTS </h1>
       </div>
+        <%= render "skills/skill_design"%>
+    </div>
+
+    <div class="user-column-3">
+        <div class="talents-tile">
+           <h1>Développez vos talents</h1>
+        <%= render "skills/skill_design_add"%>
+        </div>
+    </div>
   </div>
-
-  <div class="clear"></div>
-
 </div>
+
+
 
