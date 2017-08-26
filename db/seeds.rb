@@ -55,6 +55,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvm
 dev_ruby = Tree.create!(
   name: "Développeur Ruby",
   category_id: Category.first.id,
+  badge_color: "#56ABAD",
   photo_url: url
 )
 
@@ -62,6 +63,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ecology_s
 eco = Tree.create!(
   name: "Adepte écologie",
   category_id: Category.last.id,
+  badge_color: "#59B873",
   photo_url: url
 )
 
@@ -69,6 +71,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ux_hrhfl3
 ux_design = Tree.create!(
   name: "UX design",
   category_id: Category.find_by_name("Design").id,
+  badge_color: "#BD6594",
   photo_url: url
 )
 
@@ -76,6 +79,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mt
 lit_fr = Tree.create!(
   name: "Litterature française",
   category_id: Category.find_by_name("Éducation").id,
+  badge_color: "#F1B255",
   photo_url: url
 )
 
@@ -83,53 +87,80 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_chief_fsm
 chef = Tree.create!(
   name: "Chef en cuisine",
   category_id: Category.find_by_name("Famille").id,
+  badge_color: "#BD6565",
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrotter_mgrgcw.png"
-chef = Tree.create!(
+globe = Tree.create!(
   name: "Globe-trotter",
   category_id: Category.find_by_name("Découverte").id,
+  badge_color: "#56ABAD",
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484127/Tree_education_nha3ss.png"
-chef = Tree.create!(
+education = Tree.create!(
   name: "Éducation positive",
   category_id: Category.find_by_name("Éducation").id,
+  badge_color: "#A365BD",
   photo_url: url
 )
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_nmrkzc.png"
-chef = Tree.create!(
+front = Tree.create!(
   name: "Développeur Frontend",
-  category_id: Category.find_by_name("Développeur").id
+  category_id: Category.find_by_name("Développement Web").id,
+  badge_color: "#6577BD",
   photo_url: url
 )
 
 puts "#{Tree.count} trees created."
 
+Skill.create!(name: "globe", tree: globe, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+Skill.create!(name: "education", tree: education, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+Skill.create!(name: "ux_design", tree: ux_design, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+Skill.create!(name: "chef", tree: chef, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+Skill.create!(name: "front", tree: front, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+
+
 
 ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev_ruby, description: "Ruby is a general purpose language that is still popular and in high demand in the marketplace, as it's more commonly used in Rails applications. Concise and readable, it is easy to pick up but also plenty powerful. Companies like Twitter, Soundcloud, Goodreads, and Kickstarter got their products off the ground with Ruby.")
-    string = ruby.children.create!(name: "introduction string", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    control = string.children.create!(name: "Condition Loop", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    array = control.children.create!(name: "Array",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    hashes = array.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    rubyprimer = object.children.create!(name: "Ruby Primer",action: "Learn",  tree: dev_ruby, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  rubyascent = ruby.children.create!(name: "Ruby Primer Ascent",action: "Learn", tree: dev_ruby, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
-    blocks = rubyascent.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    inheritance = blocks.children.create!(name: "Classes: Inheritance",action:"Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    classes = inheritance.children.create!(name: "More Classes", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    advarray = classes.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  string = ruby.children.create!(name: "introduction string", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  control = string.children.create!(name: "Condition Loop", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  array = control.children.create!(name: "Array",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  hashes = array.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  initie = object.children.create!(name: "Initié",action: "Rang atteint", tree: dev_ruby, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+
+  blocks = ruby.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  inheritance = blocks.children.create!(name: "Classes: Inheritance",action:"Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  classes = inheritance.children.create!(name: "More Classes", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  advarray = classes.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  eclaire = modules.children.create!(name: "Éclairé",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
+
   metaprogramming = ruby.children.create!(name: "Metaprogramming Ruby",action: "Learn", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
-    meta = metaprogramming.children.create!(name: "Ruby Primer Ascent",action: "Use", tree: dev_ruby, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
-    dynamic = meta.children.create!(name: "Dynamic Methods",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    inspection = dynamic.children.create!(name: "Code Inspection",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    evaluation = inspection.children.create!(name: "Eval and friends",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    cycle = evaluation.children.create!(name: "Lifecycle Hooks",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-    finished = cycle.children.create!(name: "Real World",action: "Use", tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+  dynamic = metaprogramming.children.create!(name: "Dynamic Methods",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  inspection = dynamic.children.create!(name: "Code Inspection",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  evaluation = inspection.children.create!(name: "Eval and friends",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  cycle = evaluation.children.create!(name: "Lifecycle Hooks",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  alumni = cycle.children.create!(name: "Alumni",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  parsing = eclaire.children.create!(name: "Parsing",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  storing = parsing.children.create!(name: "Storing Data",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  api = storing.children.create!(name: "API creation ",action: "Have done", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  dataformat = api.children.create!(name: "Over-riding Methods",action: "Do", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  parsing = dataformat.children.create!(name: "Open Classes",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  datamaitre = parsing.children.create!(name: "Maître du Big Data",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  duck = eclaire.children.create!(name: "Duck typing",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  overloading = duck.children.create!(name: "Ruby overloading",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  excep = overloading.children.create!(name: "Methods Exceptions",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  serial = excep.children.create!(name: "Object Serialization",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+
+  maitre = serial.children.create!(name: "Maître du Ruby Flamboyant",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
 
 puts "#{Skill.count} ruby skills created."
 rubyskill = Skill.count
@@ -137,30 +168,67 @@ rubyskill = Skill.count
 
 ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 
+## COLONNE 1
 pipi = ecology.children.create!(name: "Faire pipi dans la douche", action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 ampoule = pipi.children.create!(name: "Installer des ampoules à économies d'énergie",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 course = ampoule.children.create!(name: "Emmener un sac durable pour faire les courses",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-pub = course.children.create!(name: "Installer un autocollant Stop Pub",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+eco_initie = course.children.create!(name: "Initié",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+#1er séparation
+# 2 COLONNES - 1er
+verre = eco_initie.children.create!(name: "Trier le verre", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+emballages = verre.children.create!(name: "Trier les emballages",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+piles = emballages.children.create!(name:  "Trier les piles", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+eco_seigneurdutri = piles.children.create!(name: "Seigneur du Tri",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+# 2 COLONNES - 2eme
+pub = eco_initie.children.create!(name: "Installer un autocollant Stop Pub",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 cadeaux = pub.children.create!(name: "Refuser les cadeaux jetables",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 brochures = cadeaux.children.create!(name: "Refuser les brochures",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 sacs = brochures.children.create!(name: "Refuser les sacs plastiques",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-coton = sacs.children.create!(name:   "Ne pas acheter de coton tige",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-verre = coton.children.create!(name: "Trier le verre", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-emballages = verre.children.create!(name: "Trier les emballages",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-piles = emballages.children.create!(name:  "Trier les piles", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-vinaigre = piles.children.create!(name:  "Utiliser du vinaigre blanc pour le ménage",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+coton = sacs.children.create!(name: "Ne pas acheter de coton tige",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+eco_seigneurdunon = coton.children.create!(name: "Seigneur du Non",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+#2eme séparation
+# 2 COLONNES - 1er
+vinaigre = eco_seigneurdutri.children.create!(name:  "Utiliser du vinaigre blanc pour le ménage",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 vantouse = vinaigre.children.create!(name:  "Apprendre à se servir d’une vantouse",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 chasse = vantouse.children.create!(name:  "Je met une bouteille dans ma chasse d’eau",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 bouteille = chasse.children.create!(name: "Ne pas acheter de l’eau en bouteille",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 laitages = bouteille.children.create!(name:   "Réduire les laitages", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-fait = laitages.children.create!(name:  "Faire la cuisine plutôt qu’acheter tout fait",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+gardeposeidon = laitages.children.create!(name: "Garde de poséidon",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+# 2 COLONNES - 2eme
+fait = eco_seigneurdutri.children.create!(name:  "Faire la cuisine plutôt qu’acheter tout fait",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 cuisine = fait.children.create!(name:  "Découper les pommes pour les faire cuire",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 viande = cuisine.children.create!(name:  "Manger moins de viande", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 saison = viande.children.create!(name: "Éviter les fruits et légumes hors saison", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-etiquette = saison.children.create!(name: "Savoir lire les étiquettes", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-recyclage = etiquette.children.create!(name:  "Connaître les logos du recyclage",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+chefintraitable = saison.children.create!(name: "Chef intraitables",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
-bio = ecology.children.create!(name: "Acheter bio dés que possible", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+## 2eme séparation
+# 2 COLONNES - 1er
+froid = gardeposeidon.children.create!(name: "Chauffer à 19°C max par temps froid",action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+douche = froid.children.create!(name:   "Acheter du bio local", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+lait = douche.children.create!(name:   "Arrêter de boire du lait", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+vetement = lait.children.create!(name:    "Acheter les vêtements d’occasion", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+objet = vetement.children.create!(name:     "Acheter des objets résistants",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+occasion = objet.children.create!(name:    "Acheter durables et d’occasion", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+climatisation = occasion.children.create!(name:     "Ne jamais utiliser la climatisation",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+manger = climatisation.children.create!(name:     "Manger moins", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+monnaie = manger.children.create!(name:    "Utiliser une monnaie locale", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+vrac = monnaie.children.create!(name:  "Acheter en vrac Utiliser",action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+covoiturage = vrac.children.create!(name:     "Utiliser le covoiturage",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+occasion = covoiturage.children.create!(name: "Offrir des cadeaux de Noël d’occasion",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+lavables = occasion.children.create!(name:   "Utiliser des couches lavables",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+zero = lavables.children.create!(name:   "Apprendre le zéro déchet",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+ralentir = zero.children.create!(name:   "Ralentir", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+gardedegaia = ralentir.children.create!(name: "Garde de Gaia",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+
+# 2 COLONNES - 2eme
+etiquette = gardeposeidon.children.create!(name: "Savoir lire les étiquettes", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+recyclage = etiquette.children.create!(name:  "Connaître les logos du recyclage",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+bio = recyclage.children.create!(name: "Acheter bio dés que possible", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 oxygene = bio.children.create!(name: "Comprendre d’où vient l’oxygène", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 decroissance = oxygene.children.create!(name:  "Savoir ce qu’est la décroissance", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 mer = decroissance.children.create!(name:   "Comprendre la montée du niveau de la mer", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
@@ -176,25 +244,10 @@ energie = seche.children.create!(name:  "S’inscrire à un fournisseur d’éne
 transport = energie.children.create!(name:    "Privilégier les transports en commun", action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 banque = transport.children.create!(name:   "Choisir une banque éthique", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 voiture = banque.children.create!(name:    "Faire un minimum de trajet en voiture", action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-
-froid = ecology.children.create!(name: "Chauffer à 19°C max par temps froid",action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-douche = froid.children.create!(name:   "Acheter du bio local", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-lait = douche.children.create!(name:   "Arrêter de boire du lait", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-vetement = lait.children.create!(name:    "Acheter les vêtements d’occasion", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-objet = vetement.children.create!(name:     "Acheter des objets résistants",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-occasion = objet.children.create!(name:    "Acheter durables et d’occasion", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-climatisation = occasion.children.create!(name:     "Ne jamais utiliser la climatisation",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-manger = climatisation.children.create!(name:     "Manger moins", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-monnaie = manger.children.create!(name:    "Utiliser une monnaie locale", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-vrac = monnaie.children.create!(name:  "Acheter en vrac Utiliser",action: "Learn",  tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-covoiturage = vrac.children.create!(name:     "Utiliser le covoiturage",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-occasion = covoiturage.children.create!(name: "Offrir des cadeaux de Noël d’occasion",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-lavables = occasion.children.create!(name:   "Utiliser des couches lavables",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-zero = lavables.children.create!(name:   "Apprendre le zéro déchet",action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-ralentir = zero.children.create!(name:   "Ralentir", action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-
+gardedepan = voiture.children.create!(name: "Garde de Pan",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 puts "#{Skill.count - rubyskill} ecology skills created."
+
 
 UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
@@ -223,10 +276,39 @@ UserTree.create!(
 
 puts "#{UserTree.count} usertree created."
 
+
 49.times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Sylvain'),
   skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+41.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+27.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+5.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  skill: Skill.find_by(name: "chef")
+  )
+end
+
+7.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  skill: Skill.find_by(name: "pipi")
   )
 end
 
@@ -250,4 +332,7 @@ UserSkill.create!(
   skill: Skill.find_by(name: "introduction string")
   )
 end
+
+puts "#{User.count} users created."
+
 
