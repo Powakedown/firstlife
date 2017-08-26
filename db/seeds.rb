@@ -55,7 +55,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvm
 dev_ruby = Tree.create!(
   name: "Développeur Ruby",
   category_id: Category.first.id,
-  badge_color: "#56ABAD",
+  color: "#56ABAD",
   photo_url: url
 )
 
@@ -63,7 +63,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ecology_s
 eco = Tree.create!(
   name: "Adepte écologie",
   category_id: Category.last.id,
-  badge_color: "#59B873",
+  color: "#59B873",
   photo_url: url
 )
 
@@ -71,7 +71,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ux_hrhfl3
 ux_design = Tree.create!(
   name: "UX design",
   category_id: Category.find_by_name("Design").id,
-  badge_color: "#BD6594",
+  color: "#BD6594",
   photo_url: url
 )
 
@@ -79,7 +79,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mt
 lit_fr = Tree.create!(
   name: "Litterature française",
   category_id: Category.find_by_name("Éducation").id,
-  badge_color: "#F1B255",
+  color: "#F1B255",
   photo_url: url
 )
 
@@ -87,7 +87,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_chief_fsm
 chef = Tree.create!(
   name: "Chef en cuisine",
   category_id: Category.find_by_name("Famille").id,
-  badge_color: "#BD6565",
+  color: "#BD6565",
   photo_url: url
 )
 
@@ -95,7 +95,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrot
 globe = Tree.create!(
   name: "Globe-trotter",
   category_id: Category.find_by_name("Découverte").id,
-  badge_color: "#56ABAD",
+  color: "#56ABAD",
   photo_url: url
 )
 
@@ -103,7 +103,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503484127/Tree_education
 education = Tree.create!(
   name: "Éducation positive",
   category_id: Category.find_by_name("Éducation").id,
-  badge_color: "#A365BD",
+  color: "#A365BD",
   photo_url: url
 )
 
@@ -111,7 +111,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_
 front = Tree.create!(
   name: "Développeur Frontend",
   category_id: Category.find_by_name("Développement Web").id,
-  badge_color: "#6577BD",
+  color: "#6577BD",
   photo_url: url
 )
 
@@ -308,7 +308,7 @@ end
 7.times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "pipi")
+  skill: Skill.find_by(name: "Faire pipi dans la douche")
   )
 end
 
