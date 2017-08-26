@@ -12,7 +12,6 @@
           <div class="card-avatar-name-description">
             <p> Etudiant au wagon </p>
           </div>
-
         </div>
       </div>
 
@@ -39,7 +38,6 @@
       </div>
     </div>
 
-
     <div class="user-column-2">
       <div class="talents-tile">
         <h1> TALENTS </h1>
@@ -50,7 +48,7 @@
               <div class="skill-name">
                 <h4 class="tree-title"><%= link_to tree.name, tree %></h4>
               </div>
-              <div class="skill-badge tree-opened">
+              <div class="skill-badge" style="background-color: <%= tree.color %>">
                 <div class="badge-content-titre">
                   <%= current_user.skills.where(tree: tree).count %>
                 </div>
@@ -69,6 +67,3 @@
         </div>
     </div>
 </div>
-
-
-
