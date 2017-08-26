@@ -40,19 +40,17 @@ categories = [
   "Informatique d'entreprise",
   "Développement personnel",
   "Éducation",
-  "Tourisme",
+  "Découverte",
   "Écologie"
 ]
-
-
-
-
 
 categories.each do |category|
   Category.create!(name: category)
 end
 
 puts "#{Category.count} category created."
+
+
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvmb5ddon.png"
 dev_ruby = Tree.create!(
   name: "Développeur Ruby",
@@ -66,7 +64,6 @@ eco = Tree.create!(
   category_id: Category.last.id,
   photo_url: url
 )
-
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_ux_hrhfl3.png"
 ux_design = Tree.create!(
@@ -92,7 +89,7 @@ chef = Tree.create!(
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrotter_mgrgcw.png"
 chef = Tree.create!(
   name: "Globe-trotter",
-  category_id: Category.find_by_name("Tourisme").id,
+  category_id: Category.find_by_name("Découverte").id,
   photo_url: url
 )
 
@@ -106,11 +103,9 @@ chef = Tree.create!(
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_nmrkzc.png"
 chef = Tree.create!(
   name: "Développeur Frontend",
-  category_id: Category.first.id,
+  category_id: Category.find_by_name("Développeur").id
   photo_url: url
 )
-
-
 
 puts "#{Tree.count} trees created."
 
@@ -137,7 +132,6 @@ ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev
     finished = cycle.children.create!(name: "Real World",action: "Use", tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
 puts "#{Skill.count} ruby skills created."
-
 rubyskill = Skill.count
 
 
@@ -166,7 +160,7 @@ saison = viande.children.create!(name: "Éviter les fruits et légumes hors sais
 etiquette = saison.children.create!(name: "Savoir lire les étiquettes", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 recyclage = etiquette.children.create!(name:  "Connaître les logos du recyclage",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
-bio = recyclage.children.create!(name: "Acheter bio dés que possible", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+bio = ecology.children.create!(name: "Acheter bio dés que possible", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 oxygene = bio.children.create!(name: "Comprendre d’où vient l’oxygène", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 decroissance = oxygene.children.create!(name:  "Savoir ce qu’est la décroissance", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 mer = decroissance.children.create!(name:   "Comprendre la montée du niveau de la mer", action: "Learn", tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
@@ -232,13 +226,6 @@ puts "#{UserTree.count} usertree created."
 49.times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
   skill: Skill.find_by(name: "introduction string")
   )
 end
