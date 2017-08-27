@@ -6,6 +6,9 @@ $leaf-max-width: 400px;
 $leaf-padding: 10px 20px;
 $border-opacity: 0.1;
 
+.talent-tree {
+  margin-bottom: 30px;
+}
 .tree-wrapper {
   max-width: 970px;
   margin-top: 50px;
@@ -46,6 +49,8 @@ $border-opacity: 0.1;
     text-align: center;
     display: inline-block;
     margin: 0 0 ($leaf-margin-height * 2) 0;
+    margin-right: 10px;
+    margin-right: 20px;
   }
   ul li {
     position: relative;
