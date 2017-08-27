@@ -225,15 +225,12 @@ $border-opacity: 0.1;
   }
 }
 
-.clear {
-
-    clear: both;
-
-}
-
 p.card-title {
-
       font-size: 19px;
       margin-bottom: 0px;
-
 }
+.card-milestone {
+  border: 5px solid red;
+}
+
+
