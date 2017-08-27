@@ -22,7 +22,7 @@
 }
 .card-profile {
   position: relative;
-  background-color: #FFF;
+  background-color: $light-gray;
   text-align: center;
   margin-bottom: 20px;
   .card-profile-level {
@@ -30,8 +30,16 @@
     top: 15px;
     right: 15px;
     font-size: 43px;
-    color: #008040;
+    color: $yellow;
     font-weight: bold;
+    p {
+      margin-bottom: 0px;
+    }
+    h1 {
+      line-height: 10px;
+      font-weight: bold;
+      margin-top: 11px;
+    }
   }
   .card-profile-avatar {
     padding: 60px 0;

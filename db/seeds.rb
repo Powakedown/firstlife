@@ -56,6 +56,7 @@ dev_ruby = Tree.create!(
   name: "Développeur Ruby",
   category_id: Category.first.id,
   color: "#56ABAD",
+  contributors: 170,
   photo_url: url
 )
 
@@ -64,6 +65,25 @@ eco = Tree.create!(
   name: "Adepte écologie",
   category_id: Category.last.id,
   color: "#59B873",
+  contributors: 2500,
+  photo_url: url
+)
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503823564/ecologie_02_ib9tvn.png"
+eco2 = Tree.create!(
+  name: "Écologie et progrès",
+  category_id: Category.last.id,
+  color: "#59B873",
+  contributors: 163,
+  photo_url: url
+)
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1503823664/ecologie_03_g6iq2b.png"
+eco3 = Tree.create!(
+  name: "Nature et écologie",
+  category_id: Category.last.id,
+  color: "#59B873",
+  contributors: 10,
   photo_url: url
 )
 
@@ -122,7 +142,6 @@ Skill.create!(name: "education", tree: education, action: "Adepte", description:
 Skill.create!(name: "ux_design", tree: ux_design, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 Skill.create!(name: "chef", tree: chef, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 Skill.create!(name: "front", tree: front, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-
 
 
 ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev_ruby, description: "Ruby is a general purpose language that is still popular and in high demand in the marketplace, as it's more commonly used in Rails applications. Concise and readable, it is easy to pick up but also plenty powerful. Companies like Twitter, Soundcloud, Goodreads, and Kickstarter got their products off the ground with Ruby.")
