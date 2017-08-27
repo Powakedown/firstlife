@@ -52,6 +52,20 @@ $border-opacity: 0.1;
     margin-right: 10px;
     margin-right: 20px;
   }
+  .leaf-level {
+    position: relative;
+    background-color: white;
+    max-width: $leaf-max-width;
+    box-shadow: 1px 1px 4px #CCD4DA;
+    border-radius: $border-radius;
+    padding: $leaf-padding;
+    text-align: center;
+    display: inline-block;
+    margin: 0 0 ($leaf-margin-height * 2) 0;
+    margin-right: 10px;
+    margin-right: 20px;
+    width: 210px;
+  }
   ul li {
     position: relative;
     &::after {
