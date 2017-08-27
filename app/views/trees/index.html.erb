@@ -81,22 +81,23 @@
     <% if @users.present? %>
       <% @users.each do |user| %>
         <div class="col-xs-12 col-sm-6 col-md-3 text-center" >
-          <%= link_to user_path(user) do %>
           <div class="card-index">
-            <div class="card-profile">
-              <div class="card-profile-level">
-                <p>niveaux</p>
-                <h1 style="color:@tree.color"> <%= user.skills.where(tree: @tree).count %></h1>
+            <%= link_to user_path(user) do %>
+              <div class="card-profile">
+                <div class="card-profile-level">
+                  <p>niveaux</p>
+                  <h1 style="color:@tree.color"> <%= user.skills.where(tree: @tree).count %></h1>
+                </div>
+                <div class="card-profile-avatar">
+                  <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-title"><%= user.first_name %> <%= user.last_name %></p>
+                  <p class="card-contributors"><%= user.address %></p>
+                </div>
               </div>
-              <div class="card-profile-avatar">
-                <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
-              </div>
-              <div class="card-profile-username">
-                <%= user.first_name %> <%= user.last_name %>
-              </div>
-            </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       <% end %>
     <% end %>

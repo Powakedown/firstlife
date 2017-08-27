@@ -22,12 +22,13 @@
 }
 .card-profile {
   position: relative;
-  background-color: $light-gray;
+  background-color: $medium-gray;
   text-align: center;
-  margin-bottom: 20px;
+  border-radius: 15px;
+
   .card-profile-level {
     position: absolute;
-    top: 15px;
+    top: 10px;
     right: 15px;
     font-size: 43px;
     color: $yellow;
@@ -42,11 +43,14 @@
     }
   }
   .card-profile-avatar {
-    padding: 60px 0;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .card-profile-username {
     background-color: #D8D8D8;
-
+    height: 90px;
     color: #4A4A4A;
     padding: 20px;
     font-size: 18px;
