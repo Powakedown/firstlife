@@ -27,7 +27,7 @@ $border-opacity: 0.1;
   .card-title {
     display: inline-block;
     width: 100%;
-    font-size: 19px;
+    font-size: 17px;
     color: #2d2d2d;
     p {
       font-size: 19px;
@@ -43,7 +43,7 @@ $border-opacity: 0.1;
   }
   .card-contributors {
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     width: 100%;
 
     color: #2d2d2d;
@@ -58,13 +58,24 @@ $border-opacity: 0.1;
   }
   .card-subtitle {
     display: inline-block;
-    font-size: 15px;
+    font-size: 13px;
     width: 100%;
 
     color: gray;
   }
   margin: 10px;
 }
+// Button Ajouter un arbre
+.btn-addtree{
+border-radius: 6px;
+color: white;
+margin-top: 5px;
+}
+#button-addtree{
+  margin-right: -15px;
+  background-color: #b2d430;
+}
+//
 
 .slogan {
   margin-top: 0px;
