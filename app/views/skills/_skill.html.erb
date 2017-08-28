@@ -13,7 +13,6 @@
             </div>
           </div>
 
-
           <!-- Action de cocher les skills si le Tree est possédé par le current user -->
           <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
             <div class="badge-content" %>
@@ -46,7 +45,6 @@
             <h4 class="rank-title"><%= skill.name %></h4>
         </div>
       <% else %>
-
 
       <% end %>
   </div>
