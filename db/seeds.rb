@@ -268,6 +268,32 @@ gardedepan = voiture.children.create!(name: "Garde de Pan",action: "Rang atteint
 puts "#{Skill.count - rubyskill} ecology skills created."
 
 
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Développeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Éducation positive")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "UX design")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "Développeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "UX design")
+  )
+
 UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Ruby")
