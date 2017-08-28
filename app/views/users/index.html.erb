@@ -16,7 +16,7 @@
         <div class="card-profile">
           <div class="card-profile-level">
             <span>niveaux</span>
-            <%= current_user.skills.where(tree: @tree).count %>
+            <%= user.skills.where(tree: @tree).count %>
           </div>
           <div class="card-profile-avatar">
             <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
