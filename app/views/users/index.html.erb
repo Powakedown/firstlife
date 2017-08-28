@@ -2,10 +2,10 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-12 talents">
-        <% if @result && @search %>
-        <p>Personne avec ce talent: <%= @result %></p>
-        <% end %>
+      <div class="col-md-12 talents text-center">
+
+          <h1><%= pluralize( @result, @query)  %> à <%= @address %></h1>
+
       </div>
     </div>
   <div class="row">
@@ -16,7 +16,7 @@
         <div class="card-profile">
           <div class="card-profile-level">
             <span>niveaux</span>
-            <%= current_user.skills.where(tree: @tree).count %>
+            <%= user.skills.where(tree: @tree).count %>
           </div>
           <div class="card-profile-avatar">
             <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
