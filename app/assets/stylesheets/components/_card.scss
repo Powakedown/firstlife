@@ -6,6 +6,9 @@ $leaf-max-width: 400px;
 $leaf-padding: 10px 20px;
 $border-opacity: 0.1;
 
+.card-avatar{
+  position: relative;
+}
 .card-index {
   background-color: rgba(0,0,0, 0.15);
   margin-top: 40px;
@@ -118,6 +121,9 @@ $border-opacity: 0.1;
 }
 .card-avatar-contact{
   font-size: 25px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
 }
 .card-avatar-name-description p{
   margin-top: -10px;
