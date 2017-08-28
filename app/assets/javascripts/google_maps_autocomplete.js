@@ -6,8 +6,6 @@ function initializeAutocomplete(id) {
   }
 }
 
-
-
 function onPlaceChanged() {
   var place = this.getPlace();
 
@@ -23,3 +21,8 @@ function onPlaceChanged() {
     }
   }
 }
+
+google.maps.event.addDomListener(window, 'load', function() {
+  initializeAutocomplete('query_address');
+});
+
