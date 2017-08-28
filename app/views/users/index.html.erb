@@ -2,10 +2,8 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-12 talents text-center">
-
+      <div class="col-md-12 talents talents-search-result text-center">
           <h1><%= pluralize( @result, @query)  %> à <%= @address %></h1>
-
       </div>
     </div>
  <div class="row talent-tree">
@@ -26,12 +24,11 @@
                   </div>
                 </div>
               <% end %>
-            <div class="card-skill">
-            <p>Développeur Ruby</p><p> 12</p>
-            </div>
-             <div class="card-skill">
-            <p>Développeur Frontend</p><p> 16</p>
-            </div>
+              <% @trees.each do |tree| %>
+                <div class="card-skill" style="background-color: <%= tree.color %>">
+                <p><%= tree.name %></p><p><%= user.skills.where(tree: tree).count%></p>
+                </div>
+              <% end %>
           </div>
         </div>
       <% end %>
