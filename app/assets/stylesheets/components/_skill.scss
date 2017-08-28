@@ -21,21 +21,19 @@
     height: 75px;
     background-color: $anis;
     opacity: 1;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 70px;
       a, h1 {
         font-size: 50px;
-        line-height: 70px;
+        line-height: 26px;
         color: white;
         font-family: "Open sans", Helvetica, sans-serif;
         font-weight: bold;
         color: white;
       }
-      a:hover {
-        text-decoration: none;
-        font-size: 55px;
-        line-height: 70px;
-      }
+
   }
   .fa-check {
     display: none;
@@ -50,6 +48,8 @@
     font-family: "Open sans", Helvetica, sans-serif;
     font-weight: bold;
     color: white;
+    padding-right: 3px;
+    letter-spacing: -3px;
   }
   .badge-content{
     display:none;
@@ -146,5 +146,13 @@
     color: $darkgray;
     margin-top: 4px;
     line-height: 36px;
+  }
+}
+
+#title {
+  i:hover {
+    text-decoration: none;
+    font-size: 42px;
+    padding-top: 5px;
   }
 }
