@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @query = params[:query][:name]
       @address = params[:query][:address]
       @trees = Tree.where("name ILIKE ?", "%#{@query}%")
-      @users = User.where("address ILIKE ?", "%#{params[:query][:address]}%")
+      @users = User.near(params[:query][:address], 100)
       @search = true
     else
       @trees = Tree.all
@@ -23,5 +23,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
   end
 end
