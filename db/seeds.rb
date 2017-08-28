@@ -303,7 +303,26 @@ UserSkill.create!(
   )
 end
 
+8.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
 
+9.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+14.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "education")
+  )
+end
 
 49.times do
 UserSkill.create!(
