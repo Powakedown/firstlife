@@ -268,6 +268,32 @@ gardedepan = voiture.children.create!(name: "Garde de Pan",action: "Rang atteint
 puts "#{Skill.count - rubyskill} ecology skills created."
 
 
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Développeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Éducation positive")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "UX design")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "Développeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "UX design")
+  )
+
 UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Ruby")
@@ -295,6 +321,34 @@ UserTree.create!(
 
 puts "#{UserTree.count} usertree created."
 
+
+18.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+8.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
+
+9.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+14.times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  skill: Skill.find_by(name: "education")
+  )
+end
 
 49.times do
 UserSkill.create!(
@@ -349,6 +403,13 @@ rand(10..15).times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Benjamin'),
   skill: Skill.find_by(name: "introduction string")
+  )
+end
+
+rand(10..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Benjamin'),
+  skill: Skill.find_by(name: "front")
   )
 end
 

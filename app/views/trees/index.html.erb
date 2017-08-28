@@ -8,9 +8,9 @@
       </div>
 
       <div class="custom-search-input">
-        <div class="fake-input">
+        <div class="fake-input" id="trees-input">
           <%= simple_form_for :query, url: trees_path, method: :get do |f| %>
-             <%= f.input :name, label: "Rechercher un arbre de talents", placeholder: 'Rechercher des talents, ex: développeur web, écologie, UX Design, éducation positive...', :label_html => { :class => 'search-field' } %>
+             <%= f.input :name, label: "Rechercher un arbre de talents", placeholder: 'Développeur web, design, écologie, éducation positive...', :label_html => { :class => 'search-field' } %>
            <span><%= f.button :submit, class: 'btn btn-pink', id: "button-search", value: "Rechercher" %></span>
           <% end %>
         </div>
