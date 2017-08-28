@@ -13,7 +13,6 @@
             </div>
           </div>
 
-
           <!-- Action de cocher les skills si le Tree est possédé par le current user -->
           <% if current_user.user_skills.where(skill: skill).exists? %> <!-- si on a le skill -->
             <div class="badge-content" %>
@@ -32,23 +31,17 @@
           <a href="#"><i class="fa fa-check unchecked"></i></a> <!-- on affiche la coche gris -->
         </div>
 
-    <% end %>
+      <% end %>
   </div>
 <% else %>
   <div class="skill-rank">
-
-      <% if @tree_user %>  <!-- si on a le tree -->
+        <!-- si on a le tree -->
         <div class="skill-rank-content text-center">
             <div class="skill-badge" style="background-color: <%= @tree.color %>">
-
             </div>
             <h4 class="rank-type"><%= skill.action %></h4>
             <h4 class="rank-title"><%= skill.name %></h4>
         </div>
-      <% else %>
-
-
-      <% end %>
   </div>
 <% end %>
 
