@@ -23,7 +23,6 @@
     opacity: 1;
     text-align: center;
     line-height: 70px;
-
       a, h1 {
         font-size: 50px;
         line-height: 70px;
@@ -40,9 +39,6 @@
   }
   .fa-check {
     display: none;
-  }
-  .tree-opened {
-    background-color: $blue;
   }
   .tree-closed {
     background-color: $anis;
@@ -72,12 +68,11 @@
   height: 40px;
   background-color:$bluegrey;
   border-radius: 50%;
-  font-size:20px ;
   display: flex;
   align-items: center;
   justify-content: center;
   h1 {
-    font-size: 25px;
+    font-size: 50px;
     font-family: "Open sans", Helvetica, sans-serif;
     font-weight: bold;
     color: transparent;
@@ -92,7 +87,6 @@
     font-size: 32px;
   }
 }
-
 .skill-component {
   display: flex;
   justify-content: space-between;
@@ -117,9 +111,37 @@
     opacity: 0.6;
     margin-bottom: 6px;
   }
-
 }
 
 #talent-leaf .skill-leaf a, #talent-leaf .skill-leaf h1 {
   line-height: 70px;
+}
+
+
+.skill-rank {
+  height: 280px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 5px dotted $medium-gray;
+  border-radius: 15px;
+  .skill-badge {
+    height: 90px;
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h4.rank-type {
+    font-size: 14px;
+    color: $gray;
+    margin-top: 12px;
+    margin-bottom: 0px;
+  }
+  h4.rank-title {
+    font-size: 22px;
+    color: $darkgray;
+    margin-top: 4px;
+    line-height: 36px;
+  }
 }

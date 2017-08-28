@@ -2,6 +2,11 @@
   <div class="user-flex-box">
     <div class="user-column-1">
       <div class="card-avatar">
+        <div class="card-avatar-contact">
+          <%= link_to do %>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <% end %>
+        </div>
         <div class="card-avatar-content">
           <div class="card-avatar-image">
             <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
@@ -11,8 +16,8 @@
           </div>
           <div class="card-avatar-name-description">
             <p> Etudiant au wagon </p>
-          </div>
 
+          </div>
         </div>
       </div>
 
@@ -23,7 +28,6 @@
         <div class="card-rang-image">
           <%= cl_image_tag("Save images/rang_masterweb1_zkiflj.png")%>
           <%= cl_image_tag("Save images/rang_ecology_xbzpth.png") %>
-          <%= cl_image_tag("Save images/emptyrang_n36lvx.png")%>
         </div>
       </div>
       <div class="card-rang-image">
@@ -32,20 +36,21 @@
             <p> OBJECTIFS ACCOMPLIS </p>
           </div>
           <div class="card-rang-image">
-            <%= image_tag "objectif_1" %>
-            <%= image_tag "Objectif02" %>
-            <%= image_tag "Objectif03" %>
-            <%= image_tag "Objectif04" %>
-            <%= image_tag "Objectif05" %>
-            <%= image_tag "Objectif06" %>
-            <%= image_tag "Objectif07" %>
-            <%= image_tag "Objectif08" %>
+            <%= cl_image_tag("Save images/objectif_1_aicmwu.png") %>
+            <%= cl_image_tag("Save images/Objectif02_cg04vv.png")  %>
+            <%= cl_image_tag("Save images/Objectif03_a0zzzh.png")  %>
+            <%= cl_image_tag("Save images/Objectif04_baojhn.png") %>
+            <%= cl_image_tag("Save images/Objectif05_ziv3mt.png")  %>
+            <%= cl_image_tag("Save images/Objectif06_e6undl.png")  %>
+            <%= cl_image_tag("Save images/Objectif07_kdnege.png")  %>
+            <%= cl_image_tag("Save images/Objectif08_mwgsqe.png") %>
+            <%= cl_image_tag("Save images/Objectif09_tldf5n.png") %>
             <%= cl_image_tag("Save images/Add_Objectif_nx6cfl.png")%>
+
           </div>
         </div>
       </div>
     </div>
-
 
     <div class="user-column-2">
       <div class="talents-tile">
@@ -57,7 +62,7 @@
               <div class="skill-name">
                 <h4 class="tree-title"><%= link_to tree.name, tree %></h4>
               </div>
-              <div class="skill-badge tree-opened">
+              <div class="skill-badge" style="background-color: <%= tree.color %>">
                 <div class="badge-content-titre">
                   <%= current_user.skills.where(tree: tree).count %>
                 </div>
@@ -76,6 +81,3 @@
         </div>
     </div>
 </div>
-
-
-

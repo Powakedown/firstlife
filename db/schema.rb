@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823094716) do
+ActiveRecord::Schema.define(version: 20170827081901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170823094716) do
     t.string "description"
     t.string "ancestry"
     t.string "action"
+    t.string "photo"
     t.index ["ancestry"], name: "index_skills_on_ancestry"
     t.index ["tree_id"], name: "index_skills_on_tree_id"
   end
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170823094716) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.string "photo"
+    t.string "color"
+    t.integer "contributors"
     t.index ["category_id"], name: "index_trees_on_category_id"
   end
 

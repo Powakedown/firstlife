@@ -15,9 +15,9 @@
   </style>
 <% end %>
 
-<div class="container size-limiter">
+<div class="container wrapper">
 
-  <div class="row">
+  <div class="row talent-tree">
     <div class="col-md-12">
       <div class="title">
       <span>FirstLife</span>
@@ -35,16 +35,18 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-md-12 talents">
-        <h3>Talents</h3>
-        <% if @result && @search %>
-        <p>Résultat de la recherche: <%= @result %></p>
-        <% end %>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Arbre de talents</h3>
+      <% if @result && @search %>
+      <p>Résultat de la recherche: <%= @result %></p>
+      <% end %>
     </div>
+  </div>
 
+  <div class="row talent-tree">
     <% @trees.each do |tree| %>
       <div class="col-xs-8 col-md-3 col-sm-4 text-center" >
         <div class="card-index">
@@ -52,22 +54,52 @@
             <% if tree.photo? %>
               <div class="card-index-image" style="background-image: url('<%= cl_image_path tree.photo.path %>')">
             <% else %>
-              <div class="card-index-image" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/e_blur:1337/v1502810434/doll8_msmtic.jpg')">
+                <div class="card-index-image" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/e_blur:1337/v1502810434/doll8_msmtic.jpg')">
+            <% end %>
+                </div>
           <% end %>
-          </div>
-          <% end %>
-          <div class="card-body text-center">
-            <span class="card-title"><%= link_to tree.name, tree_path(tree) %></span>
-            <span class="card-subtitle"><%= tree.skills.count > 0 ? tree.skills.count : rand(1..30) %> niveaux disponibles</span>
+                <div class="card-body text-center">
+                  <span class="card-title"><%= link_to tree.name, tree_path(tree) %></span>
+                  <span class="card-contributors"><%= tree.contributors == nil ? "#{rand(50..3000)} contributeurs" : "#{tree.contributors} contributeurs" %> </span>
+                  <span class="card-subtitle"><%= tree.skills.count > 1 ? tree.skills.count : rand(5..30) %> niveaux disponibles</span>
+                </div>
+              </div>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 talents">
+      <h3>Personnes de talents</h3>
+      <% if @result && @search %>
+      <p>Résultat de la recherche: <%= @result %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row talent-tree">
+    <% if @users.present? %>
+      <% @users.each do |user| %>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center" >
+          <div class="card-index">
+            <%= link_to user_path(user) do %>
+              <div class="card-profile">
+                <div class="card-profile-level">
+                  <p>niveaux</p>
+                  <h1 style="color:@tree.color"> <%= user.skills.where(tree: @tree).count %></h1>
+                </div>
+                <div class="card-profile-avatar">
+                  <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-title"><%= user.first_name %> <%= user.last_name %></p>
+                  <p class="card-contributors"><%= user.address %></p>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
