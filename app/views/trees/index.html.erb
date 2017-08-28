@@ -1,35 +1,21 @@
-<% provide(:title, "FirstLife") %>
-
-<% content_for :head do %>
-  <style>
-    body {
-      background-color: white;
-      background-image: none;
-    }
-    .navbar-wagon-link {
-      color: #4A4A4A;
-    }
-    .navbar-wagon-link:hover {
-      color: #2d2d2d;
-    }
-  </style>
-<% end %>
 
 <div class="container wrapper">
 
   <div class="row talent-tree">
     <div class="col-md-12">
       <div class="title">
-      <span>FirstLife</span>
-      </div>
-      <div class="slogan">
-        <p> No more CV<br>show your skills.</p>
+      <h2><span>Nos Arbres de compétences</span></h2>
       </div>
 
       <div class="custom-search-input">
         <div class="fake-input">
-          <%= simple_form_for :query, url: trees_path, method: :get do |f| %>
-             <%= f.input :name, label: "Rechercher un arbre de talents", placeholder: 'Rechercher des talents, ex: développeur web, écologie, UX Design, éducation positive...', :label_html => { :class => 'search-field' } %>
+          <%= simple_form_for :query, url: users_path, method: :get do |f| %>
+            <p>Rechercher des talents</p>
+             <%= f.input :name, label: "Rechercher des talents", placeholder: 'Développeur web, UX Design, adepte écologie...', :label_html => { :class => 'search-field' } %>
+            <p>Où</p>
+             <%= f.input :address, label: "Où", placeholder: 'Partout', :label_html => { :class => 'search-field' } %>
+            <p>Niveau minimum</p>
+             <%= f.input :level, label: "niveau", placeholder: 'Tous les niveaux', :label_html => { :class => 'search-field' } %>
            <span><%= f.button :submit, class: 'btn btn-pink', id: "button-search", value: "Rechercher" %></span>
           <% end %>
         </div>
@@ -39,7 +25,6 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h3>Arbre de talents</h3>
       <% if @result && @search %>
       <p>Résultat de la recherche: <%= @result %></p>
       <% end %>
@@ -68,38 +53,4 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-md-12 talents">
-      <h3>Personnes de talents</h3>
-      <% if @result && @search %>
-      <p>Résultat de la recherche: <%= @result %></p>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="row talent-tree">
-    <% if @users.present? %>
-      <% @users.each do |user| %>
-        <div class="col-xs-12 col-sm-6 col-md-3 text-center" >
-          <div class="card-index">
-            <%= link_to user_path(user) do %>
-              <div class="card-profile">
-                <div class="card-profile-level">
-                  <p>niveaux</p>
-                  <h1 style="color:@tree.color"> <%= user.skills.where(tree: @tree).count %></h1>
-                </div>
-                <div class="card-profile-avatar">
-                  <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
-                </div>
-                <div class="card-body text-center">
-                  <p class="card-title"><%= user.first_name %> <%= user.last_name %></p>
-                  <p class="card-contributors"><%= user.address %></p>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
