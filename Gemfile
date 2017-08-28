@@ -21,6 +21,7 @@ gem 'uglifier'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'ancestry'
+gem 'geocoder'
 
 
 group :development, :test do

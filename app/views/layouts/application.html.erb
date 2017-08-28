@@ -15,6 +15,11 @@
 
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <!-- Include Google Maps JS API -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=PUT_YOUR_OWN_KEY_HERE">
+    </script>
+    <script type="text/javascript" src="autocomplete.js"></script>
 
   </body>
 
