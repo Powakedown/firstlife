@@ -152,15 +152,19 @@ $border-opacity: 0.1;
   max-width: 300px;
 }
 .talents-tile h1{
-  font-size: 80%;
   color: white;
   text-align: center;
   padding-top: 25px;
+  font-size: 18px;
 }
 
 .talents-profil{
   margin-left: 0px;
   // display: block;
+}
+
+.talents-search-result {
+  color: white;
 }
 
 .talent-profil-leaf{
