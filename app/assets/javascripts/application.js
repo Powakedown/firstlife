@@ -7,4 +7,8 @@ $('.leaf').click(function() {
   $('#title').addClass("expandOpen");
 });
 
+$('.skill-badge').click(function() {
+  alert('coché');
+  $(this).children('.badge-content').addClass("checked");
+});
 
