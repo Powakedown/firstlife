@@ -13,12 +13,8 @@
 .user-column-2>.talents-profil {
   margin-top: 20px;
 }
-
-.user-column-3 {
-  width: 250px;
-}
-.user-column-3 >.talents-tile{
-  margin-bottom: 102px;
+.user-column-2, .user-column-3 {
+  width: 50%;
 }
 .card-profile {
   position: relative;
@@ -63,6 +59,7 @@
 }
 .talents-tile {
   margin-bottom: 25px;
+  margin-right: 25px;
 }
 
 .card-skill {
