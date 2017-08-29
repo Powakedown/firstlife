@@ -129,7 +129,7 @@ education = Tree.create!(
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_nmrkzc.png"
 front = Tree.create!(
-  name: "Développeur Frontend",
+  name: "Développeur Front",
   category_id: Category.find_by_name("Développement Web").id,
   color: "#6577BD",
   photo_url: url
@@ -271,7 +271,7 @@ puts "#{Skill.count - rubyskill} ecology skills created."
 
 UserTree.create!(
   user: User.find_by(first_name: 'Maxime'),
-  tree: Tree.find_by(name: "Développeur Frontend")
+  tree: Tree.find_by(name: "Développeur Front")
   )
 
 UserTree.create!(
@@ -291,7 +291,7 @@ UserTree.create!(
 
 UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
-  tree: Tree.find_by(name: "Développeur Frontend")
+  tree: Tree.find_by(name: "Développeur Front")
   )
 
 UserTree.create!(

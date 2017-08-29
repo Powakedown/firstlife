@@ -9,7 +9,7 @@
 
         <div class="custom-search-input">
           <div class="fake-input">
-            <%= simple_form_for :query, url: users_path, method: :get do |f| %>
+            <%= simple_form_for :my_query, url: users_path, method: :get do |f| %>
               <div class="search-input" id="qname">
                 <p>Rechercher des talents</p>
                 <%= f.input :name, label: "Rechercher des talents", placeholder: 'Développeur web, UX Design, adepte écologie...', :label_html => { :class => 'search-field' } %>
@@ -25,15 +25,19 @@
                <span><%= f.button :submit, class: 'btn btn-pink', id: "button-search", value: "Rechercher" %></span>
             <% end %>
           </div>
-        </div>
       </div>
     </div>
 
     <div class="row">
-        <div class="col-md-12 talents text-center">
+        <div class="col-md-12 talents-result text-center">
           <% if @result && @search %>
-            <h1><%= pluralize( @result, @query)  %> à <%= @address %></h1>
+            <h3><%= pluralize( @result, @query)  %> à <%= @address %></h3>
+          <% else %>
+            <% if @users.count == User.count %>
+              <h3>Personnes de talents - partout</h3>
+            <% end %>
           <% end %>
+
         </div>
       </div>
 
