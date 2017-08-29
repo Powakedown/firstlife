@@ -350,16 +350,6 @@ UserTree.create!(
   )
 
 UserTree.create!(
-  user: User.find_by(first_name: 'Paul'),
-  tree: Tree.find_by(name: "Litérature française")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Elena'),
-  tree: Tree.find_by(name: "Nature et écologie")
-  )
-
-UserTree.create!(
   user: User.find_by(first_name: 'Elena'),
   tree: Tree.find_by(name: "Globe-trotter")
   )
@@ -385,16 +375,6 @@ UserTree.create!(
   )
 
 UserTree.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  tree: Tree.find_by(name: "Ecologie et progres")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Simon'),
-  tree: Tree.find_by(name: "Education positive")
-  )
-
-UserTree.create!(
   user: User.find_by(first_name: 'Simon'),
   tree: Tree.find_by(name: "Globe-trotter")
   )
@@ -411,17 +391,7 @@ UserTree.create!(
 
 UserTree.create!(
   user: User.find_by(first_name: 'Camille'),
-  tree: Tree.find_by(name: "Developpeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Camille'),
   tree: Tree.find_by(name: "Developpeur Frontend")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  tree: Tree.find_by(name: "Ecologie et progres")
   )
 
 UserTree.create!(
@@ -552,6 +522,104 @@ rand(5..20).times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Paul'),
   skill: Skill.find_by(name: "chef")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Paul'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Paul'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Elena'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
+
+rand(0..10).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Elena'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(0..10).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(15..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "Array")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Simon'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Simon'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Camille'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Camille'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "chef")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "Trier le verre")
   )
 end
 
