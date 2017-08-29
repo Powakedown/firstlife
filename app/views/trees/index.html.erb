@@ -41,9 +41,12 @@
           </div>
         </div>
         <div>
+        <div class ="btn btn-addtree btn-block" id= "button-addtree">
+        <div id="btn-addskill-plus">+</div>
           <% if @result && @search %>
-            <%= link_to "Ajouter l'arbre", tree_user_trees_path(@tree), method: :post, class: "btn btn-addtree btn-block", id: "button-addtree" %>
+            <%= link_to " Ajouter l'arbre", tree_user_trees_path(@tree), method: :post,class: "btn-addtree-text" %>
           <% end %>
+        </div>
         </div>
       </div>
     <% end %>
