@@ -4,13 +4,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    if params[:query]
-      @query = params[:query][:name]
+    if params.dig(:query, :name).present?
+      @query_name = params[:query][:name]
       @address = params[:query][:address]
       @trees = Tree.where("name ILIKE ?", "%#{@query}%")
       @users = User.near(params[:query][:address], 100)
       @search = true
-      params[:query] = {}
     else
       @trees = [Tree.first, Tree.last]
       @users = User.all
