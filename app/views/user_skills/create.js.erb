@@ -1,0 +1,3 @@
+$('#skill-<%= @skill.id %>').html('<%= j render "skills/skill", skill: @skill %>');
+
+$('#title .skill-count').text('<%= current_user.skills.where(tree: @skill.tree).count %>');

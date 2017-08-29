@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :trees, through: :user_trees
   has_many :skills, through: :user_skills
   has_attachment :photo
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+  validates :address, presence: true
 end
