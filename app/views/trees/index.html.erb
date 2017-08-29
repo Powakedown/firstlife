@@ -40,10 +40,13 @@
             <span class="card-subtitle"><%= tree.skills.count > 1 ? tree.skills.count : rand(5..30) %> niveaux disponibles</span>
           </div>
           <div>
-              <%= link_to "Ajouter cette arbre", tree_user_trees_path(@tree), method: :post, class: "btn btn-addtree btn-block", id: "button-addtree" %>
+            <% if current_user && current_user.trees.exists?(tree.id)  %>
+              <button type="button" class="btn btn-addtree btn-block" disabled="disabled" id="button-treeadded" >Arbre ajouté</button>
+            <% else %>
+              <%= link_to "Ajouter cette arbre", tree_user_trees_path(tree), method: :post, class: "btn btn-addtree btn-block", id: "button-addtree" %>
+            <% end %>
           </div>
         </div>
-
       </div>
     <% end %>
   </div>
