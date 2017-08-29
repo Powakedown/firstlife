@@ -17,17 +17,32 @@ User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr",
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
 User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503998718/Save images/Karl_hujypr.jpg"
+User.create(first_name: "Karl", last_name: "Michel", email: "karl@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504000278/Save images/Elena_ogxsur.jpg"
+User.create(first_name: "Elena", last_name: "Ficus", email: "elena@yahoo.fr", password: "123456", address: "Le Bouscat", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
 User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503998723/Save images/Corine_kw81pa.jpg"
+User.create(first_name: "Corine", last_name: "Page", email: "corine@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
 User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503998714/Save images/Leony_kjqhme.jpg"
+User.create(first_name: "Léony", last_name: "Chan", email: "leony@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503998726/Save images/Camille_ryumrm.jpg"
+User.create(first_name: "Camille", last_name: "Sim", email: "camille@yahoo.fr", password: "123456", address: "Pessac", photo_url: url)
+
+url ="http://res.cloudinary.com/doodlid/image/upload/v1503999367/Save images/Pascaline_eez5zb.jpg"
+User.create(first_name: "Pascaline", last_name: "Mug", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
 
 
 categories = [
@@ -129,7 +144,7 @@ education = Tree.create!(
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503484071/Tree_Devfront_nmrkzc.png"
 front = Tree.create!(
-  name: "Développeur Frontend",
+  name: "Développeur Front",
   category_id: Category.find_by_name("Développement Web").id,
   color: "#6577BD",
   photo_url: url
@@ -271,7 +286,7 @@ puts "#{Skill.count - rubyskill} ecology skills created."
 
 UserTree.create!(
   user: User.find_by(first_name: 'Maxime'),
-  tree: Tree.find_by(name: "Développeur Frontend")
+  tree: Tree.find_by(name: "Développeur Front")
   )
 
 UserTree.create!(
@@ -291,7 +306,7 @@ UserTree.create!(
 
 UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
-  tree: Tree.find_by(name: "Développeur Frontend")
+  tree: Tree.find_by(name: "Développeur Front")
   )
 
 UserTree.create!(
@@ -397,12 +412,27 @@ UserSkill.create!(
   )
 end
 
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Léa'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
 rand(10..15).times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Renan'),
   skill: Skill.find_by(name: "introduction string")
   )
 end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Renan'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
 
 rand(10..15).times do
 UserSkill.create!(

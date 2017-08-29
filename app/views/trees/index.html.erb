@@ -4,7 +4,7 @@
   <div class="row talent-tree">
     <div class="col-md-12">
       <div class="title">
-        <h2><span>Nos Arbres de compétences</span></h2>
+        <h2><span>Rechercher un talent à développer</span></h2>
       </div>
       <div class="custom-search-input">
         <div class="fake-input" id="trees-input">
@@ -39,14 +39,9 @@
             <span class="card-contributors"><%= tree.contributors == nil ? "#{rand(50..3000)} contributeurs" : "#{tree.contributors} contributeurs" %> </span>
             <span class="card-subtitle"><%= tree.skills.count > 1 ? tree.skills.count : rand(5..30) %> niveaux disponibles</span>
           </div>
-        </div>
-        <div>
-        <div class ="btn btn-addtree btn-block" id= "button-addtree">
-        <div id="btn-addskill-plus">+</div>
-          <% if @result && @search %>
-            <%= link_to " Ajouter l'arbre", tree_user_trees_path(@tree), method: :post,class: "btn-addtree-text" %>
-          <% end %>
-        </div>
+          <div>
+              <%= link_to "Ajouter cette arbre", tree_user_trees_path(@tree), method: :post, class: "btn btn-addtree btn-block", id: "button-addtree" %>
+          </div>
         </div>
       </div>
     <% end %>

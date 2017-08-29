@@ -42,7 +42,7 @@
 span {
   z-index: 10;
 }
-.search-field, #query_level, #query_address, #query_name {
+.search-field, #query_level, #query_address, #query_name, #my_query_name, #my_query_level, #my_query_address {
   background-color: transparent;
   margin: 0px;
   padding: 0px;
@@ -55,7 +55,7 @@ span {
   padding-left: 10px;
   border-left: 1px solid $gray;
 }
-#qaddress {
+#qaddress{
   width: 20%;
   padding-left: 10px;
   border-left: 1px solid $gray;
@@ -92,6 +92,7 @@ span {
   justify-content: space-between;
   width: 100%;
   padding-right: 10px;
+
   .form-group {
     margin-right: 20px;
     width: 100%;
@@ -103,6 +104,11 @@ span {
 
 .form-group .string .optional .user_address {
   margin-bottom: 0px;
+}
+
+.fake-input {
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 .fake-input .form-control.string.required{
@@ -141,6 +147,10 @@ form-control.string.required {
   padding-left: 0px;
 }
 
+.talents-result {
+  margin: 15px;
+  height: 70px;
+}
 
 
 
