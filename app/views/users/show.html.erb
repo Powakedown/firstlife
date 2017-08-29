@@ -48,11 +48,25 @@
         </div>
       </div>
     </div>
+  <div class ="container">
+
+
 
     <div class="user-column-2">
-      <div class="talents-tile">
-        <h1> TALENTS </h1>
+    <div class="talents-plus-addskill">
+     <div class="talents-tile">
+        <h1>TALENTS</h1>
       </div>
+    <div class="talents-plus-btn-add-skill">
+    <div class ="btn btn-addtree btn-block" id= "button-addtree">
+        <div id="btn-addskill-plus">+</div>
+
+            <%= link_to " Ajouter un nouvel arbre", trees_path, class: "btn-addtree-text" %>
+
+      </div>
+      </div>
+      </div>
+
         <% @user.trees.each do |tree| %>
           <div class="leaf" id="title">
             <div class="skill-component">
@@ -68,6 +82,8 @@
           </div>
         <% end %>
     </div>
+  </div>
+
 
     <div class="user-column-3">
         <div class="talents-tile">
