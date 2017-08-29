@@ -14,7 +14,7 @@ $border-opacity: 0.1;
   margin-top: 10px;
   padding-bottom: 0px;
   margin-bottom: 30px;
-  // border-radius: 15px
+  border-radius: 8px;
 }
 .card-index-image {
   height: 280px;
@@ -22,6 +22,7 @@ $border-opacity: 0.1;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 8px;
 
 }
 .card-body{
@@ -30,6 +31,7 @@ $border-opacity: 0.1;
     width: 100%;
     font-size: 17px;
     color: #2d2d2d;
+    margin-top: 10px;
     p {
       font-size: 19px;
     }
@@ -61,7 +63,7 @@ $border-opacity: 0.1;
     display: inline-block;
     font-size: 13px;
     width: 100%;
-
+    margin-bottom: 10px;
     color: gray;
   }
 

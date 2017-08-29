@@ -11,7 +11,10 @@ class UsersController < ApplicationController
       @users = User.near(params[:query][:address], 100)
       @search = true
     else
-      @trees = Tree.all
+      @trees = []
+      @trees << Tree.first
+      @trees << Tree.last
+
       @users = User.all
     end
 
@@ -23,6 +26,5 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
   end
 end
