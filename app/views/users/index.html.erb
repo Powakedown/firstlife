@@ -2,8 +2,10 @@
 
 <div class ="container">
   <div class="row">
-      <div class="col-md-12 talents talents-search-result text-center">
+      <div class="col-md-12 talents text-center">
+        <% if @result && @search %>
           <h1><%= pluralize( @result, @query)  %> à <%= @address %></h1>
+        <% end %>
       </div>
     </div>
   </div>
