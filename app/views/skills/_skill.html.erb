@@ -1,5 +1,12 @@
 <% if skill.level %>
-  I'm a level <%= skill.name %>
+  <div class="skill-rank">
+    <div class="skill-rank-content text-center">
+        <div class="skill-badge" style="background-color: <%= skill.tree.color %>">
+        </div>
+        <h4 class="rank-type"><%= skill.action %></h4>
+        <h4 class="rank-title"><%= skill.name %></h4>
+    </div>
+  </div>
 <% else %>
   <div class="skill-component">
     <div class="skill-name">
@@ -27,10 +34,12 @@
           <% end %>
         <% end %>
       </div>
-
     <% else %>
       <div class="skill-badge tree-closed">
         <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content-titre" do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+        <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content-skill" do %>
           <a href="#"><i class="fa fa-check unchecked"></i></a> <!-- on affiche la coche gris -->
         <% end %>
       </div>

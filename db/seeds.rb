@@ -55,7 +55,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503346777/ebs0fhzbikdzvm
 dev_ruby = Tree.create!(
   name: "Développeur Ruby",
   category_id: Category.first.id,
-  color: "#56ABAD",
+  color: "#F15555",
   contributors: 170,
   photo_url: url
 )
@@ -115,7 +115,7 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503484128/Tree_globetrot
 globe = Tree.create!(
   name: "Globe-trotter",
   category_id: Category.find_by_name("Découverte").id,
-  color: "#56ABAD",
+  color: "#F1B255",
   photo_url: url
 )
 
@@ -285,6 +285,11 @@ UserTree.create!(
   )
 
 UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Globe-trotter")
+  )
+
+UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Frontend")
   )
@@ -336,7 +341,7 @@ UserSkill.create!(
   )
 end
 
-9.times do
+17.times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Maxime'),
   skill: Skill.find_by(name: "ux_design")
