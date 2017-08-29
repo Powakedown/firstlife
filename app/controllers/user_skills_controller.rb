@@ -8,6 +8,10 @@ class UserSkillsController < ApplicationController
     @tree = @skill.tree
     @tree_user = true
 
+    @skill.children.each do |skill|
+      current_user.user_skills.create(skill: skill) if skill.level
+    end
+
     respond_to do |format|
       format.html { redirect_to @skill.tree }
       format.js # render app/views/user_skills/create.js
@@ -15,6 +19,10 @@ class UserSkillsController < ApplicationController
   end
 
   def destroy
+    @user_skill.skill.children.each do |skill|
+      user_skill = UserSkill.find_by(skill: skill, user: current_user)
+      user_skill.destroy if skill.level
+    end
     @user_skill.destroy
     @tree = @user_skill.skill.tree
     @tree_user = true
