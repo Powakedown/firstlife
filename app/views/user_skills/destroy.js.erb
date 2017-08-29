@@ -1,3 +1,9 @@
 $('#skill-<%= @user_skill.skill.id %>').html('<%= j render "skills/skill", skill: @user_skill.skill %>');
 
-$('#title .skill-count').text('<%= current_user.skills.where(tree: @user_skill.skill.tree).count %>');
+<% @user_skill.skill.children.each do |skill| %>
+  <% if skill.level %>
+    $('#skill-<%= skill.id %>').html('<%= j render "skills/skill", skill: skill %>');
+  <% end %>
+<% end %>
+
+$('#title .skill-count').text('<%= current_user.skills.where(tree: @user_skill.skill.tree, level: nil).count %>');
