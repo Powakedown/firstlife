@@ -2,6 +2,7 @@
   <div class="skill-rank">
     <div class="skill-rank-content text-center">
         <div class="skill-badge" style="background-color: <%= skill.tree.color %>">
+          <%= cl_image_tag skill.photo.path, class: "skill-level-image" %>
         </div>
         <h4 class="rank-type"><%= skill.action %></h4>
         <h4 class="rank-title"><%= skill.name %></h4>

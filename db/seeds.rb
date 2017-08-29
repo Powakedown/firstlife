@@ -163,37 +163,46 @@ ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev
   string = ruby.children.create!(name: "introduction string", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   control = string.children.create!(name: "Condition Loop", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   array = control.children.create!(name: "Array",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  hashes = array.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  initie = object.children.create!(name: "Initié",action: "Rang atteint", tree: dev_ruby, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
 
-  blocks = ruby.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023300/rank_init_ky5iqz.png"
+  initie = array.children.create!(name: "Initié",action: "Rang atteint", tree: dev_ruby, photo_url: url, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+
+  hashes = ruby.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  blocks = object.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   inheritance = blocks.children.create!(name: "Classes: Inheritance",action:"Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   classes = inheritance.children.create!(name: "More Classes", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  advarray = classes.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  eclaire = modules.children.create!(name: "Éclairé",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
 
-  metaprogramming = ruby.children.create!(name: "Metaprogramming Ruby",action: "Learn", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023301/rank_eclaire_s11cch.png"
+  eclaire = classes.children.create!(name: "Éclairé",action: "Rang atteint", level: true, tree: dev_ruby, photo_url: url, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
+
+  advarray = ruby.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  metaprogramming = modules.children.create!(name: "Metaprogramming Ruby",action: "Learn", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   dynamic = metaprogramming.children.create!(name: "Dynamic Methods",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   inspection = dynamic.children.create!(name: "Code Inspection",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   evaluation = inspection.children.create!(name: "Eval and friends",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   cycle = evaluation.children.create!(name: "Lifecycle Hooks",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  alumni = cycle.children.create!(name: "Alumni",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  url = "http://res.cloudinary.com/doodlid/image/upload/v1504024439/rank_alumni_hscfdi.png"
+  alumni = cycle.children.create!(name: "Alumni",action: "Rang atteint", level: true, tree: dev_ruby,photo_url: url, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
   parsing = eclaire.children.create!(name: "Parsing",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   storing = parsing.children.create!(name: "Storing Data",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   api = storing.children.create!(name: "API creation ",action: "Have done", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   dataformat = api.children.create!(name: "Over-riding Methods",action: "Do", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   parsing = dataformat.children.create!(name: "Open Classes",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
-  datamaitre = parsing.children.create!(name: "Maître du Big Data",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023232/rank_data_i8mu8n.png"
+  datamaitre = parsing.children.create!(name: "Maître du Big Data",action: "Rang atteint", level: true, photo_url: url, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
   duck = eclaire.children.create!(name: "Duck typing",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   overloading = duck.children.create!(name: "Ruby overloading",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   excep = overloading.children.create!(name: "Methods Exceptions",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   serial = excep.children.create!(name: "Object Serialization",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
 
-  maitre = serial.children.create!(name: "Maître du Ruby Flamboyant",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+  url = "http://res.cloudinary.com/doodlid/image/upload/v1504023232/master_ruby_tkzs8h.png"
+  maitre = serial.children.create!(name: "Maître du Ruby Flamboyant",action: "Rang atteint", level: true, photo_url: url, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
 
 puts "#{Skill.count} ruby skills created."
