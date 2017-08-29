@@ -397,12 +397,27 @@ UserSkill.create!(
   )
 end
 
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Léa'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
 rand(10..15).times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Renan'),
   skill: Skill.find_by(name: "introduction string")
   )
 end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Renan'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
 
 rand(10..15).times do
 UserSkill.create!(
