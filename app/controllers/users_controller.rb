@@ -10,11 +10,9 @@ class UsersController < ApplicationController
       @trees = Tree.where("name ILIKE ?", "%#{@query}%")
       @users = User.near(params[:query][:address], 100)
       @search = true
+      params[:query] = {}
     else
-      @trees = []
-      @trees << Tree.first
-      @trees << Tree.last
-
+      @trees = [Tree.first, Tree.last]
       @users = User.all
     end
 
