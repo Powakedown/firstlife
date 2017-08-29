@@ -29,9 +29,11 @@
                 </div>
               <% end %>
               <% @trees.each do |tree| %>
-                <div class="card-skill" style="background-color: <%= tree.color %>">
-                <p><%= tree.name %></p><p><%= user.skills.where(tree: tree).count%></p>
-                </div>
+                <% if  user.skills.where(tree: tree).count > 0 %>
+                  <div class="card-skill" style="background-color: <%= tree.color %>">
+                    <p><%= tree.name %></p><p><%= user.skills.where(tree: tree).count%></p>
+                  </div>
+                <% end %>
               <% end %>
           </div>
         </div>
@@ -39,4 +41,3 @@
     <% end %>
   </div>
 </div>
-
