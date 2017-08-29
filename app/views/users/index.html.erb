@@ -1,35 +1,40 @@
 <% provide(:title, "Talents") %>
 
-<div class="container">
+<div class ="container">
   <div class="row">
-      <div class="col-md-12 talents text-center">
-
+      <div class="col-md-12 talents talents-search-result text-center">
           <h1><%= pluralize( @result, @query)  %> à <%= @address %></h1>
-
       </div>
     </div>
-  <div class="row">
-  <% @users.each do |user| %>
-    <div class="col-xs-12 col-md-3 text-center" >
-      <%= link_to user_path(user) do %>
-      <div class="card-user">
-        <div class="card-profile">
-          <div class="card-profile-level">
-            <span>niveaux</span>
-            <%= user.skills.where(tree: @tree).count %>
-          </div>
-          <div class="card-profile-avatar">
-            <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
-          </div>
-          <div class="card-profile-username">
-            <%= user.first_name %> <%= user.last_name %>
+  </div>
+
+  <div class="row talent-tree">
+    <% if @users.present? %>
+      <% @users.each do |user| %>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center" >
+            <div class="card-index">
+              <%= link_to user_path(user) do %>
+                <div class="card-profile">
+                  <div class="card-profile-level">
+                  </div>
+                  <div class="card-profile-avatar">
+                    <%= cl_image_tag user.photo.path,  width: 173, height: 173, radius: "max", crop: "fill"%>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-title"><%= user.first_name %> <%= user.last_name %></p>
+                    <p class="card-contributors"><%= user.address %></p>
+                  </div>
+                </div>
+              <% end %>
+              <% @trees.each do |tree| %>
+                <div class="card-skill" style="background-color: <%= tree.color %>">
+                <p><%= tree.name %></p><p><%= user.skills.where(tree: tree).count%></p>
+                </div>
+              <% end %>
           </div>
         </div>
-      </div>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
   </div>
 </div>
-
 

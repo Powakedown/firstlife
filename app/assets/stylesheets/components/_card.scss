@@ -11,9 +11,10 @@ $border-opacity: 0.1;
 }
 .card-index {
   background-color: rgba(0,0,0, 0.15);
-  margin-top: 40px;
-  padding-bottom: 10px;
-  border-radius: 15px
+  margin-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 30px;
+  // border-radius: 15px
 }
 .card-index-image {
   height: 280px;
@@ -63,7 +64,7 @@ $border-opacity: 0.1;
 
     color: gray;
   }
-  margin: 10px;
+
 }
 // Button Ajouter un arbre
 .btn-addtree{
@@ -162,15 +163,19 @@ margin-top: 5px;
   max-width: 300px;
 }
 .talents-tile h1{
-  font-size: 80%;
   color: white;
   text-align: center;
   padding-top: 25px;
+  font-size: 18px;
 }
 
 .talents-profil{
   margin-left: 0px;
   // display: block;
+}
+
+.talents-search-result {
+  color: white;
 }
 
 .talent-profil-leaf{
@@ -230,6 +235,9 @@ margin-top: 5px;
   .tree-title {
     font-size: 16px;
     margin-top: 6px;
+    a {
+      color: $medium-gray;
+    }
   }
 }
 
