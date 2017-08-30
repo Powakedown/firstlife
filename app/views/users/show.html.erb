@@ -77,7 +77,7 @@
                 </div>
                 <div class="skill-badge" style="background-color: <%= tree.color %>">
                   <div class="badge-content-titre">
-                    <%= @user.skills.where(tree: tree).count %>
+                    <%= @user.skills.where(tree: tree, level: nil).count %>
                   </div>
                 </div>
               </div>
