@@ -12,4 +12,8 @@ class User < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   validates :address, presence: true
   validates_uniqueness_of :tree_id, scope: :skill_id
+
+  def best_3_trees
+    Tree.find(skills.pluck(:tree_id).group_by{ |id| id}.sort_by{|k,v| v.length}.reverse.to_h.keys.first(3))
+  end
 end
