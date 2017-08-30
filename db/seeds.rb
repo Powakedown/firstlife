@@ -12,7 +12,7 @@ Category.destroy_all
 User.destroy_all
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503506825/max.png"
-User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+maxime = User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
 User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
@@ -30,7 +30,7 @@ url ="http://res.cloudinary.com/doodlid/image/upload/v1504016563/Save images/Sim
 User.create(first_name: "Simon", last_name: "Nasa", email: "simon@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
-User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+sylvain = User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018343/Save images/Pascaline.png"
 User.create(first_name: "Pascaline", last_name: "Lecas", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
@@ -361,6 +361,17 @@ UserTree.create!(
   tree: Tree.find_by(name: "Développeur Ruby")
   )
 
+max_trees = [dev_ruby, front, globe, ux_design, education]
+
+max_trees.each do |tree|
+  tree_skills = Skill.where(tree: tree)
+  rand(0..20).times do |i|
+    UserSkill.create!(
+      user: maxime,
+      skill: tree_skills[i]
+    )
+  end
+end
 
 # ============================= SYLVAIN ========================================
 
@@ -383,11 +394,24 @@ UserTree.create!(
   tree: Tree.find_by(name: "Globe-trotter")
   )
 
+
+sylvain_trees = [dev_ruby, front, chef, ux_design]
+
+sylvain_trees.each do |tree|
+  tree_skills = Skill.where(tree: tree)
+  tree_skills.count.times do |i|
+    UserSkill.create!(
+      user: sylvain,
+      skill: tree_skills[i]
+    )
+  end
+end
 # ================================ AUTRES ======================================
 
 puts "#{UserTree.count} usertree created."
 
-User.all.each do |user|
+
+User.where.not("first_name = ? OR first_name = ?", "Sylvain", "Maxime").each do |user|
   Tree.all.each do |tree|
     tree_skills = Skill.where(tree: tree)
     rand(0..tree_skills.count).times do |i|

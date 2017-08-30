@@ -12,6 +12,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   validates :address, presence: true
 
+
   def has_tree_and_skill(tree, skill)
     has_tree(tree) && has_skill(skill)
   end
@@ -25,4 +26,5 @@ class User < ApplicationRecord
   def has_skill(skill)
     skills.exists?(skill.id)
   end
+
 end
