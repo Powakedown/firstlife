@@ -30,5 +30,4 @@ class User < ApplicationRecord
     skills.exists?(skill.id)
   end
 
-
 end
