@@ -2,7 +2,11 @@
   <div class="skill-rank">
       <div class="skill-rank-content text-center  <%= 'bg-black' if @user_has_tree && current_user.user_skills.where(skill: skill).exists?  %> ">
           <div class="skill-badge" style="background-color: <%= skill.tree.color %>">
+            <% if skill.photo  %>
             <%= cl_image_tag skill.photo.path, class: "skill-level-image" %>
+            <% else %>
+            <%= cl_image_tag 'http://res.cloudinary.com/doodlid/image/upload/v1503591908/Save%20images/objectif_1_aicmwu.png', class: "skill-level-image-default" %>
+            <% end %>
           </div>
           <h4 class="rank-type"><%= skill.action %></h4>
           <h4 class="rank-title"><%= skill.name %></h4>
