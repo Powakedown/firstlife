@@ -11,5 +11,20 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   validates :address, presence: true
-  validates_uniqueness_of :tree_id, scope: :skill_id
+
+
+  def has_tree_and_skill(tree, skill)
+    has_tree(tree) && has_skill(skill)
+  end
+
+  private
+
+  def has_tree(tree)
+    trees.exists?(tree.id)
+  end
+
+  def has_skill(skill)
+    skills.exists?(skill.id)
+  end
+
 end
