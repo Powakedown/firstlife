@@ -194,6 +194,11 @@
   align-items: center;
   // border: 5px dotted $medium-gray;
   border-radius: 15px;
+  .skill-grey {
+    height: 120px;
+    width: 120px;
+    margin: auto;
+  }
   .skill-badge {
     height: 120px;
     width: 120px;
@@ -224,6 +229,10 @@
 .skill-level-image {
   width: 100px;
   padding-top: 5px;
+}
+.skill-level-image-default{
+  width: 48px;
+  height: 57px;
 }
 a:hover, h1:hover {
   text-decoration:none;

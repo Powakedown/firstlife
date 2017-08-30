@@ -11,6 +11,8 @@ class UsersController < ApplicationController
       @users = User.joins(user_trees: :tree)
                    .near(params[:query][:address], 100)
                    .where(trees: { id: @trees })
+                   .distinct
+
       @search = true
     else
       @trees = [Tree.first, Tree.last]

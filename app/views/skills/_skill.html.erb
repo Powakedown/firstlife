@@ -1,9 +1,7 @@
 <% if skill.level %>
   <div class="skill-rank">
-      <div class="skill-rank-content text-center  <%= 'bg-black' if @user_has_tree && current_user.user_skills.where(skill: skill).exists?  %> ">
-          <div class="skill-badge" style="background-color: <%= skill.tree.color %>">
-            <%= cl_image_tag skill.photo.path, class: "skill-level-image" %>
-          </div>
+      <div class="skill-rank-content text-center">
+          <%= skill_badge_display(skill) %>
           <h4 class="rank-type"><%= skill.action %></h4>
           <h4 class="rank-title"><%= skill.name %></h4>
       </div>
