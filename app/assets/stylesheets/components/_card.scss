@@ -200,13 +200,24 @@ $border-opacity: 0.1;
   border-radius: 8px;
   margin-left: 0px;
   text-align: center;
+  .skill-badge {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .skill-level-image {
+    width: 70px;
+    height: 70px;
+  }
 }
 .card-rang p{
   padding-top: 15px;
   font-size: 70%;
 }
 .card-rang-image {
-  padding: 10px;
+  padding: 30px;
   margin-right: 10px;
   margin: auto auto;
   img {
