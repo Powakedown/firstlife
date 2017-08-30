@@ -14,39 +14,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-avatar-contact text-center">
+        <div class="card-avatar-contact text-center">
          <div class ="btn btn-block">
-             <%= link_to "Contacter #{@user.first_name}","#", class: "btn-addtree-text", data: {toggle: "modal", target: "#my-modal", whatever: "@mdo"}  %>
-               <div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                 <div class="modal-dialog" role="document">
-                   <div class="modal-content">
-                     <div class="modal-header">
-                       <h4 class="modal-title" id="exampleModalLabel">Contacter <%= @user.first_name %> </h4>
-                     </div>
-                     <div class="modal-body">
-                       <form>
-                         <div class="form-group">
-                           <label for="recipient-name" class="control-label">Votre mail:</label>
-                           <input type="text" class="form-control" id="recipient-name" placeholder="exemple@mail.com">
-                         </div>
-                         <div class="form-group">
-                           <label for="message-text" class="control-label">Votre message:</label>
-                           <textarea class="form-control" id="message-text" placeholder="..."></textarea>
-                         </div>
-                       </form>
-                     </div>
-                     <div class="modal-footer">
-                       <button type="button" class="btn btn-primary" data-dismiss="modal">Envoyer</button>
-                     </div>
-                   </div>
-                 </div>
-               </div>
+             <%= link_to "Contacter #{@user.first_name}", @user_path, class: "btn-addtree-text" %>
          </div>
-      </div>
-      <div class="card-avatar-rang">
-        <div class="card-rang text-center">
-          <p> RANGS ATTEINTS </p>
         </div>
         <div class="card-avatar-rang">
           <div class="card-rang text-center">

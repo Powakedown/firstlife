@@ -20,11 +20,13 @@ module ApplicationHelper
   end
 
   def skill_badge_display(skill)
-    if current_user.has_tree_and_skill(skill.tree, skill)
-      style = "background:" + skill.tree.color
-      klass = ' skill-grey'
-    else
-      style, klass = nil, nil
+    if current_user
+      if current_user.has_tree_and_skill(skill.tree, skill)
+        style = "background:" + skill.tree.color
+        klass = ' skill-grey'
+      else
+        style, klass = nil, nil
+      end
     end
 
     content_tag(:div, class: "skill-badge#{klass}", style: style) do
