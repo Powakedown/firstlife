@@ -19,14 +19,22 @@ module ApplicationHelper
     controller_name == "trees" && action_name == "index"
   end
 
+  def skill_badge_display_tree(skill)
+    @user = current_user
+    skill_badge_display(skill)
+  end
+
+  def skill_badge_display_user(skill)
+    @user = User.find(params[:id])
+    skill_badge_display(skill)
+  end
+
   def skill_badge_display(skill)
-    if current_user
-      if current_user.has_tree_and_skill(skill.tree, skill)
-        style = "background:" + skill.tree.color
-        klass = ' skill-grey'
-      else
-        style, klass = nil, nil
-      end
+    if @user && @user.has_tree_and_skill(skill.tree, skill)
+      style = "background:" + skill.tree.color
+      klass = ' skill-grey'
+    else
+      style, klass = nil, nil
     end
 
     content_tag(:div, class: "skill-badge#{klass}", style: style) do

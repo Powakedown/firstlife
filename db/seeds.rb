@@ -413,6 +413,10 @@ puts "#{UserTree.count} usertree created."
 
 User.where.not("first_name = ? OR first_name = ?", "Sylvain", "Maxime").each do |user|
   Tree.all.each do |tree|
+    UserTree.create!(
+      user: user,
+      tree: tree
+    )
     tree_skills = Skill.where(tree: tree)
     rand(0..tree_skills.count).times do |i|
       UserSkill.create!(
