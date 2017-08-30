@@ -17,17 +17,11 @@ User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr",
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
 User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1504016573/Save images/Karl.png"
-User.create(first_name: "Paul", last_name: "Posichon", email: "paul@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
-
-url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018217/Save images/Elena.png"
-User.create(first_name: "Elena", last_name: "Ficus", email: "elena@yahoo.fr", password: "123456", address: "Le Bouscat", photo_url: url)
-
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
 User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016581/Save images/Corinne.png"
-User.create(first_name: "Corinne", last_name: "Pages", email: "corine@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
+User.create(first_name: "Lina", last_name: "Zhang", email: "lina@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
 User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
@@ -38,12 +32,16 @@ User.create(first_name: "Simon", last_name: "Nasa", email: "simon@yahoo.fr", pas
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016585/Save images/Camille.png"
-User.create(first_name: "Camille", last_name: "Sim", email: "camille@yahoo.fr", password: "123456", address: "Pessac", photo_url: url)
-
 url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018343/Save images/Pascaline.png"
-User.create(first_name: "Pascaline", last_name: "Mug", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
+User.create(first_name: "Pascaline", last_name: "Lecas", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
 
+users = []
+User.all.each do |user|
+  users << user.first_name
+end
+
+puts "User first names : #{users}"
+puts "---------------------------"
 
 categories = [
   "Développement Web",
@@ -112,7 +110,7 @@ ux_design = Tree.create!(
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mtpdtq.png"
 lit_fr = Tree.create!(
-  name: "Litterature française",
+  name: "Littérature française",
   category_id: Category.find_by_name("Éducation").id,
   color: "#F1B255",
   photo_url: url
@@ -150,13 +148,19 @@ front = Tree.create!(
   photo_url: url
 )
 
-puts "#{Tree.count} trees created."
 
-Skill.create!(name: "globe", tree: globe, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "education", tree: education, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "ux_design", tree: ux_design, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "chef", tree: chef, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "front", tree: front, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+trees = []
+Tree.all.each do |tree|
+  trees << tree.name
+end
+
+puts "Trees names : #{trees}"
+puts "#{Tree.count} trees created."
+puts "---------------------------"
+
+
+
+# =================================  TREE: RUBY
 
 
 ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev_ruby, description: "Ruby is a general purpose language that is still popular and in high demand in the marketplace, as it's more commonly used in Rails applications. Concise and readable, it is easy to pick up but also plenty powerful. Companies like Twitter, Soundcloud, Goodreads, and Kickstarter got their products off the ground with Ruby.")
@@ -208,6 +212,8 @@ ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev
 puts "#{Skill.count} ruby skills created."
 rubyskill = Skill.count
 
+
+# =================================  TREE: ECOLOGIE
 
 ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 
@@ -291,8 +297,45 @@ gardedepan = voiture.children.create!(name: "Garde de Pan",action: "Rang atteint
 
 puts "#{Skill.count - rubyskill} ecology skills created."
 
+# =================================  AUTRES
 
 
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "globe #{i}", tree: globe, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "education #{i}", tree: education, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "ux_design #{i}", tree: ux_design, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "chef #{i}", tree: chef, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "front #{i}", tree: front, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+
+# ============================ USER_TREE
+
+
+ # ============================ MAXIME =========================================
 UserTree.create!(
   user: User.find_by(first_name: 'Maxime'),
   tree: Tree.find_by(name: "Développeur Front")
@@ -314,6 +357,14 @@ UserTree.create!(
   )
 
 UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+
+# ============================= SYLVAIN ========================================
+
+UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Front")
   )
@@ -327,311 +378,27 @@ UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Ruby")
   )
-
 UserTree.create!(
-  user: User.find_by(first_name: 'Léa'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Renan'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Paul'),
-  tree: Tree.find_by(name: "Chef en cuisine")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Paul'),
-  tree: Tree.find_by(name: "Éducation positive")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Elena'),
+  user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Globe-trotter")
   )
 
-UserTree.create!(
-  user: User.find_by(first_name: 'Elena'),
-  tree: Tree.find_by(name: "Développeur Frontend")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  tree: Tree.find_by(name: "Ux design")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  tree: Tree.find_by(name: "Litérature française")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Simon'),
-  tree: Tree.find_by(name: "Globe-trotter")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Simon'),
-  tree: Tree.find_by(name: "Litérature française")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Camille'),
-  tree: Tree.find_by(name: "Ux design")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Camille'),
-  tree: Tree.find_by(name: "Developpeur Frontend")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  tree: Tree.find_by(name: "Chef en cuisine")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  tree: Tree.find_by(name: "Éducation positive")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  tree: Tree.find_by(name: "Globe-trotter")
-  )
+# ================================ AUTRES ======================================
 
 puts "#{UserTree.count} usertree created."
 
-
-18.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "front")
-  )
+User.all.each do |user|
+  Tree.all.each do |tree|
+    tree_skills = Skill.where(tree: tree)
+    rand(0..tree_skills.count).times do |i|
+      UserSkill.create!(
+        user: user,
+        skill: tree_skills[i]
+      )
+    end
+  end
 end
 
-8.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "globe")
-  )
-end
-
-17.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-14.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-49.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-41.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-27.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-5.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "chef")
-  )
-end
-
-7.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "Faire pipi dans la douche")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Léa'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Léa'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Renan'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Renan'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(10..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Paul'),
-  skill: Skill.find_by(name: "chef")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Paul'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Paul'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Elena'),
-  skill: Skill.find_by(name: "globe")
-  )
-end
-
-rand(0..10).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Elena'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(0..10).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-rand(15..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Corinne'),
-  skill: Skill.find_by(name: "Array")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Simon'),
-  skill: Skill.find_by(name: "globe")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Simon'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Camille'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Camille'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  skill: Skill.find_by(name: "chef")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-rand(0..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Pascaline'),
-  skill: Skill.find_by(name: "Trier le verre")
-  )
-end
-
-puts "#{User.count} users created."
+puts "#{UserSkill.count} user skills created."
 
 
