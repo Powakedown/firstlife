@@ -6,7 +6,7 @@ class UserSkillsController < ApplicationController
     @user_skill = current_user.user_skills.new(skill: @skill)
     @user_skill.save
     @tree = @skill.tree
-    @tree_user = true
+    @user_has_tree = true
 
     @skill.children.each do |skill|
       current_user.user_skills.create(skill: skill) if skill.level
@@ -25,7 +25,7 @@ class UserSkillsController < ApplicationController
     end
     @user_skill.destroy
     @tree = @user_skill.skill.tree
-    @tree_user = true
+    @user_has_tree = true
 
     respond_to do |format|
       format.html { redirect_to @user_skill.skill.tree }
