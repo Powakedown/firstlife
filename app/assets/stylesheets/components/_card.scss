@@ -173,13 +173,14 @@ $border-opacity: 0.1;
   padding-top: 5px;
   margin-top: 30px;
   border-radius: $border-radius;
-  background-color: #B2D430;
+  background-color: $anis;
   a {
     color: white;
     text-decoration: none;
   }
   a:hover {
-    color: $green;
+
+    color: #56ABAD;
   }
   h4 {
     margin-top: 10px
