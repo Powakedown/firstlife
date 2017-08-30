@@ -1,16 +1,17 @@
 <div class="container">
   <div class="user-flex-box">
     <div class="user-column-1">
-      <div class="card-avatar">
-        <div class="card-avatar-content">
-          <div class="card-avatar-image">
-            <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
-          </div>
-          <div class="card-avatar-name">
-            <p><%= @user.first_name.downcase %> <%= @user.last_name.downcase %></p>
-          </div>
-          <div class="card-avatar-name-description">
-            <p> Etudiant au wagon </p>
+        <div class="card-avatar">
+          <div class="card-avatar-content">
+            <div class="card-avatar-image">
+              <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
+            </div>
+            <div class="card-avatar-name">
+              <p><%= @user.first_name.downcase %> <%= @user.last_name.downcase %></p>
+            </div>
+            <div class="card-avatar-name-description">
+              <p> Etudiant au wagon </p>
+            </div>
           </div>
         </div>
       </div>
@@ -47,31 +48,21 @@
         <div class="card-rang text-center">
           <p> RANGS ATTEINTS </p>
         </div>
-        <div class="card-rang-image">
-          <%= cl_image_tag("Save images/rang_masterweb1_zkiflj.png")%>
-          <%= cl_image_tag("Save images/rang_ecology_xbzpth.png") %>
-        </div>
-      </div>
-      <div class="card-rang-image">
         <div class="card-avatar-rang">
           <div class="card-rang text-center">
-            <p> OBJECTIFS ACCOMPLIS </p>
+            <p> RANGS ATTEINTS </p>
           </div>
           <div class="card-rang-image">
-            <%= cl_image_tag("Save images/objectif_1_aicmwu.png") %>
-            <%= cl_image_tag("Save images/Objectif02_cg04vv.png")  %>
-            <%= cl_image_tag("Save images/Objectif03_a0zzzh.png")  %>
-            <%= cl_image_tag("Save images/Objectif04_baojhn.png") %>
-            <%= cl_image_tag("Save images/Objectif05_ziv3mt.png")  %>
-            <%= cl_image_tag("Save images/Objectif06_e6undl.png")  %>
-            <%= cl_image_tag("Save images/Objectif07_kdnege.png")  %>
-            <%= cl_image_tag("Save images/Objectif08_mwgsqe.png") %>
-            <%= cl_image_tag("Save images/Objectif09_tldf5n.png") %>
-            <%= cl_image_tag("Save images/Add_Objectif_nx6cfl.png")%>
+            <div class="row">
+                <% @user.skills.where(level: true).each do |skill| %>
+                  <div class="col-xs-6 text-center">
+                    <%= skill_badge_display(skill) %>
+                  </div>
+                <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+  </div>
   <div class ="container">
 
     <div class="row">
