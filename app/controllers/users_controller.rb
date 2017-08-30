@@ -3,12 +3,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
     if params[:query]
-      @query = params[:query][:name]
+      @tree_name = params[:query][:name]
       @address = params[:query][:address]
-      @trees = Tree.where("name ILIKE ?", "%#{@query}%")
-      @users = User.near(params[:query][:address], 100)
+      set_trees
+      @users = User.joins(user_trees: :tree)
+                   .near(params[:query][:address], 100)
+                   .where(trees: { id: @trees })
       @search = true
       params[:query] = {}
     else
@@ -18,11 +19,21 @@ class UsersController < ApplicationController
 
     @result = 0
     @users.each do |user|
-      @result += 1 if user.trees.where("name ILIKE ?", "%#{@query}%").count > 0
+      @result += 1 if user.trees.where("name ILIKE ?", "%#{@tree_name}%").count > 0
     end
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  private
+
+  def set_trees
+    if  @tree_name.present?
+      @trees = Tree.where("name ILIKE ?", "%#{@tree_name}%")
+    else
+      @trees = Tree.all
+    end
   end
 end
