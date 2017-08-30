@@ -221,14 +221,18 @@ ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", descript
 pipi = ecology.children.create!(name: "Faire pipi dans la douche", action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 ampoule = pipi.children.create!(name: "Installer des ampoules à économies d'énergie",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 course = ampoule.children.create!(name: "Emmener un sac durable pour faire les courses",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-eco_initie = course.children.create!(name: "Initié",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1504124082/Save%20images/rank_eco_1.png"
+eco_initie = course.children.create!(name: "Initié",action: "Rang atteint",level: true,photo_url: url,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 #1er séparation
 # 2 COLONNES - 1er
 verre = eco_initie.children.create!(name: "Trier le verre", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 emballages = verre.children.create!(name: "Trier les emballages",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 piles = emballages.children.create!(name:  "Trier les piles", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-eco_seigneurdutri = piles.children.create!(name: "Seigneur du Tri",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1504124082/Save%20images/rank_eco_2.png"
+eco_seigneurdutri = piles.children.create!(name: "Seigneur du Tri",action: "Rang atteint",level: true,photo_url: url,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 # 2 COLONNES - 2eme
 pub = eco_initie.children.create!(name: "Installer un autocollant Stop Pub",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
@@ -236,7 +240,9 @@ cadeaux = pub.children.create!(name: "Refuser les cadeaux jetables",action: "Lea
 brochures = cadeaux.children.create!(name: "Refuser les brochures",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 sacs = brochures.children.create!(name: "Refuser les sacs plastiques",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 coton = sacs.children.create!(name: "Ne pas acheter de coton tige",action: "Learn", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-eco_seigneurdunon = coton.children.create!(name: "Seigneur du Non",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1504124082/Save%20images/rank_eco_3.png"
+eco_seigneurdunon = coton.children.create!(name: "Seigneur du Non",action: "Rang atteint",level: true,photo_url: url,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 #2eme séparation
 # 2 COLONNES - 1er
@@ -245,14 +251,18 @@ vantouse = vinaigre.children.create!(name:  "Apprendre à se servir d’une vant
 chasse = vantouse.children.create!(name:  "Je met une bouteille dans ma chasse d’eau",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 bouteille = chasse.children.create!(name: "Ne pas acheter de l’eau en bouteille",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 laitages = bouteille.children.create!(name:   "Réduire les laitages", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-gardeposeidon = laitages.children.create!(name: "Garde de poséidon",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1504124082/Save%20images/rank_eco_5.png"
+gardeposeidon = laitages.children.create!(name: "Garde de poséidon",action: "Rang atteint",level: true,photo_url: url,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 # 2 COLONNES - 2eme
 fait = eco_seigneurdutri.children.create!(name:  "Faire la cuisine plutôt qu’acheter tout fait",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 cuisine = fait.children.create!(name:  "Découper les pommes pour les faire cuire",action: "Learn",tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 viande = cuisine.children.create!(name:  "Manger moins de viande", action: "Learn",tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 saison = viande.children.create!(name: "Éviter les fruits et légumes hors saison", tree: eco,description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
-chefintraitable = saison.children.create!(name: "Chef intraitables",action: "Rang atteint",level: true,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
+
+url = "http://res.cloudinary.com/doodlid/image/upload/v1504124082/Save%20images/rank_eco_4.png"
+chefintraitable = saison.children.create!(name: "Chef intraitables",action: "Rang atteint",level: true,photo_url: url,tree: eco, description: "Parum claram anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima eodem. Sit amet consectetuer adipiscing elit, sed diam nonummy.")
 
 ## 2eme séparation
 # 2 COLONNES - 1er
