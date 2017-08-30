@@ -51,7 +51,7 @@
             <div class="row">
                 <% @user.skills.where(level: true).each do |skill| %>
                   <div class="col-xs-6 text-center">
-                    <%= skill_badge_display(skill) %>
+                    <%= skill_badge_display_user(skill) %>
                   </div>
                 <% end %>
             </div>
