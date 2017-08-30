@@ -15,33 +15,33 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503506825/max.png"
 User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
-User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
+User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998718/Save images/Karl_hujypr.jpg"
-User.create(first_name: "Karl", last_name: "Michel", email: "karl@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504016573/Save images/Karl.png"
+User.create(first_name: "Paul", last_name: "Posichon", email: "paul@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1504000278/Save images/Elena_ogxsur.jpg"
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018217/Save images/Elena.png"
 User.create(first_name: "Elena", last_name: "Ficus", email: "elena@yahoo.fr", password: "123456", address: "Le Bouscat", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
 User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998723/Save images/Corine_kw81pa.jpg"
-User.create(first_name: "Corine", last_name: "Page", email: "corine@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016581/Save images/Corinne.png"
+User.create(first_name: "Corinne", last_name: "Pages", email: "corine@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
-User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998714/Save images/Leony_kjqhme.jpg"
-User.create(first_name: "Léony", last_name: "Chan", email: "leony@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504016563/Save images/Simon.png"
+User.create(first_name: "Simon", last_name: "Nasa", email: "simon@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998726/Save images/Camille_ryumrm.jpg"
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016585/Save images/Camille.png"
 User.create(first_name: "Camille", last_name: "Sim", email: "camille@yahoo.fr", password: "123456", address: "Pessac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503999367/Save images/Pascaline_eez5zb.jpg"
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018343/Save images/Pascaline.png"
 User.create(first_name: "Pascaline", last_name: "Mug", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
 
 
@@ -348,6 +348,76 @@ UserTree.create!(
   tree: Tree.find_by(name: "Développeur Ruby")
   )
 
+UserTree.create!(
+  user: User.find_by(first_name: 'Paul'),
+  tree: Tree.find_by(name: "Chef en cuisine")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Paul'),
+  tree: Tree.find_by(name: "Éducation positive")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Elena'),
+  tree: Tree.find_by(name: "Globe-trotter")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Elena'),
+  tree: Tree.find_by(name: "Développeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  tree: Tree.find_by(name: "Ux design")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  tree: Tree.find_by(name: "Litérature française")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Simon'),
+  tree: Tree.find_by(name: "Globe-trotter")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Simon'),
+  tree: Tree.find_by(name: "Litérature française")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Camille'),
+  tree: Tree.find_by(name: "Ux design")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Camille'),
+  tree: Tree.find_by(name: "Developpeur Frontend")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  tree: Tree.find_by(name: "Chef en cuisine")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  tree: Tree.find_by(name: "Éducation positive")
+  )
+
+UserTree.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  tree: Tree.find_by(name: "Globe-trotter")
+  )
+
 puts "#{UserTree.count} usertree created."
 
 
@@ -454,6 +524,111 @@ rand(10..20).times do
 UserSkill.create!(
   user: User.find_by(first_name: 'Benjamin'),
   skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Paul'),
+  skill: Skill.find_by(name: "chef")
+  )
+end
+
+rand(10..15).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Paul'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Paul'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(5..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Elena'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
+
+rand(0..10).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Elena'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(0..10).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(15..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Corinne'),
+  skill: Skill.find_by(name: "Array")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Simon'),
+  skill: Skill.find_by(name: "globe")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Simon'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Camille'),
+  skill: Skill.find_by(name: "ux_design")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Camille'),
+  skill: Skill.find_by(name: "front")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "chef")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "education")
+  )
+end
+
+rand(0..20).times do
+UserSkill.create!(
+  user: User.find_by(first_name: 'Pascaline'),
+  skill: Skill.find_by(name: "Trier le verre")
   )
 end
 
