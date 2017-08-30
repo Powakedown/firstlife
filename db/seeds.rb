@@ -15,35 +15,33 @@ url = "http://res.cloudinary.com/doodlid/image/upload/v1503506825/max.png"
 User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
-User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
-
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998718/Save images/Karl_hujypr.jpg"
-User.create(first_name: "Karl", last_name: "Michel", email: "karl@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
-
-url ="http://res.cloudinary.com/doodlid/image/upload/v1504000278/Save images/Elena_ogxsur.jpg"
-User.create(first_name: "Elena", last_name: "Ficus", email: "elena@yahoo.fr", password: "123456", address: "Le Bouscat", photo_url: url)
+User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
 User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998723/Save images/Corine_kw81pa.jpg"
-User.create(first_name: "Corine", last_name: "Page", email: "corine@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016581/Save images/Corinne.png"
+User.create(first_name: "Lina", last_name: "Zhang", email: "lina@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
-User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998714/Save images/Leony_kjqhme.jpg"
-User.create(first_name: "Léony", last_name: "Chan", email: "leony@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504016563/Save images/Simon.png"
+User.create(first_name: "Simon", last_name: "Nasa", email: "simon@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
 User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503998726/Save images/Camille_ryumrm.jpg"
-User.create(first_name: "Camille", last_name: "Sim", email: "camille@yahoo.fr", password: "123456", address: "Pessac", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018343/Save images/Pascaline.png"
+User.create(first_name: "Pascaline", last_name: "Lecas", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503999367/Save images/Pascaline_eez5zb.jpg"
-User.create(first_name: "Pascaline", last_name: "Mug", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
+users = []
+User.all.each do |user|
+  users << user.first_name
+end
 
+puts "User first names : #{users}"
+puts "---------------------------"
 
 categories = [
   "Développement Web",
@@ -112,7 +110,7 @@ ux_design = Tree.create!(
 
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503340773/Tree_reader_mtpdtq.png"
 lit_fr = Tree.create!(
-  name: "Litterature française",
+  name: "Littérature française",
   category_id: Category.find_by_name("Éducation").id,
   color: "#F1B255",
   photo_url: url
@@ -150,55 +148,72 @@ front = Tree.create!(
   photo_url: url
 )
 
-puts "#{Tree.count} trees created."
 
-Skill.create!(name: "globe", tree: globe, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "education", tree: education, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "ux_design", tree: ux_design, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "chef", tree: chef, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
-Skill.create!(name: "front", tree: front, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+trees = []
+Tree.all.each do |tree|
+  trees << tree.name
+end
+
+puts "Trees names : #{trees}"
+puts "#{Tree.count} trees created."
+puts "---------------------------"
+
+
+
+# =================================  TREE: RUBY
 
 
 ruby = Skill.create!(name: "Développement Ruby", action: "Mastering", tree: dev_ruby, description: "Ruby is a general purpose language that is still popular and in high demand in the marketplace, as it's more commonly used in Rails applications. Concise and readable, it is easy to pick up but also plenty powerful. Companies like Twitter, Soundcloud, Goodreads, and Kickstarter got their products off the ground with Ruby.")
   string = ruby.children.create!(name: "introduction string", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   control = string.children.create!(name: "Condition Loop", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   array = control.children.create!(name: "Array",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  hashes = array.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  initie = object.children.create!(name: "Initié",action: "Rang atteint", tree: dev_ruby, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
 
-  blocks = ruby.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023300/rank_init_ky5iqz.png"
+  initie = array.children.create!(name: "Initié",action: "Rang atteint", tree: dev_ruby, photo_url: url, level: true, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+
+  hashes = ruby.children.create!(name: "Hashes",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  object = hashes.children.create!(name: "Classes and Object Oriented ",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  blocks = object.children.create!(name: "Blocks",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   inheritance = blocks.children.create!(name: "Classes: Inheritance",action:"Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   classes = inheritance.children.create!(name: "More Classes", action: "Learn", tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  advarray = classes.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  eclaire = modules.children.create!(name: "Éclairé",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
 
-  metaprogramming = ruby.children.create!(name: "Metaprogramming Ruby",action: "Learn", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023301/rank_eclaire_s11cch.png"
+  eclaire = classes.children.create!(name: "Éclairé",action: "Rang atteint", level: true, tree: dev_ruby, photo_url: url, description: "<p><strong>Experience the next level.</strong> You've mastered the Ruby Primer. Now it's time to master more advanced Ruby skills!</p>")
+
+  advarray = ruby.children.create!(name: "Advanced Arrays",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  modules = advarray.children.create!(name: "Advanced Modules",action: "Use",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
+  metaprogramming = modules.children.create!(name: "Metaprogramming Ruby",action: "Learn", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   dynamic = metaprogramming.children.create!(name: "Dynamic Methods",action: "Learn", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   inspection = dynamic.children.create!(name: "Code Inspection",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   evaluation = inspection.children.create!(name: "Eval and friends",action: "Learn",  tree: dev_ruby,description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
   cycle = evaluation.children.create!(name: "Lifecycle Hooks",action: "Use", tree: dev_ruby, description: "<p>Learn Ruby, today. You want to learn Ruby for fun, for a new job, or just to see what all the fuss is about? Start here.</p>")
-  alumni = cycle.children.create!(name: "Alumni",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  url = "http://res.cloudinary.com/doodlid/image/upload/v1504024439/rank_alumni_hscfdi.png"
+  alumni = cycle.children.create!(name: "Alumni",action: "Rang atteint", level: true, tree: dev_ruby,photo_url: url, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
   parsing = eclaire.children.create!(name: "Parsing",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   storing = parsing.children.create!(name: "Storing Data",action: "Know", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   api = storing.children.create!(name: "API creation ",action: "Have done", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   dataformat = api.children.create!(name: "Over-riding Methods",action: "Do", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   parsing = dataformat.children.create!(name: "Open Classes",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
-  datamaitre = parsing.children.create!(name: "Maître du Big Data",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+
+  url ="http://res.cloudinary.com/doodlid/image/upload/v1504023232/rank_data_i8mu8n.png"
+  datamaitre = parsing.children.create!(name: "Maître du Big Data",action: "Rang atteint", level: true, photo_url: url, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
   duck = eclaire.children.create!(name: "Duck typing",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   overloading = duck.children.create!(name: "Ruby overloading",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   excep = overloading.children.create!(name: "Methods Exceptions",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
   serial = excep.children.create!(name: "Object Serialization",action: "Use", tree: dev_ruby,description: "<p><strong>Code that writes code.</strong> Add more powerful abstractions and reduce duplication through Ruby that writes Ruby!</p>")
 
-  maitre = serial.children.create!(name: "Maître du Ruby Flamboyant",action: "Rang atteint", level: true, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
+  url = "http://res.cloudinary.com/doodlid/image/upload/v1504023232/master_ruby_tkzs8h.png"
+  maitre = serial.children.create!(name: "Maître du Ruby Flamboyant",action: "Rang atteint", level: true, photo_url: url, tree: dev_ruby, description: "<p>Experience dynamic power. You've learned the basics of writing code with code in Metaprogramming Ruby. Now take it to the next level with eval, object lifecycle hooks, and more!</p>")
 
 
 puts "#{Skill.count} ruby skills created."
 rubyskill = Skill.count
 
+
+# =================================  TREE: ECOLOGIE
 
 ecology = Skill.create!(name: "Écologie", tree: eco, action: "Adepte", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
 
@@ -282,8 +297,45 @@ gardedepan = voiture.children.create!(name: "Garde de Pan",action: "Rang atteint
 
 puts "#{Skill.count - rubyskill} ecology skills created."
 
+# =================================  AUTRES
 
 
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "globe #{i}", tree: globe, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "education #{i}", tree: education, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "ux_design #{i}", tree: ux_design, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "chef #{i}", tree: chef, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+i = 0
+rand(10..50).times do
+  Skill.create!(name: "front #{i}", tree: front, action: "learn", description: "L'écologie, également connue sous les noms de bioécologie, bionomie ou science de l'environnement ou environnementale, est la science qui étudie les êtres vivants dans leur milieu et les interactions entre eux.")
+  i += 1
+end
+
+
+# ============================ USER_TREE
+
+
+ # ============================ MAXIME =========================================
 UserTree.create!(
   user: User.find_by(first_name: 'Maxime'),
   tree: Tree.find_by(name: "Développeur Front")
@@ -305,6 +357,14 @@ UserTree.create!(
   )
 
 UserTree.create!(
+  user: User.find_by(first_name: 'Maxime'),
+  tree: Tree.find_by(name: "Développeur Ruby")
+  )
+
+
+# ============================= SYLVAIN ========================================
+
+UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Front")
   )
@@ -318,136 +378,27 @@ UserTree.create!(
   user: User.find_by(first_name: 'Sylvain'),
   tree: Tree.find_by(name: "Développeur Ruby")
   )
-
 UserTree.create!(
-  user: User.find_by(first_name: 'Léa'),
-  tree: Tree.find_by(name: "Développeur Ruby")
+  user: User.find_by(first_name: 'Sylvain'),
+  tree: Tree.find_by(name: "Globe-trotter")
   )
 
-UserTree.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Renan'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
-
-UserTree.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  tree: Tree.find_by(name: "Développeur Ruby")
-  )
+# ================================ AUTRES ======================================
 
 puts "#{UserTree.count} usertree created."
 
-
-18.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "front")
-  )
+User.all.each do |user|
+  Tree.all.each do |tree|
+    tree_skills = Skill.where(tree: tree)
+    rand(0..tree_skills.count).times do |i|
+      UserSkill.create!(
+        user: user,
+        skill: tree_skills[i]
+      )
+    end
+  end
 end
 
-8.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "globe")
-  )
-end
-
-17.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-14.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Maxime'),
-  skill: Skill.find_by(name: "education")
-  )
-end
-
-49.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-41.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-27.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "ux_design")
-  )
-end
-
-5.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "chef")
-  )
-end
-
-7.times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Sylvain'),
-  skill: Skill.find_by(name: "Faire pipi dans la douche")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Léa'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Léa'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Renan'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(5..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Renan'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-
-rand(10..15).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  skill: Skill.find_by(name: "introduction string")
-  )
-end
-
-rand(10..20).times do
-UserSkill.create!(
-  user: User.find_by(first_name: 'Benjamin'),
-  skill: Skill.find_by(name: "front")
-  )
-end
-
-puts "#{User.count} users created."
+puts "#{UserSkill.count} user skills created."
 
 

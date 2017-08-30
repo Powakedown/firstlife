@@ -69,18 +69,27 @@ $border-opacity: 0.1;
 
 }
 // Button Ajouter un arbre
-.btn-addtree{
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 6px;
+
+#button-addtree {
+  background-color: #b2d430;
   color: white;
-  margin-top: 5px;
-  font-weight: bold;
+  border-radius: 0px 0px 8px 8px;
+}
+
+#button-show-add-tree {
   width: 260px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: $anis;
 }
 
 #button-addtree{
+  margin-right: -15px;
+  background-color: $anis;
+}
+#button-treeadded{
+  margin-right: -15px;
+  background-color: $anis;
   margin-right: -5px;
   background-color: #b2d430;
   color: white
@@ -89,8 +98,11 @@ $border-opacity: 0.1;
 .btn-addtree-text{
   color: white;
   margin-top: 7px;
-  font-weight: bold;
+  font-weight: normal;
   margin-right: 0px;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 #btn-addskill-plus{
@@ -158,7 +170,7 @@ $border-opacity: 0.1;
   color: white;
   width: 295px;
   height: 50px;
-  padding-top: 2px;
+  padding-top: 5px;
   margin-top: 30px;
   border-radius: $border-radius;
   background-color: #B2D430;
@@ -206,20 +218,23 @@ $border-opacity: 0.1;
   display: block;
   max-width: 300px;
 }
+
 .talents-tile h1{
   color: white;
   font-size: 18px;
   margin-left: 10px;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-right: 25px;
 }
 
 .talents-plus-addskill{
   display: flex;
-  justify-content: space-between;
+   flex-direction: row;
   // width: 400px;
   width: 100%;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .talents-profil{

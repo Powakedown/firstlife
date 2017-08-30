@@ -33,7 +33,6 @@
         font-weight: bold;
         color: white;
       }
-
   }
   .fa-check {
     display: none;
@@ -130,8 +129,8 @@
   // border: 5px dotted $medium-gray;
   border-radius: 15px;
   .skill-badge {
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -155,4 +154,8 @@
     font-size: 42px;
     padding-top: 5px;
   }
+}
+.skill-level-image {
+  width: 100px;
+  padding-top: 5px;
 }

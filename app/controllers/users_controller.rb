@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
     if params[:query]
       @tree_name = params[:query][:name]
       @address = params[:query][:address]
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
                    .near(params[:query][:address], 100)
                    .where(trees: { id: @trees })
       @search = true
-      params[:query] = {}
     else
       @trees = [Tree.first, Tree.last]
       @users = User.all

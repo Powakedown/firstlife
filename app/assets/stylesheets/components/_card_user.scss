@@ -6,19 +6,14 @@
 #tile {
   margin-top: 0px;
 }
-
 .user-column-2>#title {
   margin-bottom: 25px;
 }
 .user-column-2>.talents-profil {
   margin-top: 20px;
 }
-
-.user-column-3 {
-  width: 250px;
-}
-.user-column-3 >.talents-tile{
-  margin-bottom: 102px;
+.user-column-2, .user-column-3 {
+  width: 50%;
 }
 .card-profile {
   position: relative;
@@ -26,7 +21,6 @@
   text-align: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
-
   .card-profile-level {
     position: absolute;
     top: 10px;
@@ -63,6 +57,7 @@
 }
 .talents-tile {
   margin-bottom: 25px;
+  margin-right: 25px;
 }
 
 .card-skill {

@@ -6,6 +6,7 @@
         <div class="title">
           <h2><span>Rechercher une personne de talent</span></h2>
         </div>
+
         <%= render 'shared/search_form' %>
       </div>
     </div>
@@ -15,7 +16,7 @@
           <% if @result && @search %>
             <h3><%= pluralize( @result, @tree_name)  %> à <%= @address %></h3>
           <% else %>
-            <% if @users.count == User.count %>
+            <% if @users.size == User.count %>
               <h3>Personnes de talents - partout</h3>
             <% end %>
           <% end %>

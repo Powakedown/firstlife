@@ -15,7 +15,7 @@ class TreesController < ApplicationController
   def show
     @tree = Tree.find(params[:id])
     @root_skill = @tree.skills.first.root
-    @tree_user = UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1
+    @user_has_tree = UserTree.where("user_id = ? AND tree_id = ?", current_user, @tree).count >= 1
     if params[:query]
       @users = @tree.users.where( address: user_query_params[:address])
     end
