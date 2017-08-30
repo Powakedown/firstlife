@@ -18,4 +18,17 @@ module ApplicationHelper
   def is_home?
     controller_name == "trees" && action_name == "index"
   end
+
+  def skill_badge_display(skill)
+    if current_user.has_tree_and_skill(skill.tree, skill)
+      style = "background:" + skill.tree.color
+      klass = ' skill-grey'
+    else
+      style, klass = nil, nil
+    end
+
+    content_tag(:div, class: "skill-badge#{klass}", style: style) do
+      cl_image_tag skill.photo.path, class: "skill-level-image" if skill.photo
+    end
+  end
 end
