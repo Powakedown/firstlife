@@ -51,42 +51,42 @@
     </div>
   <div class ="container">
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="talents-plus-addskill">
-        <div class="talents-tile">
-            <h1>TALENTS</h1>
-        </div>
-        <div id="button-show-add-tree">
-          <div class ="btn btn-block">
-              <%= link_to "+ Ajouter un nouvel arbre", trees_path, class: "btn-addtree-text" %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="talents-plus-addskill">
+          <div class="talents-tile">
+              <h1>TALENTS</h1>
+          </div>
+          <div id="button-show-add-tree">
+            <div class ="btn btn-block">
+                <%= link_to "+ Ajouter un nouvel arbre", trees_path, class: "btn-addtree-text" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="user-column-2">
-        <% @user.trees.each do |tree| %>
-          <div class="leaf" id="title">
-            <div class="skill-component">
-              <div class="skill-name">
-                <h4 class="tree-title"><%= link_to tree.name, tree %></h4>
-              </div>
-              <div class="skill-badge" style="background-color: <%= tree.color %>">
-                <div class="badge-content-titre">
-                  <%= @user.skills.where(tree: tree).count %>
+    <div class="row">
+      <% @user.trees.each do |tree| %>
+        <div class="col-xs-6">
+          <%= link_to tree do %>
+            <div class="leaf" id="user-tree-capsule">
+              <div class="skill-component">
+                <div class="skill-name">
+                  <h4 class="tree-title"><%= tree.name%></h4>
+                </div>
+                <div class="skill-badge" style="background-color: <%= tree.color %>">
+                  <div class="badge-content-titre">
+                    <%= @user.skills.where(tree: tree).count %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="user-column-3">
-
-  </div>
 </div>
+
+
