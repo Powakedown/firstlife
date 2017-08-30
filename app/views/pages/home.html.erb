@@ -60,14 +60,15 @@
                     </div>
                   </div>
                 <% end %>
-                <% @trees.each_with_index do |tree, index| %>
-                  <% if user.skills.where(tree: tree).count > 0 && index < 3 %>
-                    <div class="card-skill" style="background-color: <%= tree.color %>">
-                      <div class="text-left"><%= tree.name %></div>
-                      <div><%= user.skills.where(tree: tree).count%></div>
-                    </div>
-                  <% end %>
+
+                <% user.best_3_trees.each do |tree| %>
+                  <div class="card-skill" style="background-color: <%= tree.color %>">
+                    <div class="text-left"><%= tree.name %></div>
+                    <div><%= user.skills.where(tree: tree).count %></div>
+                  </div>
                 <% end %>
+
+
             </div>
           </div>
         <% end %>
