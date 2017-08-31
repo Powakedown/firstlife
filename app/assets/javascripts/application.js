@@ -8,6 +8,4 @@ $('.leaf').click(function() {
 });
 
 
-$('.skill-component').click(function()) {
-  alert("hey");
-}
+
