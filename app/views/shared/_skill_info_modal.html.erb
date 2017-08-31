@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Modal -->
-  <% current_skill = Skill.find(1477) %>
+  <% current_skill = Skill.find_by_name("Duck typing") %>
   <div class="modal right fade" id="myModal<%= current_skill.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
