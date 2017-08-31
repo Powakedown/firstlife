@@ -6,3 +6,8 @@
 $('.leaf').click(function() {
   $('#skill-root').addClass("expandOpen");
 });
+
+
+$('.skill-component').click(function()) {
+  alert("hey");
+}
