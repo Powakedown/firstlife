@@ -6,12 +6,12 @@ $('#skill-<%= @skill.id %>').html('<%= j render "skills/skill", skill: @skill %>
   <% end %>
 <% end %>
 
-$('#title').removeClass("expandOpen");
+$('#skill-root').removeClass("expandOpen");
 window.requestAnimationFrame(function(time) {
 window.requestAnimationFrame(function(time) {
-    $('#title').addClass("expandOpen");
+    $('#skill-root').addClass("expandOpen");
   });
   });
 
-$('#title .skill-count').text('<%= current_user.skills.where(tree: @skill.tree, level: nil).count %>');
+$('#skill-root .skill-count').text('<%= current_user.skills.where(tree: @skill.tree, level: nil).count %>');
 

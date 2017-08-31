@@ -3,8 +3,10 @@
   <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer" %>
   <ul class="tree">
     <li>
-      <div class="leaf" id="title">
+      <div class="leaf" id="skill-root">
+        <div id="skill-root-arrow-right"><h1><</h1></div>
         <%= render "skills/skill", skill: @root_skill, tree: @tree %>
+        <div id="skill-root-arrow-left"><h1>></h1></div>
       </div>
       <ul>
         <% @root_skill.children.each do |skill| %>
