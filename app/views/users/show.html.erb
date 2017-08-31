@@ -7,7 +7,7 @@
               <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
             </div>
             <div class="card-avatar-name">
-              <p><%= @user.first_name.downcase %> <%= @user.last_name.downcase %></p>
+              <p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
             </div>
             <div class="card-avatar-name-description">
               <p> Etudiant au wagon </p>
@@ -58,7 +58,7 @@
           </div>
         </div>
   </div>
-  <div class ="container">
+  <div class ="container-talents">
 
     <div class="row">
       <div class="col-xs-12">
