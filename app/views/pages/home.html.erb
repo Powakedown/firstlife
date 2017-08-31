@@ -27,7 +27,6 @@
           <p> No more CV,<br>show your skills.</p>
         </div>
 
-
       <%= render 'shared/search_form' %>
 
     </div>
@@ -64,7 +63,7 @@
                 <% user.best_3_trees.each do |tree| %>
                   <div class="card-skill" style="background-color: <%= tree.color %>">
                     <div class="text-left"><%= tree.name %></div>
-                    <div><%= user.skills.where(tree: tree).count %></div>
+                    <div><%= user.skills.where(tree: tree, level: nil).count %></div>
                   </div>
                 <% end %>
 
