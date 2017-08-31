@@ -1,5 +1,5 @@
 .footer {
-  background: #E9EEF1;
+  background: #D9D9D9;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,6 +8,7 @@
   color: $anis;
   border-top: 7px solid $anis;
   font-size:25px;
+  margin-top: 50px;
 }
 .footer-links {
   display: flex;
@@ -15,7 +16,7 @@
 }
 .footer-links a {
   color: $gray-base;
-  opacity: 0.30;
+  opacity: 0.70;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -26,6 +27,6 @@
 }
 
 .footer-copyright{
-   opacity: 0.70;
+   opacity: 0.90;
 }
 
