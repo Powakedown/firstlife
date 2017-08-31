@@ -1,42 +1,37 @@
-<div class="container demo">
-
-
-    <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
-      Skill info
-    </button>
-  </div>
-
+<div class="container">
   <!-- Modal -->
-
-
-  <!-- Modal -->
-  <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+  <% current_skill = Skill.find(1477) %>
+  <div class="modal right fade" id="myModal<%= current_skill.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div>
-          <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
-          <div class="modal-title-how-to-learn">
-          <h4  id="myModalLabel2">How to learn</h4>
+          <div class="modal-title">
+            <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+            <h4  id="myModalLabel2"><%= current_skill.action %></h4>
           </div>
           <div class="modal-title">
-          <h4  id="myModalLabel22"><%= skill.name %></h4>
+            <h4  id="myModalLabel2"><%= current_skill.name.capitalize %></h4>
           </div>
         </div>
-        <div class="modal-body">
-          <p>Entre le sens strict et l'utilisation qui en est faite dans la vie de tous les jours, on ne sait plus très bien ce qu'est l'écologie. Voici une définition simple et claire de l'écologie. L'écologie est une science récente de la biologie née dans les années 1800. Mais l'écologie désigne aussi une préoccupation très récente liée à l'avenir et aux conditions de vie sur la planète.
-          Il existe aujourd’hui trois définitions de l’écologie. La définition étymologique, la définition stricte de l’écologie et la définition utilisée dans le sens courant.
+        <div class="modal-body" id="panel-info">
+          <p class="content-introduction">En programmation informatique, le duck typing (traduction: typage canard) est un style de typage dynamique de certains langages de programmation orientés objet. En duck typing, la sémantique d'un objet, c'est-à-dire son type dans le contexte où il est utilisé, est déterminée par l'ensemble de ses méthodes et de ses attributs, et non, comme il l'est habituellement, par un type défini et nommé explicitement par le programmeur dans les systèmes à typage nominatif.
           </p>
+          <div class="content-introduction">
           <p>En savoir plus:</p>
-          <div class="buy-on-amazon">
-          <p>ACHETEZ LE LIVRE SUR AMAZON:</p>
+          <p><a href="#"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Ruby Monk: Pourquoi apprendre le Duck Typing?</strong></a></p>
+          <p><a href="#"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Wikipedia: Le duck typing</strong></a></p>
+          <p><a href="#"><strong><i class="fa fa-external-link" aria-hidden="true"></i> Stackoverflow: Main issues</strong></a></p>
           </div>
-          <%= link_to image_tag("amazon_ecolo_book", :border=>0, :class => 'amazon-item') %>
+          <div class="buy-on-amazon">
+            <p>Achetez le livre sur <%= cl_image_tag "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1504170810/amazon-logo_peglb5.jpg", class: "modal-image" %></p>
+            <div>
+              <%= cl_image_tag "http://res.cloudinary.com/doodlid/image/upload/c_scale,h_120/v1504171158/duck-typing_vp1dt9.jpg" %>
+              <span class="book-price">19€</span>
+            </div>
+          </div>
         </div>
-
       </div><!-- modal-content -->
     </div><!-- modal-dialog -->
   </div><!-- modal -->
-
-
 </div><!-- container -->
