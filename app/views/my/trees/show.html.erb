@@ -1,12 +1,15 @@
+<div class="tree-actions">
+  <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer-my" %>
+</div>
+
 <%= render "shared/skill_info_modal", skill: @root_skill, tree: @tree %>
 <div class="tree-wrapper">
-  <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer" %>
   <ul class="tree">
     <li>
       <div class="leaf" id="skill-root">
         <div id="skill-root-arrow-right"><h1><</h1></div>
         <%= render "skills/skill", skill: @root_skill, tree: @tree, user: @user %>
-        <div id="skill-root-arrow-left"></div>
+        <div id="skill-root-arrow-left"><h1>></h1></div>
       </div>
       <ul>
         <% @root_skill.children.each do |skill| %>
