@@ -1,0 +1,42 @@
+<div class="container demo">
+
+
+    <button type="button" class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
+      Skill info
+    </button>
+  </div>
+
+  <!-- Modal -->
+
+
+  <!-- Modal -->
+  <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div>
+          <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+          <div class="modal-title-how-to-learn">
+          <h4  id="myModalLabel2">How to learn</h4>
+          </div>
+          <div class="modal-title">
+          <h4  id="myModalLabel22"><%= skill.name %></h4>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p>Entre le sens strict et l'utilisation qui en est faite dans la vie de tous les jours, on ne sait plus très bien ce qu'est l'écologie. Voici une définition simple et claire de l'écologie. L'écologie est une science récente de la biologie née dans les années 1800. Mais l'écologie désigne aussi une préoccupation très récente liée à l'avenir et aux conditions de vie sur la planète.
+          Il existe aujourd’hui trois définitions de l’écologie. La définition étymologique, la définition stricte de l’écologie et la définition utilisée dans le sens courant.
+          </p>
+          <p>En savoir plus:</p>
+          <div class="buy-on-amazon">
+          <p>ACHETEZ LE LIVRE SUR AMAZON:</p>
+          </div>
+          <%= link_to image_tag("amazon_ecolo_book", :border=>0, :class => 'amazon-item') %>
+        </div>
+
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal -->
+
+
+</div><!-- container -->
