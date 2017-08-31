@@ -7,7 +7,7 @@
     </div>
   </div>
 <% else %>
-  <div class="skill-component">
+ <div class="skill-component" data-toggle="modal" data-target="#myModal<%= skill.id %>">
     <div class="skill-name">
       <h4 class="tree-type"><%= skill.action %></h4>
       <h4 class="tree-title"><%= skill.name %></h4>
@@ -15,6 +15,7 @@
 
     <% if user.has_tree(@tree) %>  <!-- si on a le tree -->
       <div class="skill-badge tree-opened">
+
         <div class="badge-content-titre">
           <div class="skill-badge skill-count" style="background-color: <%= @tree.color %>">
             <%= user.skills.where(tree: @tree, level: nil).count %>
@@ -42,8 +43,10 @@
             <i class="fa fa-check unchecked"></i>
           <% end %>
         <% end %>
+
       </div>
-    <% else %>
+
+    <% else %> <!-- IF user is not logged or doesn't have the tree -->
       <div class="skill-badge tree-closed">
         <%= link_to tree_user_trees_path(@tree), method: :post, class: "badge-content-titre" do %>
           <i class="fa fa-plus"></i>
