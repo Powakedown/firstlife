@@ -88,7 +88,7 @@
       <% @trees.each do |tree| %>
         <div class="col-xs-8 col-md-3 col-sm-4 text-center" >
           <div class="card-index">
-            <%= link_to tree_path(tree) do %>
+            <%= link_to my_tree_path(tree) do %>
               <% if tree.photo? %>
                 <div class="card-index-image" style="background-image: url('<%= cl_image_path tree.photo.path %>')">
               <% else %>
@@ -97,7 +97,7 @@
                 </div>
             <% end %>
               <div class="card-body text-center">
-                <span class="card-title"><%= link_to tree.name, tree_path(tree) %></span>
+                <span class="card-title"><%= link_to tree.name, my_tree_path(tree) %></span>
                 <span class="card-contributors"><%= tree.contributors == nil ? "#{rand(50..3000)} contributeurs" : "#{tree.contributors} contributeurs" %> </span>
                 <span class="card-subtitle"><%= tree.skills.count > 1 ? tree.skills.count : rand(5..30) %> niveaux disponibles</span>
               </div>

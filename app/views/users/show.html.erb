@@ -66,11 +66,13 @@
           <div class="talents-tile">
               <h1>TALENTS</h1>
           </div>
-          <div id="button-show-add-tree">
-            <div class ="btn btn-block">
-                <%= link_to "+ Ajouter un nouvel arbre", trees_path, class: "btn-addtree-text" %>
+          <% if @user == current_user %>
+            <div id="button-show-add-tree">
+              <div class ="btn btn-block">
+                  <%= link_to "+ Ajouter un nouvel arbre", trees_path, class: "btn-addtree-text" %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -78,7 +80,7 @@
     <div class="row">
       <% @user.trees.each do |tree| %>
         <div class="col-xs-6">
-          <%= link_to tree do %>
+          <%= link_to get_tree_path(tree, @user) do %>
             <div class="leaf" id="user-tree-capsule">
               <div class="skill-component">
                 <div class="skill-name">
