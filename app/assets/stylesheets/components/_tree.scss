@@ -131,7 +131,11 @@ $border-opacity: 0.1;
 }
 .btn-contribuer {
   border-radius: 8px 8px 0px 0px;
-
+}
+.btn-contribuer-my {
+  position: absolute;
+  top: 11px;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .tree-actions {
