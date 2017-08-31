@@ -6,4 +6,4 @@ $('#skill-<%= @user_skill.skill.id %>').html('<%= j render "skills/skill", skill
   <% end %>
 <% end %>
 
-$('#title .skill-count').text('<%= current_user.skills.where(tree: @user_skill.skill.tree, level: nil).count %>');
+$('#skill-root .skill-count').text('<%= current_user.skills.where(tree: @user_skill.skill.tree, level: nil).count %>');

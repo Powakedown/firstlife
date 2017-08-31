@@ -4,5 +4,5 @@
 //= require_tree .
 
 $('.leaf').click(function() {
-  $('#title').addClass("expandOpen");
+  $('#skill-root').addClass("expandOpen");
 });
