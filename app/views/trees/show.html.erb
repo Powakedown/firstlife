@@ -1,25 +1,16 @@
-<div class="card-avatar">
-  <div class="card-avatar-content">
-    <div class="card-avatar-image">
-      <%= cl_image_tag @user.photo.path,  width: 128, height: 128, radius: "max", crop: "fill"%>
-    </div>
-    <div class="card-avatar-name">
-      <p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
-    </div>
-    <div class="card-avatar-name-description">
-      <p> Etudiant au wagon </p>
-    </div>
-  </div>
-</div>
-
 <div class="tree-wrapper">
-  <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer" %>
+  <div class="tree-actions">
+    <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer" %>
+    <%= cl_image_tag @user.photo.path,  width: 60, height: 60, radius: "max", crop: "fill"%>
+    <span><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></span>
+  </div>
+
   <ul class="tree">
     <li>
       <div class="leaf" id="skill-root">
         <div id="skill-root-arrow-right"><h1><</h1></div>
         <%= render "skills/skill", skill: @root_skill, tree: @tree, user: @user %>
-        <div id="skill-root-arrow-left"></div>
+        <div id="skill-root-arrow-left"><h1>></h1></div>
       </div>
       <ul>
         <% @root_skill.children.each do |skill| %>

@@ -130,7 +130,16 @@ $border-opacity: 0.1;
   }
 }
 .btn-contribuer {
-  position: absolute;
   border-radius: 8px 8px 0px 0px;
-  top: 241px;
+
+}
+
+.tree-actions {
+  position: absolute;
+  top: 230px;
+  left: 100px;
+  color: white;
+  img {
+    margin-left: 10px;
+  }
 }
