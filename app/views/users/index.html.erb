@@ -6,7 +6,6 @@
         <div class="title">
           <h2><span>Rechercher une personne de talent</span></h2>
         </div>
-
         <%= render 'shared/search_form' %>
       </div>
     </div>
@@ -46,7 +45,7 @@
                  <% if  user.skills.where(tree: tree).count > 0 %>
                   <div class="card-skill" style="background-color: <%= tree.color %>">
                     <div><%= tree.name %></div>
-                    <div><%= user.skills.where(tree: tree).count%></div>
+                    <div><%= user.skills.where(tree: tree, level: nil).count%></div>
                   </div>
                  <% end %>
                 <% end %>
