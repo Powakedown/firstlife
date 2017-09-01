@@ -14,23 +14,23 @@ User.destroy_all
 url = "http://res.cloudinary.com/doodlid/image/upload/v1503506825/max.png"
 maxime = User.create(first_name: "Maxime", last_name: "Boué", email: "doodlid@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_renan_gi9org.png"
-User.create(first_name: "Renan", last_name: "Dolan", email: "renan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504258198/Save images/ronan_leroy.png"
+User.create(first_name: "Ronan", last_name: "Leroy", email: "ronan@yahoo.fr", password: "123456", address: "Cenon", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/profil_lea_jz7t71.png"
-User.create(first_name: "Léa", last_name: "Lamartine", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504258201/Save images/lea_martin.png"
+User.create(first_name: "Léa", last_name: "Martin", email: "lea@yahoo.fr", password: "123456", address: "Paris", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504016581/Save images/Corinne.png"
 User.create(first_name: "Lina", last_name: "Zhang", email: "lina@yahoo.fr", password: "123456", address: "Lacanau", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503482540/Profil_benji_vamqlm.png"
-User.create(first_name: "Benjamin", last_name: "Dessange", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504258208/Save images/benjamin_faure.png"
+User.create(first_name: "Benjamin", last_name: "Faure", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1504016563/Save images/Simon.png"
-User.create(first_name: "Simon", last_name: "Nasa", email: "simon@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504258204/Save images/karl_verdier.png"
+User.create(first_name: "Karl", last_name: "Verdier", email: "karl@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1503483318/profil_sylvain_k9pczh.png"
-sylvain = User.create(first_name: "Sylvain", last_name: "Lempereur", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504258177/Save images/sylvain_arlot.png"
+sylvain = User.create(first_name: "Sylvain", last_name: "Arlot", email: "sylvain@yahoo.fr", password: "123456", address: "Bordeaux", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/c_scale,w_300/v1504018343/Save images/Pascaline.png"
 User.create(first_name: "Pascaline", last_name: "Lecas", email: "pascaline@yahoo.fr", password: "123456", address: "Floirac", photo_url: url)
