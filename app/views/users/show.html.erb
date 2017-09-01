@@ -1,3 +1,7 @@
+<% content_for :meta_title, @user.first_name %>
+<% content_for :meta_description, @user.skills.where(tree: @user.trees.first).count %>
+
+
 <div class="container">
   <div class="user-flex-box">
     <div class="user-column-1">
