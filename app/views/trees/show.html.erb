@@ -1,3 +1,7 @@
+<% content_for :meta_title, @tree.name %>
+<% content_for :meta_description, meta_description %>
+<% content_for :meta_image, cloudinary_url(@tree.photo.path) %>
+
 <div class="tree-wrapper">
   <div class="tree-actions">
     <%= link_to "Contribuer", "#", class: "btn btn-success btn-contribuer" %>

@@ -1,5 +1,5 @@
 meta_product_name: "FirstLife"
 meta_title: "FirstLife - No more CV, show your skills"
 meta_description: "Développez vos talents grâce au futur du CV et à une plateforme pensée pour faciliter le recrutement, le développement personnel, l’orientation et la reconversion professionnelle."
-meta_image: "firstlife_home.png"                       # should exist in `app/assets/images/`
-meta_url: "www.firstlife.fr"   # url
+meta_image: "firstlife_home.png"
+meta_url: "www.firstlife.fr"
