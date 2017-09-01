@@ -26,7 +26,7 @@ User.create(first_name: "Lina", last_name: "Zhang", email: "lina@yahoo.fr", pass
 url ="http://res.cloudinary.com/doodlid/image/upload/v1504258208/Save images/benjamin_faure.png"
 User.create(first_name: "Benjamin", last_name: "Faure", email: "benjamin@yahoo.fr", password: "123456", address: "Mérignac", photo_url: url)
 
-url ="http://res.cloudinary.com/doodlid/image/upload/v1504258204/Save images/karl_verdier.png"
+url ="http://res.cloudinary.com/doodlid/image/upload/v1504260055/Save images/Karl.png"
 User.create(first_name: "Karl", last_name: "Verdier", email: "karl@yahoo.fr", password: "123456", address: "Liboune", photo_url: url)
 
 url ="http://res.cloudinary.com/doodlid/image/upload/v1504258177/Save images/sylvain_arlot.png"
